@@ -47,7 +47,7 @@ namespace UniteDrafter.Decrypter
                     return (possibleKey, possibleEnc);
             }
 
-            throw new Exception("Não foi possível separar blob em key + encB64");
+            throw new Exception("Could not split blob into key + encB64");
         }
 
         // --- AES-CTR decrypt ---
@@ -57,7 +57,7 @@ namespace UniteDrafter.Decrypter
             var key = SHA256.HashData(Encoding.UTF8.GetBytes(keyStr));
             var raw = B64DecodeLoose(encB64);
 
-            if (raw.Length < 17) throw new Exception("Payload demasiado curto");
+            if (raw.Length < 17) throw new Exception("Payload too short");
 
             var iv = raw[..16];
             var ct = raw[16..];
@@ -137,13 +137,13 @@ namespace UniteDrafter.Decrypter
             return null;
         }
 
-        // --- Test function ---
+        // --- Smoke-test helper ---
         public static void TestDecrypt(string filePath)
         {
             string jsonText = File.ReadAllText(filePath);
             using var doc = JsonDocument.Parse(jsonText);
             var aBlob = FindPagePropsA(doc.RootElement);
-            if (aBlob == null) throw new Exception("pageProps.a não encontrado");
+            if (aBlob == null) throw new Exception("pageProps.a not found");
 
             string decryptedJson = DecryptBlob(aBlob);
             Console.WriteLine("Decrypted JSON preview (first 500 chars):"); 
