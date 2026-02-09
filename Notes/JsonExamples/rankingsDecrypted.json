@@ -1,0 +1,1802 @@
+{
+  "top100": [
+    {
+      "Uid": "17538743255368189772",
+      "MasterPoint": 2122,
+      "RoleName": "DFM_Serata",
+      "AvatarFrame": "t_Avatar_frame_74",
+      "AvatarFace": "t_CreateRole_male2_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "11165801582880087132",
+      "MasterPoint": 2051,
+      "RoleName": "RC_Häruto",
+      "AvatarFrame": "t_Avatar_frame_35",
+      "AvatarFace": "t_CreateRole_male2_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "5956142753306607232",
+      "MasterPoint": 2025,
+      "RoleName": "ru1.",
+      "AvatarFrame": "t_Avatar_frame_35",
+      "AvatarFace": "t_CreateRole_female2_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "8222467432660731019",
+      "MasterPoint": 1997,
+      "RoleName": "・Blade<3・",
+      "AvatarFrame": "t_Avatar_frame_74",
+      "AvatarFace": "t_CreateRole_male3_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "6508939674484480584",
+      "MasterPoint": 1975,
+      "RoleName": "ZETA_Rom",
+      "AvatarFrame": "t_Avatar_frame_271",
+      "AvatarFace": "t_CreateRole_male2_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "17051594082813379862",
+      "MasterPoint": 1916,
+      "RoleName": "暗・|ʟоѕтүシ",
+      "AvatarFrame": "t_Avatar_frame_46",
+      "AvatarFace": "t_CreateRole_female1_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "10534675065609729666",
+      "MasterPoint": 1898,
+      "RoleName": "EVFL_77chin",
+      "AvatarFrame": "t_Avatar_frame_209",
+      "AvatarFace": "t_CreateRole_female1_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "4650516741805870351",
+      "MasterPoint": 1863,
+      "RoleName": "DFM_cocoa",
+      "AvatarFrame": "t_Avatar_frame_69",
+      "AvatarFace": "t_CreateRole_female2_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "11900635037595693948",
+      "MasterPoint": 1856,
+      "RoleName": "RëtireMėwF0×",
+      "AvatarFrame": "t_Avatar_frame_112",
+      "AvatarFace": "t_CreateRole_male2_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "12288966489936169270",
+      "MasterPoint": 1851,
+      "RoleName": "しとおうる",
+      "AvatarFrame": "t_Avatar_frame_235",
+      "AvatarFace": "t_CreateRole_male1_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "8389756648170138714",
+      "MasterPoint": 1842,
+      "RoleName": "猫喰う",
+      "AvatarFrame": "t_Avatar_frame_83",
+      "AvatarFace": "t_CreateRole_male2_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "17428066328931805915",
+      "MasterPoint": 1808,
+      "RoleName": "LDㆍPiachu",
+      "AvatarFrame": "t_Avatar_frame_47",
+      "AvatarFace": "t_CreateRole_male1_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "1532728413528849345",
+      "MasterPoint": 1805,
+      "RoleName": "AXK・Fl4sh",
+      "AvatarFrame": "t_Avatar_frame_06",
+      "AvatarFace": "t_CreateRole_male2_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "407041137030543247",
+      "MasterPoint": 1803,
+      "RoleName": "GT_Champion",
+      "AvatarFrame": "t_Avatar_frame_10",
+      "AvatarFace": "t_CreateRole_male2_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "4377988764923468134",
+      "MasterPoint": 1802,
+      "RoleName": "MooM・SaSha",
+      "AvatarFrame": "t_Avatar_frame_16",
+      "AvatarFace": "t_CreateRole_female2_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "3675726595931019641",
+      "MasterPoint": 1801,
+      "RoleName": "iTzMufasa",
+      "AvatarFrame": "t_Avatar_frame_209",
+      "AvatarFace": "t_CreateRole_female1_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "7485439520154660728",
+      "MasterPoint": 1788,
+      "RoleName": "Iñfinity_S",
+      "AvatarFrame": "t_Avatar_frame_16",
+      "AvatarFace": "t_CreateRole_female2_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "9079142506788376413",
+      "MasterPoint": 1780,
+      "RoleName": "storм",
+      "AvatarFrame": "t_Avatar_frame_233",
+      "AvatarFace": "t_CreateRole_male2_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "16108852757084937776",
+      "MasterPoint": 1770,
+      "RoleName": "E36_Nomu",
+      "AvatarFrame": "t_Avatar_frame_74",
+      "AvatarFace": "t_CreateRole_female4_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "3921163207932634509",
+      "MasterPoint": 1751,
+      "RoleName": "EVFL_94",
+      "AvatarFrame": "t_Avatar_frame_210",
+      "AvatarFace": "t_CreateRole_male2_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "4567632014520969365",
+      "MasterPoint": 1737,
+      "RoleName": "竜舞青龍",
+      "AvatarFrame": "t_Avatar_frame_33",
+      "AvatarFace": "t_CreateRole_female1_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "4727351645773364578",
+      "MasterPoint": 1735,
+      "RoleName": "ZETA_Vitoppo",
+      "AvatarFrame": "t_Avatar_frame_209",
+      "AvatarFace": "t_CreateRole_female1_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "11966382790374591590",
+      "MasterPoint": 1723,
+      "RoleName": "ai_arx90",
+      "AvatarFrame": "t_Avatar_frame_136",
+      "AvatarFace": "t_CreateRole_male2_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "6145342094806446839",
+      "MasterPoint": 1715,
+      "RoleName": "BH3・Sazuro",
+      "AvatarFrame": "t_Avatar_frame_161",
+      "AvatarFace": "t_CreateRole_male2_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "6933753027081878827",
+      "MasterPoint": 1695,
+      "RoleName": "AXK・Moony",
+      "AvatarFrame": "t_Avatar_frame_66",
+      "AvatarFace": "t_CreateRole_male2_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "5185710992174128381",
+      "MasterPoint": 1695,
+      "RoleName": "GT_Slog",
+      "AvatarFrame": "t_Avatar_frame_42",
+      "AvatarFace": "t_CreateRole_female1_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "4159890689816137646",
+      "MasterPoint": 1695,
+      "RoleName": "LDㆍKloud",
+      "AvatarFrame": "t_Avatar_frame_1",
+      "AvatarFace": "t_CreateRole_male3_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "13440740660643935791",
+      "MasterPoint": 1678,
+      "RoleName": "牛牛トレイン",
+      "AvatarFrame": "t_Avatar_frame_1",
+      "AvatarFace": "t_CreateRole_female1_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "15426913390848710201",
+      "MasterPoint": 1663,
+      "RoleName": "miffybear",
+      "AvatarFrame": "t_Avatar_frame_260",
+      "AvatarFace": "t_CreateRole_female2_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "10144190353600969420",
+      "MasterPoint": 1659,
+      "RoleName": "4Lc×Ƥɴɪxッ",
+      "AvatarFrame": "t_Avatar_frame_35",
+      "AvatarFace": "t_CreateRole_female2_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "15574168549347076900",
+      "MasterPoint": 1657,
+      "RoleName": "FS.Todo",
+      "AvatarFrame": "t_Avatar_frame_70",
+      "AvatarFace": "t_CreateRole_male2_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "4120359653453207722",
+      "MasterPoint": 1656,
+      "RoleName": "RVL・Yang",
+      "AvatarFrame": "t_Avatar_frame_37",
+      "AvatarFace": "t_CreateRole_male2_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "13650773390075215338",
+      "MasterPoint": 1645,
+      "RoleName": "Todo°",
+      "AvatarFrame": "t_Avatar_frame_182",
+      "AvatarFace": "t_CreateRole_male2_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "7663160921479500494",
+      "MasterPoint": 1640,
+      "RoleName": "PEPS・Xante",
+      "AvatarFrame": "t_Avatar_frame_209",
+      "AvatarFace": "t_CreateRole_male2_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "3013836537945264886",
+      "MasterPoint": 1633,
+      "RoleName": "AL・Ice",
+      "AvatarFrame": "t_Avatar_frame_85",
+      "AvatarFace": "t_CreateRole_male2_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "9240752993248423834",
+      "MasterPoint": 1622,
+      "RoleName": "RNTX_Apple",
+      "AvatarFrame": "t_Avatar_frame_35",
+      "AvatarFace": "t_CreateRole_female1_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "14240114892468309010",
+      "MasterPoint": 1619,
+      "RoleName": "D'arĸtanyan°",
+      "AvatarFrame": "t_Avatar_frame_272",
+      "AvatarFace": "t_CreateRole_male2_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "9092069133239669081",
+      "MasterPoint": 1613,
+      "RoleName": "LDㆍIvy",
+      "AvatarFrame": "t_Avatar_frame_32",
+      "AvatarFace": "t_CreateRole_female1_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "283744645113576315",
+      "MasterPoint": 1610,
+      "RoleName": "YeMu.",
+      "AvatarFrame": "t_Avatar_frame_11",
+      "AvatarFace": "t_CreateRole_female1_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "12824032011677686230",
+      "MasterPoint": 1610,
+      "RoleName": "RIG_HarsaMゑ",
+      "AvatarFrame": "t_Avatar_frame_107",
+      "AvatarFace": "t_CreateRole_male3_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "14728986650951784142",
+      "MasterPoint": 1600,
+      "RoleName": "三堀慎一郎",
+      "AvatarFrame": "t_Avatar_frame_40",
+      "AvatarFace": "t_CreateRole_male2_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "18151924568289409012",
+      "MasterPoint": 1592,
+      "RoleName": "GT_Vlacan",
+      "AvatarFrame": "t_Avatar_frame_14",
+      "AvatarFace": "t_CreateRole_female1_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "13886311500729801477",
+      "MasterPoint": 1586,
+      "RoleName": "LDㆍHosia",
+      "AvatarFrame": "t_Avatar_frame_201",
+      "AvatarFace": "t_CreateRole_female2_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "10004437835139005436",
+      "MasterPoint": 1584,
+      "RoleName": "FL_Ma・sh1o",
+      "AvatarFrame": "t_Avatar_frame_209",
+      "AvatarFace": "t_CreateRole_female1_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "7164885314394221617",
+      "MasterPoint": 1582,
+      "RoleName": "EVFL_Srias",
+      "AvatarFrame": "t_Avatar_frame_211",
+      "AvatarFace": "t_CreateRole_male2_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "12312546953588024775",
+      "MasterPoint": 1581,
+      "RoleName": "ちゃがわ°",
+      "AvatarFrame": "t_Avatar_frame_06",
+      "AvatarFace": "t_CreateRole_male4_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "13431882799845227428",
+      "MasterPoint": 1580,
+      "RoleName": "FL_ak1",
+      "AvatarFrame": "t_Avatar_frame_83",
+      "AvatarFace": "t_CreateRole_female2_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "317915557534962692",
+      "MasterPoint": 1577,
+      "RoleName": "DenjiKH",
+      "AvatarFrame": "t_Avatar_frame_10",
+      "AvatarFace": "t_CreateRole_female2_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "3866810706799089730",
+      "MasterPoint": 1569,
+      "RoleName": "RIG_あるみに",
+      "AvatarFrame": "t_Avatar_frame_61",
+      "AvatarFace": "t_CreateRole_female2_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "210272479071173341",
+      "MasterPoint": 1565,
+      "RoleName": "Darkrai冥",
+      "AvatarFrame": "t_Avatar_frame_27",
+      "AvatarFace": "t_CreateRole_female1_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "1432165423796658326",
+      "MasterPoint": 1560,
+      "RoleName": "神楽モミジ",
+      "AvatarFrame": "t_Avatar_frame_10",
+      "AvatarFace": "t_CreateRole_female1_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "13243730229763991061",
+      "MasterPoint": 1559,
+      "RoleName": "絶対的不可視",
+      "AvatarFrame": "t_Avatar_frame_74",
+      "AvatarFace": "t_CreateRole_female2_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "9886109483002104680",
+      "MasterPoint": 1553,
+      "RoleName": "EVFL_ZzzRay",
+      "AvatarFrame": "t_Avatar_frame_209",
+      "AvatarFace": "t_CreateRole_male1_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "9180667691265495473",
+      "MasterPoint": 1551,
+      "RoleName": "T1_Comi",
+      "AvatarFrame": "t_Avatar_frame_35",
+      "AvatarFace": "t_CreateRole_male2_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "12430967859275648468",
+      "MasterPoint": 1548,
+      "RoleName": "xIrls_o9",
+      "AvatarFrame": "t_Avatar_frame_151",
+      "AvatarFace": "t_CreateRole_female1_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "11452458717748607241",
+      "MasterPoint": 1534,
+      "RoleName": "RU이스",
+      "AvatarFrame": "t_Avatar_frame_1",
+      "AvatarFace": "t_CreateRole_male1_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "17702956853909059677",
+      "MasterPoint": 1524,
+      "RoleName": "最高学年¹",
+      "AvatarFrame": "t_Avatar_frame_249",
+      "AvatarFace": "t_CreateRole_female1_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "2782406464943081367",
+      "MasterPoint": 1523,
+      "RoleName": "大喝采こちた",
+      "AvatarFrame": "t_Avatar_frame_14",
+      "AvatarFace": "t_CreateRole_male1_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "16303822713822670284",
+      "MasterPoint": 1515,
+      "RoleName": "AXK・Ashツ",
+      "AvatarFrame": "t_Avatar_frame_10",
+      "AvatarFace": "t_CreateRole_male2_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "3507341521590713496",
+      "MasterPoint": 1515,
+      "RoleName": "JNS・Akira",
+      "AvatarFrame": "t_Avatar_frame_272",
+      "AvatarFace": "t_CreateRole_male2_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "16821330415154165555",
+      "MasterPoint": 1508,
+      "RoleName": "ComfeyEGirl",
+      "AvatarFrame": "t_Avatar_frame_271",
+      "AvatarFace": "t_CreateRole_male1_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "9396038837239933214",
+      "MasterPoint": 1501,
+      "RoleName": "Hammy",
+      "AvatarFrame": "t_Avatar_frame_272",
+      "AvatarFace": "t_CreateRole_male2_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "6234146868023479859",
+      "MasterPoint": 1500,
+      "RoleName": "きRyo",
+      "AvatarFrame": "t_Avatar_frame_182",
+      "AvatarFace": "t_CreateRole_male1_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "10150768818910462727",
+      "MasterPoint": 1497,
+      "RoleName": "気~AetherXツ",
+      "AvatarFrame": "t_Avatar_frame_120",
+      "AvatarFace": "t_CreateRole_male2_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "5370290637738367506",
+      "MasterPoint": 1495,
+      "RoleName": "野夢山野夢",
+      "AvatarFrame": "t_Avatar_frame_76",
+      "AvatarFace": "t_CreateRole_male2_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "6842270336589008926",
+      "MasterPoint": 1494,
+      "RoleName": "Тraa",
+      "AvatarFrame": "t_Avatar_frame_10",
+      "AvatarFace": "t_CreateRole_male2_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "7078396214233706393",
+      "MasterPoint": 1493,
+      "RoleName": "SRy_誠",
+      "AvatarFrame": "t_Avatar_frame_64",
+      "AvatarFace": "t_CreateRole_male1_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "6059110422491815427",
+      "MasterPoint": 1491,
+      "RoleName": "VL_Misyu",
+      "AvatarFrame": "t_Avatar_frame_69",
+      "AvatarFace": "t_CreateRole_female1_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "2355915952205523115",
+      "MasterPoint": 1490,
+      "RoleName": "ねこたくんch",
+      "AvatarFrame": "t_Avatar_frame_76",
+      "AvatarFace": "t_CreateRole_male3_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "10722770019680267975",
+      "MasterPoint": 1490,
+      "RoleName": "MythicMarvel",
+      "AvatarFrame": "t_Avatar_frame_249",
+      "AvatarFace": "t_CreateRole_male2_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "4199920015203134583",
+      "MasterPoint": 1487,
+      "RoleName": "NOJ_Arikun",
+      "AvatarFrame": "t_Avatar_frame_85",
+      "AvatarFace": "t_CreateRole_female2_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "160785273709519470",
+      "MasterPoint": 1485,
+      "RoleName": "Ʀɪʏa",
+      "AvatarFrame": "t_Avatar_frame_272",
+      "AvatarFace": "t_CreateRole_female1_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "7403259754758887778",
+      "MasterPoint": 1483,
+      "RoleName": "echo-echo!!!",
+      "AvatarFrame": "t_Avatar_frame_272",
+      "AvatarFace": "t_CreateRole_male1_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "14133412286933787377",
+      "MasterPoint": 1479,
+      "RoleName": "IGZ_みずたま",
+      "AvatarFrame": "t_Avatar_frame_280",
+      "AvatarFace": "t_CreateRole_male2_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "5935618742883064839",
+      "MasterPoint": 1478,
+      "RoleName": "NMSS・Dylan",
+      "AvatarFrame": "t_Avatar_frame_47",
+      "AvatarFace": "t_CreateRole_female1_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "3764300704335582336",
+      "MasterPoint": 1478,
+      "RoleName": "NOJ_HisAmё",
+      "AvatarFrame": "t_Avatar_frame_136",
+      "AvatarFace": "t_CreateRole_male1_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "15914297029289371320",
+      "MasterPoint": 1477,
+      "RoleName": "Tra1nerID",
+      "AvatarFrame": "t_Avatar_frame_272",
+      "AvatarFace": "t_CreateRole_female1_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "10801485172719582063",
+      "MasterPoint": 1469,
+      "RoleName": "pOm_pOm:v",
+      "AvatarFrame": "t_Avatar_frame_59",
+      "AvatarFace": "t_CreateRole_male1_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "3225902604073690245",
+      "MasterPoint": 1468,
+      "RoleName": "GxdL・Rédux",
+      "AvatarFrame": "t_Avatar_frame_76",
+      "AvatarFace": "t_CreateRole_female2_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "2782252453526854653",
+      "MasterPoint": 1467,
+      "RoleName": "SZ/Shiganaki",
+      "AvatarFrame": "t_Avatar_frame_107",
+      "AvatarFace": "t_CreateRole_male1_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "13220966662058133912",
+      "MasterPoint": 1466,
+      "RoleName": "KR.Noah",
+      "AvatarFrame": "t_Avatar_frame_1",
+      "AvatarFace": "t_CreateRole_female1_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "18142548658610419369",
+      "MasterPoint": 1465,
+      "RoleName": "N'shiro_",
+      "AvatarFrame": "t_Avatar_frame_236",
+      "AvatarFace": "t_CreateRole_male1_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "3290804468694444949",
+      "MasterPoint": 1460,
+      "RoleName": "纯・Sนḅḧคm",
+      "AvatarFrame": "t_Avatar_frame_23",
+      "AvatarFace": "t_CreateRole_male1_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "7081886636364723244",
+      "MasterPoint": 1458,
+      "RoleName": "纯・Ɗสʀҡ",
+      "AvatarFrame": "t_Avatar_frame_65",
+      "AvatarFace": "t_CreateRole_male2_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "6788124190898312239",
+      "MasterPoint": 1452,
+      "RoleName": "ここあった",
+      "AvatarFrame": "t_Avatar_frame_161",
+      "AvatarFace": "t_CreateRole_male3_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "17872233269772961328",
+      "MasterPoint": 1450,
+      "RoleName": "失われた学力",
+      "AvatarFrame": "t_Avatar_frame_211",
+      "AvatarFace": "t_CreateRole_male2_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "8963926033800687287",
+      "MasterPoint": 1444,
+      "RoleName": "EVFL_slash",
+      "AvatarFrame": "t_Avatar_frame_07",
+      "AvatarFace": "t_CreateRole_male2_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "15391898267019433083",
+      "MasterPoint": 1440,
+      "RoleName": "Thrower?",
+      "AvatarFrame": "t_Avatar_frame_35",
+      "AvatarFace": "t_CreateRole_male1_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "5058627952922849218",
+      "MasterPoint": 1440,
+      "RoleName": ".Ht",
+      "AvatarFrame": "t_Avatar_frame_05",
+      "AvatarFace": "t_CreateRole_female2_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "3512482371660881651",
+      "MasterPoint": 1440,
+      "RoleName": "ElJavizzTTV",
+      "AvatarFrame": "t_Avatar_frame_181",
+      "AvatarFace": "t_CreateRole_female1_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "7997712602265628420",
+      "MasterPoint": 1435,
+      "RoleName": "JavierNS",
+      "AvatarFrame": "t_Avatar_frame_81",
+      "AvatarFace": "t_CreateRole_male2_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "14802443030340513267",
+      "MasterPoint": 1433,
+      "RoleName": "だあひよん'",
+      "AvatarFrame": "t_Avatar_frame_94",
+      "AvatarFace": "t_CreateRole_male1_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "1322071407394885198",
+      "MasterPoint": 1432,
+      "RoleName": "역효과!",
+      "AvatarFrame": "t_Avatar_frame_09",
+      "AvatarFace": "t_CreateRole_female1_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "15897943240212585826",
+      "MasterPoint": 1429,
+      "RoleName": "Pyroaquila",
+      "AvatarFrame": "t_Avatar_frame_233",
+      "AvatarFace": "t_CreateRole_female2_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "15096212420534320211",
+      "MasterPoint": 1429,
+      "RoleName": "ONIC・eeyorr",
+      "AvatarFrame": "t_Avatar_frame_113",
+      "AvatarFace": "t_CreateRole_male2_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "6497420717664380339",
+      "MasterPoint": 1429,
+      "RoleName": "使・Gxara",
+      "AvatarFrame": "t_Avatar_frame_113",
+      "AvatarFace": "t_CreateRole_female1_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "17837417878381842046",
+      "MasterPoint": 1429,
+      "RoleName": "チキンダック",
+      "AvatarFrame": "t_Avatar_frame_1",
+      "AvatarFace": "t_CreateRole_male2_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "14185002574506178926",
+      "MasterPoint": 1427,
+      "RoleName": "Zephyrr!",
+      "AvatarFrame": "t_Avatar_frame_199",
+      "AvatarFace": "t_CreateRole_male1_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "12706943737600484124",
+      "MasterPoint": 1423,
+      "RoleName": "snоw",
+      "AvatarFrame": "t_Avatar_frame_94",
+      "AvatarFace": "t_CreateRole_male3_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    },
+    {
+      "Uid": "9859621382230173917",
+      "MasterPoint": 1421,
+      "RoleName": "xbeastlol",
+      "AvatarFrame": "t_Avatar_frame_272",
+      "AvatarFace": "t_CreateRole_male3_1",
+      "RankedIcon": "t_rankBigIcon_08",
+      "CurrentRank": "Legend"
+    }
+  ],
+  "topRankedPokemons": [
+    {
+      "icon": "t_Square_Venusaur",
+      "pokemonName": "Venusaur",
+      "pokemonId": 1,
+      "rank": 1,
+      "score": 7013,
+      "uid": "14260995353434194783",
+      "roleName": "R.M_アブ専",
+      "winRate": 99,
+      "totalWinCnt": 6023,
+      "lastHeldItemDesignInfo": [
+        1002001022,
+        1002001002,
+        1002001012
+      ]
+    },
+    {
+      "icon": "t_Square_Charizard",
+      "pokemonName": "Charizard",
+      "pokemonId": 4,
+      "rank": 1,
+      "score": 10311,
+      "uid": "17404087419519802588",
+      "roleName": "あとぶ",
+      "winRate": 82,
+      "totalWinCnt": 9491,
+      "lastHeldItemDesignInfo": [
+        1002001002,
+        1002001007,
+        1002001012
+      ]
+    },
+    {
+      "icon": "t_Square_Blastoise",
+      "pokemonName": "Blastoise",
+      "pokemonId": 7,
+      "rank": 1,
+      "score": 6050,
+      "uid": "6570327136253948443",
+      "roleName": "ERI",
+      "winRate": 62,
+      "totalWinCnt": 5430,
+      "lastHeldItemDesignInfo": [
+        1002001019,
+        1002001013,
+        1002001024
+      ]
+    },
+    {
+      "icon": "t_Square_Pikachu",
+      "pokemonName": "Pikachu",
+      "pokemonId": 25,
+      "rank": 1,
+      "score": 8549,
+      "uid": "7505218712080323848",
+      "roleName": "WWFメmöchï",
+      "winRate": 70,
+      "totalWinCnt": 7849,
+      "lastHeldItemDesignInfo": [
+        1002001007,
+        1002001024,
+        1002001019
+      ]
+    },
+    {
+      "icon": "t_Square_Clefable",
+      "pokemonName": "Clefable",
+      "pokemonId": 35,
+      "rank": 1,
+      "score": 4848,
+      "uid": "14230775183313217513",
+      "roleName": "をネ>J383",
+      "winRate": 97,
+      "totalWinCnt": 3878,
+      "lastHeldItemDesignInfo": [
+        1002001024,
+        1002001004,
+        1002001007
+      ]
+    },
+    {
+      "icon": "t_Square_Ninetales",
+      "pokemonName": "Alolan Ninetales",
+      "pokemonId": 37,
+      "rank": 1,
+      "score": 16782,
+      "uid": "11776081953338641156",
+      "roleName": "Takku",
+      "winRate": 69,
+      "totalWinCnt": 16092,
+      "lastHeldItemDesignInfo": [
+        1002001008,
+        1002001005,
+        1002001013
+      ]
+    },
+    {
+      "icon": "t_Square_Wigglytuff",
+      "pokemonName": "Wigglytuff",
+      "pokemonId": 39,
+      "rank": 1,
+      "score": 6654,
+      "uid": "17255735614533070631",
+      "roleName": "赤海マボYT",
+      "winRate": 61,
+      "totalWinCnt": 6044,
+      "lastHeldItemDesignInfo": [
+        1002001015,
+        1002001010,
+        1002001006
+      ]
+    },
+    {
+      "icon": "t_Square_Machamp",
+      "pokemonName": "Machamp",
+      "pokemonId": 66,
+      "rank": 1,
+      "score": 9136,
+      "uid": "15585799550240880960",
+      "roleName": "marceloosti",
+      "winRate": 80,
+      "totalWinCnt": 8336,
+      "lastHeldItemDesignInfo": [
+        1002001018,
+        1002001003,
+        1002001002
+      ]
+    },
+    {
+      "icon": "t_Square_Slowbro",
+      "pokemonName": "Slowbro",
+      "pokemonId": 79,
+      "rank": 1,
+      "score": 7642,
+      "uid": "16178917542616134624",
+      "roleName": "KC_なおき",
+      "winRate": 58,
+      "totalWinCnt": 7062,
+      "lastHeldItemDesignInfo": [
+        1002001006,
+        1002001015,
+        1002001019
+      ]
+    },
+    {
+      "icon": "t_Square_Dodrio",
+      "pokemonName": "Dodrio",
+      "pokemonId": 84,
+      "rank": 1,
+      "score": 4000,
+      "uid": "14260995353434194783",
+      "roleName": "R.M_アブ専",
+      "winRate": 99,
+      "totalWinCnt": 3010,
+      "lastHeldItemDesignInfo": [
+        1002001018,
+        1002001012,
+        1002001003
+      ]
+    },
+    {
+      "icon": "t_Square_Gengar",
+      "pokemonName": "Gengar",
+      "pokemonId": 92,
+      "rank": 1,
+      "score": 10601,
+      "uid": "16178389802050542517",
+      "roleName": "まったり陰",
+      "winRate": 80,
+      "totalWinCnt": 9801,
+      "lastHeldItemDesignInfo": [
+        1002001024,
+        1002001019,
+        1002001005
+      ]
+    },
+    {
+      "icon": "t_Square_Blissey",
+      "pokemonName": "Blissey",
+      "pokemonId": 113,
+      "rank": 1,
+      "score": 5779,
+      "uid": "14705504396558926336",
+      "roleName": "Æ_まるてゃ-",
+      "winRate": 87,
+      "totalWinCnt": 4909,
+      "lastHeldItemDesignInfo": [
+        1002001015,
+        1002001009,
+        1002001006
+      ]
+    },
+    {
+      "icon": "t_Square_MrMime",
+      "pokemonName": "Mr. Mime",
+      "pokemonId": 122,
+      "rank": 1,
+      "score": 8236,
+      "uid": "2039872566709440221",
+      "roleName": "HP?",
+      "winRate": 62,
+      "totalWinCnt": 7616,
+      "lastHeldItemDesignInfo": [
+        1002001008,
+        1002001024,
+        1002001013
+      ]
+    },
+    {
+      "icon": "t_Square_Scizor",
+      "pokemonName": "Scizor",
+      "pokemonId": 123,
+      "rank": 1,
+      "score": 7090,
+      "uid": "7985206693740434717",
+      "roleName": "はるもY",
+      "winRate": 95,
+      "totalWinCnt": 6140,
+      "lastHeldItemDesignInfo": [
+        1002001018,
+        1002001020,
+        1002001006
+      ]
+    },
+    {
+      "icon": "t_Square_Lapras",
+      "pokemonName": "Lapras",
+      "pokemonId": 131,
+      "rank": 1,
+      "score": 2990,
+      "uid": "4744286442450303086",
+      "roleName": "앨버트로스",
+      "winRate": 99,
+      "totalWinCnt": 2000,
+      "lastHeldItemDesignInfo": [
+        1002001013,
+        1002001011,
+        1002001024
+      ]
+    },
+    {
+      "icon": "t_Square_Snorlax",
+      "pokemonName": "Snorlax",
+      "pokemonId": 143,
+      "rank": 1,
+      "score": 6318,
+      "uid": "7748446545718931414",
+      "roleName": "直哉キャット",
+      "winRate": 48,
+      "totalWinCnt": 5838,
+      "lastHeldItemDesignInfo": [
+        1002001006,
+        1002001015,
+        1002001009
+      ]
+    },
+    {
+      "icon": "t_Square_Dragonite",
+      "pokemonName": "Dragonite",
+      "pokemonId": 147,
+      "rank": 1,
+      "score": 8950,
+      "uid": "13811570957879878863",
+      "roleName": "(_WICK_)",
+      "winRate": 95,
+      "totalWinCnt": 8000,
+      "lastHeldItemDesignInfo": [
+        1002001002,
+        1002001003,
+        1002001012
+      ]
+    },
+    {
+      "icon": "t_Square_MewtwoX",
+      "pokemonName": "Mewtwo",
+      "pokemonId": 150,
+      "rank": 1,
+      "score": 2087,
+      "uid": "12157343738984338731",
+      "roleName": "wřвм*amu",
+      "winRate": 95,
+      "totalWinCnt": 1137,
+      "lastHeldItemDesignInfo": [
+        1002001018,
+        1002001020,
+        1002001006
+      ]
+    },
+    {
+      "icon": "t_Square_Mew",
+      "pokemonName": "Mew",
+      "pokemonId": 151,
+      "rank": 1,
+      "score": 5664,
+      "uid": "15623405057991322548",
+      "roleName": "高理大_道連",
+      "winRate": 85,
+      "totalWinCnt": 4814,
+      "lastHeldItemDesignInfo": [
+        1002001019,
+        1002001005,
+        1002001024
+      ]
+    },
+    {
+      "icon": "t_Square_Azumarill",
+      "pokemonName": "Azumarill",
+      "pokemonId": 183,
+      "rank": 1,
+      "score": 4936,
+      "uid": "12503459650407003078",
+      "roleName": "GoGoR",
+      "winRate": 71,
+      "totalWinCnt": 4226,
+      "lastHeldItemDesignInfo": [
+        1002001003,
+        1002001012,
+        1002001018
+      ]
+    },
+    {
+      "icon": "t_Square_Espeon",
+      "pokemonName": "Espeon",
+      "pokemonId": 196,
+      "rank": 1,
+      "score": 7727,
+      "uid": "1819062607662725932",
+      "roleName": "天国の廃墟",
+      "winRate": 97,
+      "totalWinCnt": 6757,
+      "lastHeldItemDesignInfo": [
+        1002001019,
+        1002001024,
+        1002001005
+      ]
+    },
+    {
+      "icon": "t_Square_Umbreon",
+      "pokemonName": "Umbreon",
+      "pokemonId": 197,
+      "rank": 1,
+      "score": 3057,
+      "uid": "14260995353434194783",
+      "roleName": "R.M_アブ専",
+      "winRate": 99,
+      "totalWinCnt": 2067,
+      "lastHeldItemDesignInfo": [
+        1002001006,
+        1002001012,
+        1002001002
+      ]
+    },
+    {
+      "icon": "t_Square_Mamoswine",
+      "pokemonName": "Mamoswine",
+      "pokemonId": 220,
+      "rank": 1,
+      "score": 6436,
+      "uid": "6152715119593569526",
+      "roleName": "Izzy05",
+      "winRate": 48,
+      "totalWinCnt": 5956,
+      "lastHeldItemDesignInfo": [
+        1002001010,
+        1002001002,
+        1002001022
+      ]
+    },
+    {
+      "icon": "t_Square_Tyranitar",
+      "pokemonName": "Tyranitar",
+      "pokemonId": 246,
+      "rank": 1,
+      "score": 4266,
+      "uid": "11277340132263899310",
+      "roleName": "Godzillа",
+      "winRate": 95,
+      "totalWinCnt": 3316,
+      "lastHeldItemDesignInfo": [
+        1002001012,
+        1002001006,
+        1002001011
+      ]
+    },
+    {
+      "icon": "t_Square_Gardevoir",
+      "pokemonName": "Gardevoir",
+      "pokemonId": 280,
+      "rank": 1,
+      "score": 10173,
+      "uid": "14260789869746996773",
+      "roleName": "тwïn*aIi",
+      "winRate": 87,
+      "totalWinCnt": 9303,
+      "lastHeldItemDesignInfo": [
+        1002001019,
+        1002001024,
+        1002001005
+      ]
+    },
+    {
+      "icon": "t_Square_Sableye",
+      "pokemonName": "Sableye",
+      "pokemonId": 302,
+      "rank": 1,
+      "score": 3458,
+      "uid": "15998853666257814540",
+      "roleName": "AYE盗",
+      "winRate": 95,
+      "totalWinCnt": 2508,
+      "lastHeldItemDesignInfo": [
+        1002001008,
+        1002001012,
+        1002001018
+      ]
+    },
+    {
+      "icon": "t_Square_Absol",
+      "pokemonName": "Absol",
+      "pokemonId": 359,
+      "rank": 1,
+      "score": 16343,
+      "uid": "14494605590065141952",
+      "roleName": "あくまる.",
+      "winRate": 87,
+      "totalWinCnt": 15473,
+      "lastHeldItemDesignInfo": [
+        1002001003,
+        1002001018,
+        1002001006
+      ]
+    },
+    {
+      "icon": "t_Square_Garchomp",
+      "pokemonName": "Garchomp",
+      "pokemonId": 443,
+      "rank": 1,
+      "score": 6658,
+      "uid": "2546109724765693981",
+      "roleName": "Dillyツ",
+      "winRate": 65,
+      "totalWinCnt": 6008,
+      "lastHeldItemDesignInfo": [
+        1002001012,
+        1002001023,
+        1002001003
+      ]
+    },
+    {
+      "icon": "t_Square_Lucario",
+      "pokemonName": "Lucario",
+      "pokemonId": 448,
+      "rank": 1,
+      "score": 8846,
+      "uid": "17587362878192565333",
+      "roleName": "LIFEisgood",
+      "winRate": 48,
+      "totalWinCnt": 8366,
+      "lastHeldItemDesignInfo": [
+        1002001012,
+        1002001002,
+        1002001020
+      ]
+    },
+    {
+      "icon": "t_Square_Leafeon",
+      "pokemonName": "Leafeon",
+      "pokemonId": 470,
+      "rank": 1,
+      "score": 5290,
+      "uid": "1819062607662725932",
+      "roleName": "天国の廃墟",
+      "winRate": 99,
+      "totalWinCnt": 4300,
+      "lastHeldItemDesignInfo": [
+        1002001012,
+        1002001018,
+        1002001020
+      ]
+    },
+    {
+      "icon": "t_Square_Glaceon",
+      "pokemonName": "Glaceon",
+      "pokemonId": 471,
+      "rank": 1,
+      "score": 8022,
+      "uid": "13515215240230734991",
+      "roleName": "せっぴん",
+      "winRate": 88,
+      "totalWinCnt": 7142,
+      "lastHeldItemDesignInfo": [
+        1002001024,
+        1002001005,
+        1002001009
+      ]
+    },
+    {
+      "icon": "t_Square_Crustle",
+      "pokemonName": "Crustle",
+      "pokemonId": 557,
+      "rank": 1,
+      "score": 11294,
+      "uid": "1783539078638535285",
+      "roleName": "リリリりり",
+      "winRate": 76,
+      "totalWinCnt": 10534,
+      "lastHeldItemDesignInfo": [
+        1002001006,
+        1002001012,
+        1002001003
+      ]
+    },
+    {
+      "icon": "t_Square_Zoroark",
+      "pokemonName": "Zoroark",
+      "pokemonId": 570,
+      "rank": 1,
+      "score": 4384,
+      "uid": "580971959722959893",
+      "roleName": "тwïn*x",
+      "winRate": 99,
+      "totalWinCnt": 3394,
+      "lastHeldItemDesignInfo": [
+        1002001018,
+        1002001020,
+        1002001002
+      ]
+    },
+    {
+      "icon": "t_Square_Chandelure",
+      "pokemonName": "Chandelure",
+      "pokemonId": 609,
+      "rank": 1,
+      "score": 2401,
+      "uid": "2396873744439905960",
+      "roleName": "BRCS_洗濯機",
+      "winRate": 99,
+      "totalWinCnt": 1411,
+      "lastHeldItemDesignInfo": [
+        1002001024,
+        1002001007,
+        1002001004
+      ]
+    },
+    {
+      "icon": "t_Square_Delphox",
+      "pokemonName": "Delphox",
+      "pokemonId": 653,
+      "rank": 1,
+      "score": 4417,
+      "uid": "7035629428862239263",
+      "roleName": "Soltales",
+      "winRate": 92,
+      "totalWinCnt": 3497,
+      "lastHeldItemDesignInfo": [
+        1002001007,
+        1002001024,
+        1002001004
+      ]
+    },
+    {
+      "icon": "t_Square_Greninja",
+      "pokemonName": "Greninja",
+      "pokemonId": 656,
+      "rank": 1,
+      "score": 15920,
+      "uid": "14063342088432409111",
+      "roleName": "<b>Wayne</b>",
+      "winRate": 92,
+      "totalWinCnt": 15000,
+      "lastHeldItemDesignInfo": [
+        1002001002,
+        1002001003,
+        1002001012
+      ]
+    },
+    {
+      "icon": "t_Square_Talonflame",
+      "pokemonName": "Talonflame",
+      "pokemonId": 661,
+      "rank": 1,
+      "score": 9302,
+      "uid": "15793965106778707490",
+      "roleName": "Kazooieman",
+      "winRate": 77,
+      "totalWinCnt": 8532,
+      "lastHeldItemDesignInfo": [
+        1002001018,
+        1002001008,
+        1002001012
+      ]
+    },
+    {
+      "icon": "t_Square_Aegislash",
+      "pokemonName": "Aegislash",
+      "pokemonId": 679,
+      "rank": 1,
+      "score": 4814,
+      "uid": "15939660784736051425",
+      "roleName": "yxcxk",
+      "winRate": 52,
+      "totalWinCnt": 4294,
+      "lastHeldItemDesignInfo": [
+        1002001020,
+        1002001002,
+        1002001018
+      ]
+    },
+    {
+      "icon": "t_Square_Sylveon",
+      "pokemonName": "Sylveon",
+      "pokemonId": 700,
+      "rank": 1,
+      "score": 12144,
+      "uid": "11382678511533986925",
+      "roleName": "はるき700",
+      "winRate": 80,
+      "totalWinCnt": 11344,
+      "lastHeldItemDesignInfo": [
+        1002001013,
+        1002001002,
+        1002001022
+      ]
+    },
+    {
+      "icon": "t_Square_Goodra",
+      "pokemonName": "Goodra",
+      "pokemonId": 706,
+      "rank": 1,
+      "score": 2229,
+      "uid": "16991180122885529368",
+      "roleName": "애기토끼0",
+      "winRate": 80,
+      "totalWinCnt": 1429,
+      "lastHeldItemDesignInfo": [
+        1002001006,
+        1002001004,
+        1002001024
+      ]
+    },
+    {
+      "icon": "t_Square_Trevenant",
+      "pokemonName": "Trevenant",
+      "pokemonId": 708,
+      "rank": 1,
+      "score": 4092,
+      "uid": "18227487783331702170",
+      "roleName": "GK_GorillA",
+      "winRate": 64,
+      "totalWinCnt": 3452,
+      "lastHeldItemDesignInfo": [
+        1002001006,
+        1002001015,
+        1002001008
+      ]
+    },
+    {
+      "icon": "t_Square_Hoopa",
+      "pokemonName": "Hoopa",
+      "pokemonId": 720,
+      "rank": 1,
+      "score": 5933,
+      "uid": "1819062607662725932",
+      "roleName": "天国の廃墟",
+      "winRate": 89,
+      "totalWinCnt": 5043,
+      "lastHeldItemDesignInfo": [
+        1002001002,
+        1002001006,
+        1002001022
+      ]
+    },
+    {
+      "icon": "t_Square_Decidueye",
+      "pokemonName": "Decidueye",
+      "pokemonId": 724,
+      "rank": 1,
+      "score": 10085,
+      "uid": "13482921259788912889",
+      "roleName": "Evvvv",
+      "winRate": 91,
+      "totalWinCnt": 9175,
+      "lastHeldItemDesignInfo": [
+        1002001002,
+        1002001022,
+        1002001003
+      ]
+    },
+    {
+      "icon": "t_Square_Tsareena",
+      "pokemonName": "Tsareena",
+      "pokemonId": 763,
+      "rank": 1,
+      "score": 7358,
+      "uid": "8842862087792976459",
+      "roleName": "シルシェラ",
+      "winRate": 95,
+      "totalWinCnt": 6408,
+      "lastHeldItemDesignInfo": [
+        1002001022,
+        1002001006,
+        1002001020
+      ]
+    },
+    {
+      "icon": "t_Square_Comfey",
+      "pokemonName": "Comfey",
+      "pokemonId": 764,
+      "rank": 1,
+      "score": 3205,
+      "uid": "14705504396558926336",
+      "roleName": "Æ_まるてゃ-",
+      "winRate": 87,
+      "totalWinCnt": 2335,
+      "lastHeldItemDesignInfo": [
+        1002001015,
+        1002001013,
+        1002001005
+      ]
+    },
+    {
+      "icon": "t_Square_Buzzwole",
+      "pokemonName": "Buzzwole",
+      "pokemonId": 794,
+      "rank": 1,
+      "score": 4015,
+      "uid": "14260995353434194783",
+      "roleName": "R.M_アブ専",
+      "winRate": 99,
+      "totalWinCnt": 3025,
+      "lastHeldItemDesignInfo": [
+        1002001022,
+        1002001002,
+        1002001012
+      ]
+    },
+    {
+      "icon": "t_Square_Zeraora",
+      "pokemonName": "Zeraora",
+      "pokemonId": 807,
+      "rank": 1,
+      "score": 12754,
+      "uid": "4201313018151151584",
+      "roleName": "고로롱",
+      "winRate": 86,
+      "totalWinCnt": 11894,
+      "lastHeldItemDesignInfo": [
+        1002001006,
+        1002001008,
+        1002001018
+      ]
+    },
+    {
+      "icon": "t_Square_Cinderace",
+      "pokemonName": "Cinderace",
+      "pokemonId": 813,
+      "rank": 1,
+      "score": 13533,
+      "uid": "16230375231599211408",
+      "roleName": "ㅤはるㅤㅤ",
+      "winRate": 85,
+      "totalWinCnt": 12683,
+      "lastHeldItemDesignInfo": [
+        1002001002,
+        1002001003,
+        1002001022
+      ]
+    },
+    {
+      "icon": "t_Square_Inteleon",
+      "pokemonName": "Inteleon",
+      "pokemonId": 816,
+      "rank": 1,
+      "score": 3186,
+      "uid": "14230775183313217513",
+      "roleName": "をネ>J383",
+      "winRate": 99,
+      "totalWinCnt": 2196,
+      "lastHeldItemDesignInfo": [
+        1002001024,
+        1002001004,
+        1002001007
+      ]
+    },
+    {
+      "icon": "t_Square_Greedent",
+      "pokemonName": "Greedent",
+      "pokemonId": 820,
+      "rank": 1,
+      "score": 7829,
+      "uid": "12624252402786969003",
+      "roleName": "SAVAG3",
+      "winRate": 80,
+      "totalWinCnt": 7029,
+      "lastHeldItemDesignInfo": [
+        1002001012,
+        1002001011,
+        1002001006
+      ]
+    },
+    {
+      "icon": "t_Square_Eldegoss",
+      "pokemonName": "Eldegoss",
+      "pokemonId": 829,
+      "rank": 1,
+      "score": 9378,
+      "uid": "7049394012991474535",
+      "roleName": "よぞらん",
+      "winRate": 48,
+      "totalWinCnt": 8898,
+      "lastHeldItemDesignInfo": [
+        1002001005,
+        1002001019,
+        1002001022
+      ]
+    },
+    {
+      "icon": "t_Square_Cramorant",
+      "pokemonName": "Cramorant",
+      "pokemonId": 845,
+      "rank": 1,
+      "score": 7532,
+      "uid": "16603065108789647761",
+      "roleName": "ブシエルYT",
+      "winRate": 84,
+      "totalWinCnt": 6692,
+      "lastHeldItemDesignInfo": [
+        1002001005,
+        1002001019,
+        1002001024
+      ]
+    },
+    {
+      "icon": "t_Square_Duraludon",
+      "pokemonName": "Duraludon",
+      "pokemonId": 884,
+      "rank": 1,
+      "score": 6926,
+      "uid": "11812522900729455422",
+      "roleName": "tamms",
+      "winRate": 59,
+      "totalWinCnt": 6336,
+      "lastHeldItemDesignInfo": [
+        1002001002,
+        1002001022,
+        1002001003
+      ]
+    },
+    {
+      "icon": "t_Square_Dragapult",
+      "pokemonName": "Dragapult",
+      "pokemonId": 885,
+      "rank": 1,
+      "score": 4740,
+      "uid": "11988176145797730733",
+      "roleName": "wřвм*pori",
+      "winRate": 96,
+      "totalWinCnt": 3780,
+      "lastHeldItemDesignInfo": [
+        1002001002,
+        1002001022,
+        1002001003
+      ]
+    },
+    {
+      "icon": "t_Square_Zacian",
+      "pokemonName": "Zacian",
+      "pokemonId": 888,
+      "rank": 1,
+      "score": 3987,
+      "uid": "13811570957879878863",
+      "roleName": "(_WICK_)",
+      "winRate": 99,
+      "totalWinCnt": 2997,
+      "lastHeldItemDesignInfo": [
+        1002001027,
+        1002001003,
+        1002001012
+      ]
+    },
+    {
+      "icon": "t_Square_Urshifu_Single",
+      "pokemonName": "Urshifu",
+      "pokemonId": 892,
+      "rank": 1,
+      "score": 4415,
+      "uid": "12157343738984338731",
+      "roleName": "wřвм*amu",
+      "winRate": 85,
+      "totalWinCnt": 3565,
+      "lastHeldItemDesignInfo": [
+        1002001007,
+        1002001003,
+        1002001006
+      ]
+    }
+  ]
+}

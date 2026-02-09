@@ -1,0 +1,12 @@
+Priorities:
+- Change decoder from Python to C#  ->  DONE
+- Automate scraping ( cloudflare blocking, GUARANTEE IT WORKS MANUALLY for now )
+- Create structures from JSON components -> prepare DB
+- Extract from JSONs to DB
+- Script DB functions and unit tests
+- Build interface
+
+
+Non priority:
+- Cloudflare blocking scraping; manually scraping for mvp, learn puppeteer/playright later
+- Automate scraping and updating DB on a timer

@@ -1,0 +1,30 @@
+#Work in progress!!! (just took a look as of now)
+
+"mapsubmode": 2 -> ranked games and start line of a match object
+
+Formato de player entry in a match
+{
+              "BattleFlag": "2181890049",
+              "PlayerFightData": {
+                "CatchFightData": {
+                  "Score": 274,
+                  "Kill": 11,
+                  "HurtToEnemy": 99089,
+                  "HurtTakenByEnemy": 45091,
+                  "CureToTeam": 8383,
+                  "AssistCnt": 8
+                }
+              },
+              "PlayerName": "RC_Häruto",
+              "TeamFlag": 1,
+              "HeroLv": 15,
+              "PlayerUid": "11165801582880087132",
+              "usedBattleItem": "t_prop_Purify",
+              "playedPokemonImage": "t_Square_Dodrio",
+              "Skill1": "t_Skill_Dodrio_S11",
+              "Skill2": "t_Skill_Dodrio_S22",
+              "Skill1Name": "Tri Attack+",
+              "Skill2Name": "Jump Kick+",
+              "RankedImage": "t_rankSmallIcon_09_01"
+            }
+
