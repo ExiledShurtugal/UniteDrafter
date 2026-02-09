@@ -13,3 +13,5 @@ obj/
 
 # Logs
 *.log
+# Test artifacts
+Tests/Decrypter/TestResults/

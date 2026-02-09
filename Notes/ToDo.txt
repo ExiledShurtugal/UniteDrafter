@@ -10,3 +10,16 @@ Priorities:
 Non priority:
 - Cloudflare blocking scraping; manually scraping for mvp, learn puppeteer/playright later
 - Automate scraping and updating DB on a timer
+
+Added roadmap items:
+- Turn `Program.cs` into a tiny CLI
+- Introduce folder boundaries:
+  - `src/` for app code,
+  - `tests/` for test project,
+  - `data/` for snapshots/examples.
+- Add a short architecture/status section to README:
+  - “Current implemented: decryptor POC”
+  - “Planned: scraper, DB pipeline, draft model, UI”.
+Program.cs
+Program.cs
++2

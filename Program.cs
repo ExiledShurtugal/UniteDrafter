@@ -7,12 +7,12 @@ class Program
     {
         try
         {
-            string path = "JsonsManually/rankings.json"; // caminho para o JSON que queres testar
+            string path = "JsonsManually/rankings.json"; // path to the JSON file to test
             Decrypter.TestDecrypt(path);
         }
         catch (Exception ex)
         {
-            Console.WriteLine("Erro: " + ex.Message);
+            Console.WriteLine("Error: " + ex.Message);
         }
     }
 }
