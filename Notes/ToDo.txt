@@ -1,6 +1,6 @@
 Priorities:
 - Change decoder from Python to C#  ->  DONE
-- Automate scraping ( cloudflare blocking, GUARANTEE IT WORKS MANUALLY for now )
+- Automate scraping ( cloudflare blocking, DONE MANUALLY for now )
 - Create structures from JSON components -> prepare DB
 - Extract from JSONs to DB
 - Script DB functions and unit tests
@@ -9,17 +9,4 @@ Priorities:
 
 Non priority:
 - Cloudflare blocking scraping; manually scraping for mvp, learn puppeteer/playright later
-- Automate scraping and updating DB on a timer
 
-Added roadmap items:
-- Turn `Program.cs` into a tiny CLI
-- Introduce folder boundaries:
-  - `src/` for app code,
-  - `tests/` for test project,
-  - `data/` for snapshots/examples.
-- Add a short architecture/status section to README:
-  - “Current implemented: decryptor POC”
-  - “Planned: scraper, DB pipeline, draft model, UI”.
-Program.cs
-Program.cs
-+2

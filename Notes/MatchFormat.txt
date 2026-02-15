@@ -1,0 +1,339 @@
+"isBotMatch": true,     -->     Use this parameter to filter data   
+"GameStartTime": "1758490265",      -->      Use this parameter as match PK (Every player in high elo plays with themselves so games wont overlap)
+"playedPokemonImage": "t_Square_Comfey",     -->     Use this parameter to find out pokemons selected
+
+-----------
+
+1 match:
+
+
+    "MatchResults": [
+      {
+        "MapSubMode": 1,
+        "GameStartTime": "1758490265",
+        "WinCampClient": 51,
+        "Winners": {
+          "data": [
+            {
+              "BattleFlag": "4296015872",
+              "PlayerFightData": {
+                "CatchFightData": {
+                  "Score": 4,
+                  "Interrupt": 1,
+                  "HurtToEnemy": 5591,
+                  "HurtTakenByEnemy": 10620,
+                  "CureToTeam": 33461,
+                  "AssistCnt": 12
+                }
+              },
+              "PlayerName": "RC_H\u00E4ruto",
+              "TeamFlag": 1,
+              "HeroLv": 13,
+              "PlayerUid": "11165801582880087132",
+              "usedBattleItem": "t_prop_Gear",
+              "playedPokemonImage": "t_Square_Comfey",
+              "Skill1": "t_Skill_Comfey_S11_1",
+              "Skill2": "t_Skill_Comfey_S21_1",
+              "Skill1Name": "Floral Healing\u002B",
+              "Skill2Name": "Magical Leaf\u002B",
+              "RankedImage": "t_rankSmallIcon_08_01"
+            },
+            {
+              "BattleFlag": "76087297",
+              "PlayerFightData": {
+                "CatchFightData": {
+                  "Score": 176,
+                  "Kill": 15,
+                  "Interrupt": 1,
+                  "HurtToEnemy": 96984,
+                  "HurtTakenByEnemy": 57987,
+                  "CureToTeam": 15315,
+                  "AssistCnt": 4
+                }
+              },
+              "PlayerName": "silentcats",
+              "TeamFlag": 1,
+              "HeroLv": 15,
+              "PlayerUid": "12266995933521120828",
+              "usedBattleItem": "t_prop_Purify",
+              "playedPokemonImage": "t_Square_Dodrio",
+              "Skill1": "t_Skill_Dodrio_S11_1",
+              "Skill2": "t_Skill_Dodrio_S22",
+              "Skill1Name": "Tri Attack\u002B",
+              "Skill2Name": "Jump Kick\u002B",
+              "RankedImage": "t_rankSmallIcon_08_01"
+            },
+            {
+              "BattleFlag": "805310468",
+              "PlayerFightData": {
+                "CatchFightData": {
+                  "Score": 126,
+                  "Kill": 6,
+                  "HurtToEnemy": 54476,
+                  "HurtTakenByEnemy": 33419,
+                  "CureToTeam": 10000,
+                  "AssistCnt": 3
+                }
+              },
+              "PlayerName": "\u7D17\u6CE2Xx",
+              "HeroLv": 14,
+              "PlayerUid": "17105922936969719820",
+              "usedBattleItem": "t_prop_EjectButton",
+              "playedPokemonImage": "t_Square_Greninja",
+              "Skill1": "t_Skill_Froakie_S11",
+              "Skill2": "t_Skill_Froakie_S21",
+              "Skill1Name": "Water Shuriken\u002B",
+              "Skill2Name": "Double Team\u002B",
+              "RankedImage": "t_rankSmallIcon_08_01"
+            },
+            {
+              "BattleFlag": "570703876",
+              "PlayerFightData": {
+                "CatchFightData": {
+                  "Score": 215,
+                  "Kill": 6,
+                  "HurtToEnemy": 50012,
+                  "HurtTakenByEnemy": 28172,
+                  "CureToTeam": 9199,
+                  "AssistCnt": 8
+                }
+              },
+              "PlayerName": "\u6A39\u59934153",
+              "HeroLv": 14,
+              "PlayerUid": "4007674323130024591",
+              "usedBattleItem": "t_prop_XAttack",
+              "playedPokemonImage": "t_Square_Crustle",
+              "Skill1": "t_Skill_Dwebble_S12",
+              "Skill2": "t_Skill_Dwebble_S22",
+              "Skill1Name": "Shell Smash\u002B",
+              "Skill2Name": "X-Scissor\u002B",
+              "RankedImage": "t_rankSmallIcon_08_01"
+            },
+            {
+              "BattleFlag": "2147484164",
+              "PlayerFightData": {
+                "CatchFightData": {
+                  "Score": 9,
+                  "HurtToEnemy": 41108,
+                  "HurtTakenByEnemy": 49367,
+                  "CureToTeam": 4964,
+                  "AssistCnt": 4
+                }
+              },
+              "PlayerName": "0\u30EB\u30AE\u30A2",
+              "HeroLv": 13,
+              "PlayerUid": "10600726309105200910",
+              "usedBattleItem": "t_prop_EjectButton",
+              "playedPokemonImage": "t_Square_Wigglytuff",
+              "Skill1": "t_Skill_Jigglypuff_S12",
+              "Skill2": "t_Skill_Jigglypuff_S22",
+              "Skill1Name": "Dazzling Gleam\u002B",
+              "Skill2Name": "Sing\u002B",
+              "RankedImage": "t_rankSmallIcon_08_01"
+            }
+          ],
+          "TotalDmgDealt": 248171,
+          "TotalDmgTaken": 179565,
+          "TotalCured": 72939
+        },
+        "Losers": {
+          "data": [
+            {
+              "BattleFlag": "1073750020",
+              "PlayerFightData": {
+                "CatchFightData": {
+                  "Score": 41,
+                  "Kill": 2,
+                  "HurtToEnemy": 39027,
+                  "HurtTakenByEnemy": 38098,
+                  "CureToTeam": 6973,
+                  "AssistCnt": 5
+                }
+              },
+              "PlayerName": "klkok",
+              "HeroLv": 13,
+              "PlayerUid": "13400787400984658632",
+              "usedBattleItem": "t_prop_EjectButton",
+              "playedPokemonImage": "t_Square_Greninja",
+              "Skill1": "t_Skill_Froakie_S12",
+              "Skill2": "t_Skill_Froakie_S22",
+              "Skill1Name": "Surf\u002B",
+              "Skill2Name": "Smokescreen\u002B",
+              "RankedImage": "t_rankSmallIcon_08_01"
+            },
+            {
+              "BattleFlag": "545267718",
+              "PlayerFightData": {
+                "CatchFightData": {
+                  "Score": 148,
+                  "Kill": 6,
+                  "HurtToEnemy": 46225,
+                  "HurtTakenByEnemy": 30010,
+                  "CureToTeam": 13178,
+                  "AssistCnt": 3
+                }
+              },
+              "PlayerName": "\u3086\u3046ET",
+              "HeroLv": 14,
+              "PlayerUid": "3719897833923281141",
+              "usedBattleItem": "t_prop_EjectButton",
+              "playedPokemonImage": "t_Square_Ninetales",
+              "Skill1": "t_Skill_Vulpix_S12",
+              "Skill2": "t_Skill_Vulpix_S22",
+              "Skill1Name": "Dazzling Gleam\u002B",
+              "Skill2Name": "Aurora Veil\u002B",
+              "RankedImage": "t_rankSmallIcon_08_01"
+            },
+            {
+              "BattleFlag": "67141636",
+              "PlayerFightData": {
+                "CatchFightData": {
+                  "Score": 9,
+                  "Kill": 2,
+                  "HurtToEnemy": 32770,
+                  "HurtTakenByEnemy": 64967,
+                  "CureToTeam": 19084,
+                  "AssistCnt": 4
+                }
+              },
+              "PlayerName": "ONog",
+              "HeroLv": 12,
+              "PlayerUid": "8332412318319717239",
+              "usedBattleItem": "t_prop_XSpeed",
+              "playedPokemonImage": "t_Square_Slowbro",
+              "Skill1": "t_Skill_Slowpoke_S12",
+              "Skill2": "t_Skill_Slowpoke_S22",
+              "Skill1Name": "Surf\u002B",
+              "Skill2Name": "Telekinesis",
+              "RankedImage": "t_rankSmallIcon_08_01"
+            },
+            {
+              "BattleFlag": "268566532",
+              "PlayerFightData": {
+                "CatchFightData": {
+                  "Score": 84,
+                  "Kill": 4,
+                  "HurtToEnemy": 38429,
+                  "HurtTakenByEnemy": 34006,
+                  "CureToTeam": 14550,
+                  "AssistCnt": 3
+                }
+              },
+              "PlayerName": "w\u30AF\u30A7890",
+              "HeroLv": 14,
+              "PlayerUid": "1013828239847298992",
+              "usedBattleItem": "t_prop_EjectButton",
+              "playedPokemonImage": "t_Square_Gengar",
+              "Skill1": "t_Skill_Gastly_S12",
+              "Skill2": "t_Skill_Gastly_S22",
+              "Skill1Name": "Sludge Bomb\u002B",
+              "Skill2Name": "Hex\u002B",
+              "RankedImage": "t_rankSmallIcon_08_01"
+            },
+            {
+              "BattleFlag": "2097668",
+              "PlayerFightData": {
+                "CatchFightData": {
+                  "Score": 46,
+                  "HurtToEnemy": 23114,
+                  "HurtTakenByEnemy": 81090,
+                  "CureToTeam": 25107,
+                  "AssistCnt": 4
+                }
+              },
+              "PlayerName": "\u30BC\u30EB8544",
+              "HeroLv": 12,
+              "PlayerUid": "11343022096787346734",
+              "usedBattleItem": "t_prop_Potion",
+              "playedPokemonImage": "t_Square_Blissey",
+              "Skill1": "t_Skill_Chansey_S12",
+              "Skill2": "t_Skill_Chansey_S22",
+              "Skill1Name": "Helping Hand\u002B",
+              "Skill2Name": "Safeguard\u002B",
+              "RankedImage": "t_rankSmallIcon_08_01"
+            }
+          ],
+          "TotalDmgDealt": 179565,
+          "TotalDmgTaken": 248171,
+          "TotalCured": 78892
+        },
+        "currentPlayer": {
+          "PlayerCampClient": 51,
+          "PlayerName": "RC_H\u00E4ruto",
+          "PlayerUid": "11165801582880087132",
+          "PlayerLv": 50,
+          "HeroID": 100764,
+          "HeroLv": 13,
+          "MVPScore": 550541,
+          "TeamFlag": 1,
+          "GameType": 2,
+          "PlayerFightData": {
+            "CatchFightData": {
+              "Score": 4,
+              "Interrupt": 1,
+              "HurtToEnemy": 5591,
+              "HurtTakenByEnemy": 10620,
+              "CureToTeam": 33461,
+              "AssistCnt": 12
+            }
+          },
+          "BattleFlag": "4296015872",
+          "Gender": 1,
+          "HeadID": 22,
+          "SkillList": [
+            {
+              "SkillID": 107641110
+            },
+            {
+              "SkillID": 107642119
+            },
+            {
+              "SkillID": 10076440
+            }
+          ],
+          "RoleAvatarInfo": {
+            "AvatarIDList": [
+              1004000004,
+              1004003306,
+              1004000111,
+              1004000110,
+              1004000613,
+              1004052514,
+              1004048107
+            ],
+            "RoleBaseModelID": 20191219,
+            "SkinColorID": 7
+          },
+          "CarryTrainerItemID": 1002002007,
+          "RankedDivision": 23,
+          "YiAosiTechnology": {},
+          "BeachVolleyballFightData": {},
+          "HeadUrlInfo": {
+            "HeadType": 2,
+            "CurPersonStyleInfo": {}
+          },
+          "TmpNameList": {
+            "TmpNameInfo": [
+              {
+                "TmpNameType": 1,
+                "TmpName": "RC_Haruto",
+                "IsValid": 1
+              }
+            ]
+          },
+          "playedPokemonImg": "t_Square_Comfey",
+          "usedBattleItem": "t_prop_Gear",
+          "Skill1": "t_Skill_Comfey_S11_1",
+          "Skill2": "t_Skill_Comfey_S21_1"
+        },
+        "PlayerInfo": null,
+        "Teams": {
+          "1": 2
+        },
+        "MapID": "Theia Sky Ruins (\u000E\u0002\u0000\u0004\u0001\u0000)",
+        "isBotMatch": true,
+        "Camp1Score": 550,
+        "Camp2Score": 348
+      },
+
+      ...
