@@ -6,8 +6,9 @@ Working on a tool to statistically predict which team has advantage during a Pok
 
 # Project Status
 
-- Obtaining data, extracting jsons manually from the web for now
-- Decrypting of said jsons achieved
+- Data OBTAINED, extracting jsons manually from the web for now
+- Decrypting of said jsons ACHIEVED
+- Starting Database work
 
 
 # Progress velocity
