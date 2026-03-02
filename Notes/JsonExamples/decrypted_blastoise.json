@@ -1,0 +1,3750 @@
+{
+  "pokemon": {
+    "abilities": [
+      {
+        "icon": "t_Skill_Squirtle_S1",
+        "id": 9300710,
+        "name": {
+          "ar": "Pkm_SkillName_WaterGun_001",
+          "chs": "\u6C34\u67AA",
+          "cht": "\u6C34\u69CD",
+          "de": "Aquaknarre",
+          "en": "Water Gun",
+          "es": "Pistola Agua",
+          "eslt": "Pkm_SkillName_WaterGun_001",
+          "fr": "Pistolet \u00E0 O",
+          "hi": "\u0935\u0949\u091F\u0930 \u0917\u0928",
+          "id": "Pistol Air",
+          "it": "Pistolacqua",
+          "jp": "\u307F\u305A\u3067\u3063\u307D\u3046",
+          "kr": "\uBB3C\uB300\uD3EC",
+          "my": "Pkm_SkillName_WaterGun_001",
+          "nl": "Pkm_SkillName_WaterGun_001",
+          "pt": "Rev\u00F3lver d\u0027\u00C1gua",
+          "ptbr": "Rev\u00F3lver d\u0027\u00C1gua",
+          "ru": "\u0412\u043E\u0434\u043E\u043C\u0451\u0442",
+          "th": "\u0E1B\u0E37\u0E19\u0E09\u0E35\u0E14\u0E19\u0E49\u0E33",
+          "tr": "Su Tabancas\u0131",
+          "vi": "Pkm_SkillName_WaterGun_001"
+        }
+      },
+      {
+        "icon": "t_Skill_Squirtle_S2",
+        "id": 9300720,
+        "name": {
+          "ar": "Pkm_SkillName_SkullBash_001",
+          "chs": "\u706B\u7BAD\u5934\u9524",
+          "cht": "\u706B\u7BAD\u982D\u9318",
+          "de": "Sch\u00E4delwumme",
+          "en": "Skull Bash",
+          "es": "Cabezazo",
+          "eslt": "Pkm_SkillName_SkullBash_001",
+          "fr": "Coud\u0027Kr\u00E2ne",
+          "hi": "\u0938\u094D\u0915\u0932 \u092C\u0948\u0936",
+          "id": "Tandukan Kepala Roket",
+          "it": "Capocciata",
+          "jp": "\u30ED\u30B1\u30C3\u30C8\u305A\u3064\u304D",
+          "kr": "\uB85C\uCF13\uBC15\uCE58\uAE30",
+          "my": "Pkm_SkillName_SkullBash_001",
+          "nl": "Pkm_SkillName_SkullBash_001",
+          "pt": "Quebra-cr\u00E2nio",
+          "ptbr": "Quebra-cr\u00E2nio",
+          "ru": "\u041B\u043E\u0431\u043E\u0432\u043E\u0439 \u0422\u0430\u0440\u0430\u043D",
+          "th": "\u0E1E\u0E38\u0E48\u0E07\u0E2B\u0E31\u0E27\u0E08\u0E23\u0E27\u0E14",
+          "tr": "Kafatas\u0131 Darbesi",
+          "vi": "Pkm_SkillName_SkullBash_001"
+        }
+      },
+      {
+        "icon": "t_Skill_Squirtle_S12",
+        "id": 9300712,
+        "name": {
+          "ar": "Pkm_SkillName_HydroPump_001",
+          "chs": "\u6C34\u70AE",
+          "cht": "\u6C34\u70AE",
+          "de": "Hydropumpe",
+          "en": "Hydro Pump",
+          "es": "Hidrobomba",
+          "eslt": "Pkm_SkillName_HydroPump_001",
+          "fr": "Hydrocanon",
+          "hi": "\u0939\u093E\u0907\u0921\u094D\u0930\u094B \u092A\u0902\u092A",
+          "id": "Pompa Air",
+          "it": "Idropompa",
+          "jp": "\u30CF\u30A4\u30C9\u30ED\u30DD\u30F3\u30D7",
+          "kr": "\uD558\uC774\uB4DC\uB85C\uD38C\uD504",
+          "my": "Pkm_SkillName_HydroPump_001",
+          "nl": "Pkm_SkillName_HydroPump_001",
+          "pt": "Jato d\u2019\u00C1gua",
+          "ptbr": "Jato d\u2019\u00C1gua",
+          "ru": "\u0413\u0438\u0434\u0440\u043E\u043D\u0430\u0441\u043E\u0441",
+          "th": "\u0E44\u0E2E\u0E42\u0E14\u0E23\u0E1B\u0E31\u0E4A\u0E21\u0E1E\u0E4C",
+          "tr": "Su Pompas\u0131",
+          "vi": "Pkm_SkillName_HydroPump_001"
+        }
+      },
+      {
+        "icon": "t_Skill_Squirtle_S11",
+        "id": 9300711,
+        "name": {
+          "ar": "Pkm_SkillName_WaterSpout_001",
+          "chs": "\u55B7\u6C34",
+          "cht": "\u5674\u6C34",
+          "de": "Fontr\u00E4nen",
+          "en": "Water Spout",
+          "es": "Salpicar",
+          "eslt": "Pkm_SkillName_WaterSpout_001",
+          "fr": "Gicl\u00E9do",
+          "hi": "\u0935\u0949\u091F\u0930 \u0938\u094D\u092A\u093E\u0909\u091F",
+          "id": "Semburan Air",
+          "it": "Zampillo",
+          "jp": "\u3057\u304A\u3075\u304D",
+          "kr": "\uD574\uC218\uC2A4\uD30C\uC6B0\uD305",
+          "my": "Pkm_SkillName_WaterSpout_001",
+          "nl": "Pkm_SkillName_WaterSpout_001",
+          "pt": "Jato Aqu\u00E1tico",
+          "ptbr": "Jato Aqu\u00E1tico",
+          "ru": "\u0424\u043E\u043D\u0442\u0430\u043D",
+          "th": "\u0E1E\u0E48\u0E19\u0E19\u0E49\u0E33",
+          "tr": "Su F\u0131\u015Fk\u0131rtma",
+          "vi": "Pkm_SkillName_WaterSpout_001"
+        }
+      },
+      {
+        "icon": "t_Skill_Squirtle_S21",
+        "id": 9300721,
+        "name": {
+          "ar": "Pkm_SkillName_Surf_001",
+          "chs": "\u51B2\u6D6A",
+          "cht": "\u885D\u6D6A",
+          "de": "Surfer",
+          "en": "Surf",
+          "es": "Surf",
+          "eslt": "Pkm_SkillName_Surf_001",
+          "fr": "Surf",
+          "hi": "\u0938\u0930\u094D\u095E",
+          "id": "Berselancar",
+          "it": "Surf",
+          "jp": "\u306A\u307F\u306E\u308A",
+          "kr": "\uD30C\uB3C4\uD0C0\uAE30",
+          "my": "Pkm_SkillName_Surf_001",
+          "nl": "Pkm_SkillName_Surf_001",
+          "pt": "Surfar",
+          "ptbr": "Surfar",
+          "ru": "\u0421\u0451\u0440\u0444",
+          "th": "\u0E42\u0E15\u0E49\u0E04\u0E25\u0E37\u0E48\u0E19",
+          "tr": "S\u00F6rf",
+          "vi": "Pkm_SkillName_Surf_001"
+        }
+      },
+      {
+        "icon": "t_Skill_Squirtle_S22",
+        "id": 9300722,
+        "name": {
+          "ar": "Pkm_SkillName_RapidSpin_001",
+          "chs": "\u9AD8\u901F\u65CB\u8F6C",
+          "cht": "\u9AD8\u901F\u65CB\u8F49",
+          "de": "Turbodreher",
+          "en": "Rapid Spin",
+          "es": "Giro R\u00E1pido",
+          "eslt": "Pkm_SkillName_RapidSpin_001",
+          "fr": "Tour Rapide",
+          "hi": "\u0930\u0948\u092A\u093F\u0921 \u0938\u094D\u092A\u093F\u0928",
+          "id": "Putaran Cepat",
+          "it": "Rapigiro",
+          "jp": "\u3053\u3046\u305D\u304F\u30B9\u30D4\u30F3",
+          "kr": "\uACE0\uC18D\uC2A4\uD540",
+          "my": "Pkm_SkillName_RapidSpin_001",
+          "nl": "Pkm_SkillName_RapidSpin_001",
+          "pt": "Giro R\u00E1pido",
+          "ptbr": "Giro R\u00E1pido",
+          "ru": "\u0411\u044B\u0441\u0442\u0440\u043E\u0435 \u0412\u0440\u0430\u0449\u0435\u043D\u0438\u0435",
+          "th": "\u0E2B\u0E21\u0E38\u0E19\u0E15\u0E34\u0E49\u0E27",
+          "tr": "Seri D\u00F6n\u00FC\u015F",
+          "vi": "Pkm_SkillName_RapidSpin_001"
+        }
+      },
+      {
+        "icon": "t_Skill_Squirtle_S12",
+        "id": 930071211,
+        "name": {
+          "ar": "Pkm_SkillName_HydroPumpPlus_001",
+          "chs": "\u6C34\u70AE\u002B",
+          "cht": "\u6C34\u70AE\u002B",
+          "de": "Hydropumpe\u002B",
+          "en": "Hydro Pump\u002B",
+          "es": "Hidrobomba\u000E\u0001\u0003\u0000\u002B",
+          "eslt": "Pkm_SkillName_HydroPumpPlus_001",
+          "fr": "Hydrocanon\u000E\u0001\u0003\u0000\u002B",
+          "hi": "\u0939\u093E\u0907\u0921\u094D\u0930\u094B \u092A\u0902\u092A\u002B",
+          "id": "Pompa Air\u002B",
+          "it": "Idropompa\u000E\u0001\u0003\u0000\u002B",
+          "jp": "\u30CF\u30A4\u30C9\u30ED\u30DD\u30F3\u30D7\u002B",
+          "kr": "\uD558\uC774\uB4DC\uB85C\uD38C\uD504\u002B",
+          "my": "Pkm_SkillName_HydroPumpPlus_001",
+          "nl": "Pkm_SkillName_HydroPumpPlus_001",
+          "pt": "Jato d\u0027\u00C1gua\u002B",
+          "ptbr": "Jato d\u0027\u00C1gua\u002B",
+          "ru": "\u0413\u0438\u0434\u0440\u043E\u043D\u0430\u0441\u043E\u0441\u002B",
+          "th": "\u0E44\u0E2E\u0E42\u0E14\u0E23\u0E1B\u0E31\u0E4A\u0E21\u0E1E\u0E4C\u002B",
+          "tr": "Su Pompas\u0131\u002B",
+          "vi": "Pkm_SkillName_HydroPumpPlus_001"
+        }
+      },
+      {
+        "icon": "t_Skill_Squirtle_S11",
+        "id": 930071111,
+        "name": {
+          "ar": "Pkm_SkillName_WaterSpoutPlus_001",
+          "chs": "\u55B7\u6C34\u002B",
+          "cht": "\u5674\u6C34\u002B",
+          "de": "Fontr\u00E4nen\u002B",
+          "en": "Water Spout\u002B",
+          "es": "Salpicar\u000E\u0001\u0003\u0000\u002B",
+          "eslt": "Pkm_SkillName_WaterSpoutPlus_001",
+          "fr": "Gicl\u00E9do\u000E\u0001\u0003\u0000\u002B",
+          "hi": "\u0935\u0949\u091F\u0930 \u0938\u094D\u092A\u093E\u0909\u091F\u002B",
+          "id": "Semburan Air\u002B",
+          "it": "Zampillo\u000E\u0001\u0003\u0000\u002B",
+          "jp": "\u3057\u304A\u3075\u304D\u002B",
+          "kr": "\uD574\uC218\uC2A4\uD30C\uC6B0\uD305\u002B",
+          "my": "Pkm_SkillName_WaterSpoutPlus_001",
+          "nl": "Pkm_SkillName_WaterSpoutPlus_001",
+          "pt": "Jato Aqu\u00E1tico\u002B",
+          "ptbr": "Jato Aqu\u00E1tico\u002B",
+          "ru": "\u0424\u043E\u043D\u0442\u0430\u043D\u002B",
+          "th": "\u0E1E\u0E48\u0E19\u0E19\u0E49\u0E33\u002B",
+          "tr": "Su F\u0131\u015Fk\u0131rtma\u002B",
+          "vi": "Pkm_SkillName_WaterSpoutPlus_001"
+        }
+      },
+      {
+        "icon": "t_Skill_Squirtle_S21",
+        "id": 93007211,
+        "name": {
+          "ar": "Pkm_SkillName_SurfPlus_001",
+          "chs": "\u51B2\u6D6A\u002B",
+          "cht": "\u885D\u6D6A\u002B",
+          "de": "Surfer\u002B",
+          "en": "Surf\u002B",
+          "es": "Surf\u000E\u0001\u0003\u0000\u002B",
+          "eslt": "Pkm_SkillName_SurfPlus_001",
+          "fr": "Surf\u000E\u0001\u0003\u0000\u002B",
+          "hi": "\u0938\u0930\u094D\u095E\u002B",
+          "id": "Berselancar\u002B",
+          "it": "Surf\u000E\u0001\u0003\u0000\u002B",
+          "jp": "\u306A\u307F\u306E\u308A\u002B",
+          "kr": "\uD30C\uB3C4\uD0C0\uAE30\u002B",
+          "my": "Pkm_SkillName_SurfPlus_001",
+          "nl": "Pkm_SkillName_SurfPlus_001",
+          "pt": "Surfar\u002B",
+          "ptbr": "Surfar\u002B",
+          "ru": "\u0421\u0451\u0440\u0444\u002B",
+          "th": "\u0E42\u0E15\u0E49\u0E04\u0E25\u0E37\u0E48\u0E19\u002B",
+          "tr": "S\u00F6rf\u002B",
+          "vi": "Pkm_SkillName_SurfPlus_001"
+        }
+      },
+      {
+        "icon": "t_Skill_Squirtle_S22",
+        "id": 93007221,
+        "name": {
+          "ar": "Pkm_SkillName_RapidSpinPlus_001",
+          "chs": "\u9AD8\u901F\u65CB\u8F6C\u002B",
+          "cht": "\u9AD8\u901F\u65CB\u8F49\u002B",
+          "de": "Turbodreher\u002B",
+          "en": "Rapid Spin\u002B",
+          "es": "Giro R\u00E1pido\u000E\u0001\u0003\u0000\u002B",
+          "eslt": "Pkm_SkillName_RapidSpinPlus_001",
+          "fr": "Tour Rapide\u000E\u0001\u0003\u0000\u002B",
+          "hi": "\u0930\u0948\u092A\u093F\u0921 \u0938\u094D\u092A\u093F\u0928\u002B",
+          "id": "Putaran Cepat\u002B",
+          "it": "Rapigiro\u000E\u0001\u0003\u0000\u002B",
+          "jp": "\u3053\u3046\u305D\u304F\u30B9\u30D4\u30F3\u002B",
+          "kr": "\uACE0\uC18D\uC2A4\uD540\u002B",
+          "my": "Pkm_SkillName_RapidSpinPlus_001",
+          "nl": "Pkm_SkillName_RapidSpinPlus_001",
+          "pt": "Giro R\u00E1pido\u002B",
+          "ptbr": "Giro R\u00E1pido\u002B",
+          "ru": "\u0411\u044B\u0441\u0442\u0440\u043E\u0435 \u0412\u0440\u0430\u0449\u0435\u043D\u0438\u0435\u002B",
+          "th": "\u0E2B\u0E21\u0E38\u0E19\u0E15\u0E34\u0E49\u0E27\u002B",
+          "tr": "Seri D\u00F6n\u00FC\u015F\u002B",
+          "vi": "Pkm_SkillName_RapidSpinPlus_001"
+        }
+      },
+      {
+        "icon": "t_Skill_Squirtle_G1",
+        "id": 9300740,
+        "name": {
+          "ar": "Pkm_USkillName_Squirtle_001",
+          "chs": "\u96C6\u7ED3\u62DB\u5F0F\uFF1A\u65CB\u98CE\u6FC0\u6D41\u70AE",
+          "cht": "\u96C6\u7D50\u62DB\u5F0F\uFF1A\u65CB\u98A8\u6FC0\u6D41\u70AE",
+          "de": "Unite-Attacke: Hydrotaifun",
+          "en": "Unite Move: Hydro Typhoon",
+          "es": "Movimiento Unite: Hidrotif\u00F3n",
+          "eslt": "Pkm_USkillName_Squirtle_001",
+          "fr": "Capacit\u00E9 Unit\u00E9\u000E\u0001\u0003\u0000: Hydrotyphon",
+          "hi": "\u092F\u0942\u0928\u093E\u0907\u091F \u092E\u0942\u0935: \u0939\u093E\u0907\u0921\u094D\u0930\u094B \u091F\u093E\u0907\u092B\u093C\u0942\u0928",
+          "id": "Jurus UNITE: Topan Hidro",
+          "it": "Mossa Unite: Idrotifone",
+          "jp": "\u30E6\u30CA\u30A4\u30C8\u308F\u3056\uFF1A\u30CF\u30A4\u30C9\u30ED\u30BF\u30A4\u30D5\u30FC\u30F3",
+          "kr": "\uC720\uB098\uC774\uD2B8 \uAE30\uC220: \uD558\uC774\uB4DC\uB85C\uD0C0\uC774\uD47C",
+          "my": "Pkm_USkillName_Squirtle_001",
+          "nl": "Pkm_USkillName_Squirtle_001",
+          "pt": "Movimento Unite: Hidro Tuf\u00E3o",
+          "ptbr": "Movimento Unite: Hidro Tuf\u00E3o",
+          "ru": "\u0410\u0442\u0430\u043A\u0430 Unite: \u0413\u0438\u0434\u0440\u043E\u0442\u0430\u0439\u0444\u0443\u043D",
+          "th": "\u0E17\u0E48\u0E32\u0E22\u0E39\u0E44\u0E19\u0E15\u0E4C: \u0E44\u0E15\u0E49\u0E1D\u0E38\u0E48\u0E19\u0E44\u0E2E\u0E42\u0E14\u0E23",
+          "tr": "Unite Hareketi: Su Tayfunu",
+          "vi": "Pkm_USkillName_Squirtle_001"
+        }
+      }
+    ],
+    "icons": {
+      "card": "t_Entry_Card_Blastoise_85ecd80831fe1a70",
+      "growthIcon": "t_Growth_Whole_Blastoise_00_f84e5a8a6586c5f8",
+      "shareIcon": "t_Square_Blastoise",
+      "square": "t_Square_Blastoise",
+      "tachiIcon": "t_Square_Blastoise"
+    },
+    "id": 7,
+    "key": "blastoise",
+    "name": {
+      "ar": "Pkm_Name_Blastoise",
+      "chs": "\u6C34\u7BAD\u9F9F",
+      "cht": "\u6C34\u7BAD\u9F9C",
+      "de": "Turtok",
+      "en": "Blastoise",
+      "es": "Blastoise",
+      "eslt": "Pkm_Name_Blastoise",
+      "fr": "Tortank",
+      "hi": "\u092C\u094D\u0932\u093E\u0938\u094D\u091F\u0949\u0907\u0938 ",
+      "id": "Blastoise",
+      "it": "Blastoise",
+      "jp": "\u30AB\u30E1\u30C3\u30AF\u30B9",
+      "kr": "\uAC70\uBD81\uC655",
+      "my": "Pkm_Name_Blastoise",
+      "nl": "Pkm_Name_Blastoise",
+      "pt": "Blastoise",
+      "ptbr": "Blastoise",
+      "ru": "\u0411\u043B\u0430\u0441\u0442\u043E\u0439\u0437",
+      "th": "\u0E04\u0E32\u0E40\u0E21\u0E47\u0E01\u0E0B\u0E4C",
+      "tr": "Blastoise",
+      "vi": "Pkm_Name_Blastoise"
+    },
+    "reccLane": "bot",
+    "releaseTime": 1585695600,
+    "starStats": {
+      "damage": 5,
+      "endurance": 7,
+      "mobility": 4,
+      "offense": 4,
+      "scoring": 4,
+      "support": 6
+    },
+    "stats": {
+      "base": {
+        "atk": 150,
+        "def": 100,
+        "energyRate": 10000,
+        "hp": 3225,
+        "hprec": 32,
+        "mvspd": 3700,
+        "spatk": 50,
+        "spdef": 70
+      },
+      "energyRecover": [
+        {
+          "rec": 50,
+          "type": 5,
+          "val": 1000
+        },
+        {
+          "rec": 900,
+          "type": 4,
+          "val": 80000
+        }
+      ],
+      "growth": [
+        {
+          "level": "1",
+          "stats": [
+            {
+              "name": "HP",
+              "val": "3225"
+            },
+            {
+              "name": "Heal/5s",
+              "val": "32"
+            },
+            {
+              "name": "Atk",
+              "val": "150"
+            },
+            {
+              "name": "Def",
+              "val": "100"
+            },
+            {
+              "name": "Sp.Atk",
+              "val": "50"
+            },
+            {
+              "name": "Sp.Def",
+              "val": "70"
+            },
+            {
+              "name": "Atk.Spd",
+              "val": "10.0"
+            },
+            {
+              "name": "Mv.Spd",
+              "val": "3.7m/s"
+            },
+            {
+              "name": "Support Energy Rate",
+              "val": "0.0"
+            },
+            {
+              "name": "Lifesteal",
+              "val": "0.0"
+            },
+            {
+              "name": "Crit Chance",
+              "val": "0.0"
+            },
+            {
+              "name": "Crit Damage",
+              "val": "0"
+            },
+            {
+              "name": "Tenacity",
+              "val": "0.0"
+            },
+            {
+              "name": "Cooldown Reduction",
+              "val": "0.0"
+            }
+          ]
+        },
+        {
+          "level": "2",
+          "stats": [
+            {
+              "name": "HP",
+              "val": "3326"
+            },
+            {
+              "name": "Heal/5s",
+              "val": "33"
+            },
+            {
+              "name": "Atk",
+              "val": "152"
+            },
+            {
+              "name": "Def",
+              "val": "108"
+            },
+            {
+              "name": "Sp.Atk",
+              "val": "55"
+            },
+            {
+              "name": "Sp.Def",
+              "val": "75"
+            },
+            {
+              "name": "Atk.Spd",
+              "val": "10.29"
+            },
+            {
+              "name": "Mv.Spd",
+              "val": "3.7m/s"
+            },
+            {
+              "name": "Support Energy Rate",
+              "val": "0.0"
+            },
+            {
+              "name": "Lifesteal",
+              "val": "0.0"
+            },
+            {
+              "name": "Crit Chance",
+              "val": "0.0"
+            },
+            {
+              "name": "Crit Damage",
+              "val": "0"
+            },
+            {
+              "name": "Tenacity",
+              "val": "5.83"
+            },
+            {
+              "name": "Cooldown Reduction",
+              "val": "0.0"
+            }
+          ]
+        },
+        {
+          "level": "3",
+          "stats": [
+            {
+              "name": "HP",
+              "val": "3447"
+            },
+            {
+              "name": "Heal/5s",
+              "val": "34"
+            },
+            {
+              "name": "Atk",
+              "val": "154"
+            },
+            {
+              "name": "Def",
+              "val": "117"
+            },
+            {
+              "name": "Sp.Atk",
+              "val": "61"
+            },
+            {
+              "name": "Sp.Def",
+              "val": "82"
+            },
+            {
+              "name": "Atk.Spd",
+              "val": "10.63"
+            },
+            {
+              "name": "Mv.Spd",
+              "val": "3.7m/s"
+            },
+            {
+              "name": "Support Energy Rate",
+              "val": "0.0"
+            },
+            {
+              "name": "Lifesteal",
+              "val": "0.0"
+            },
+            {
+              "name": "Crit Chance",
+              "val": "0.0"
+            },
+            {
+              "name": "Crit Damage",
+              "val": "0"
+            },
+            {
+              "name": "Tenacity",
+              "val": "11.66"
+            },
+            {
+              "name": "Cooldown Reduction",
+              "val": "0.0"
+            }
+          ]
+        },
+        {
+          "level": "4",
+          "stats": [
+            {
+              "name": "HP",
+              "val": "3593"
+            },
+            {
+              "name": "Heal/5s",
+              "val": "35"
+            },
+            {
+              "name": "Atk",
+              "val": "157"
+            },
+            {
+              "name": "Def",
+              "val": "128"
+            },
+            {
+              "name": "Sp.Atk",
+              "val": "68"
+            },
+            {
+              "name": "Sp.Def",
+              "val": "90"
+            },
+            {
+              "name": "Atk.Spd",
+              "val": "11.04"
+            },
+            {
+              "name": "Mv.Spd",
+              "val": "3.7m/s"
+            },
+            {
+              "name": "Support Energy Rate",
+              "val": "0.0"
+            },
+            {
+              "name": "Lifesteal",
+              "val": "0.0"
+            },
+            {
+              "name": "Crit Chance",
+              "val": "0.0"
+            },
+            {
+              "name": "Crit Damage",
+              "val": "0"
+            },
+            {
+              "name": "Tenacity",
+              "val": "17.49"
+            },
+            {
+              "name": "Cooldown Reduction",
+              "val": "0.0"
+            }
+          ]
+        },
+        {
+          "level": "5",
+          "stats": [
+            {
+              "name": "HP",
+              "val": "4122"
+            },
+            {
+              "name": "Heal/5s",
+              "val": "40"
+            },
+            {
+              "name": "Atk",
+              "val": "168"
+            },
+            {
+              "name": "Def",
+              "val": "169"
+            },
+            {
+              "name": "Sp.Atk",
+              "val": "95"
+            },
+            {
+              "name": "Sp.Def",
+              "val": "119"
+            },
+            {
+              "name": "Atk.Spd",
+              "val": "12.54"
+            },
+            {
+              "name": "Mv.Spd",
+              "val": "3.85m/s"
+            },
+            {
+              "name": "Support Energy Rate",
+              "val": "0.0"
+            },
+            {
+              "name": "Lifesteal",
+              "val": "0.0"
+            },
+            {
+              "name": "Crit Chance",
+              "val": "0.0"
+            },
+            {
+              "name": "Crit Damage",
+              "val": "0"
+            },
+            {
+              "name": "Tenacity",
+              "val": "23.32"
+            },
+            {
+              "name": "Cooldown Reduction",
+              "val": "5.0"
+            }
+          ]
+        },
+        {
+          "level": "6",
+          "stats": [
+            {
+              "name": "HP",
+              "val": "4333"
+            },
+            {
+              "name": "Heal/5s",
+              "val": "42"
+            },
+            {
+              "name": "Atk",
+              "val": "172"
+            },
+            {
+              "name": "Def",
+              "val": "185"
+            },
+            {
+              "name": "Sp.Atk",
+              "val": "106"
+            },
+            {
+              "name": "Sp.Def",
+              "val": "130"
+            },
+            {
+              "name": "Atk.Spd",
+              "val": "13.14"
+            },
+            {
+              "name": "Mv.Spd",
+              "val": "3.85m/s"
+            },
+            {
+              "name": "Support Energy Rate",
+              "val": "0.0"
+            },
+            {
+              "name": "Lifesteal",
+              "val": "0.0"
+            },
+            {
+              "name": "Crit Chance",
+              "val": "0.0"
+            },
+            {
+              "name": "Crit Damage",
+              "val": "0"
+            },
+            {
+              "name": "Tenacity",
+              "val": "29.15"
+            },
+            {
+              "name": "Cooldown Reduction",
+              "val": "5.0"
+            }
+          ]
+        },
+        {
+          "level": "7",
+          "stats": [
+            {
+              "name": "HP",
+              "val": "5293"
+            },
+            {
+              "name": "Heal/5s",
+              "val": "52"
+            },
+            {
+              "name": "Atk",
+              "val": "191"
+            },
+            {
+              "name": "Def",
+              "val": "260"
+            },
+            {
+              "name": "Sp.Atk",
+              "val": "155"
+            },
+            {
+              "name": "Sp.Def",
+              "val": "182"
+            },
+            {
+              "name": "Atk.Spd",
+              "val": "15.86"
+            },
+            {
+              "name": "Mv.Spd",
+              "val": "4.0m/s"
+            },
+            {
+              "name": "Support Energy Rate",
+              "val": "0.0"
+            },
+            {
+              "name": "Lifesteal",
+              "val": "0.0"
+            },
+            {
+              "name": "Crit Chance",
+              "val": "0.0"
+            },
+            {
+              "name": "Crit Damage",
+              "val": "0"
+            },
+            {
+              "name": "Tenacity",
+              "val": "34.98"
+            },
+            {
+              "name": "Cooldown Reduction",
+              "val": "5.0"
+            }
+          ]
+        },
+        {
+          "level": "8",
+          "stats": [
+            {
+              "name": "HP",
+              "val": "5597"
+            },
+            {
+              "name": "Heal/5s",
+              "val": "55"
+            },
+            {
+              "name": "Atk",
+              "val": "197"
+            },
+            {
+              "name": "Def",
+              "val": "284"
+            },
+            {
+              "name": "Sp.Atk",
+              "val": "171"
+            },
+            {
+              "name": "Sp.Def",
+              "val": "198"
+            },
+            {
+              "name": "Atk.Spd",
+              "val": "16.72"
+            },
+            {
+              "name": "Mv.Spd",
+              "val": "4.0m/s"
+            },
+            {
+              "name": "Support Energy Rate",
+              "val": "0.0"
+            },
+            {
+              "name": "Lifesteal",
+              "val": "0.0"
+            },
+            {
+              "name": "Crit Chance",
+              "val": "0.0"
+            },
+            {
+              "name": "Crit Damage",
+              "val": "0"
+            },
+            {
+              "name": "Tenacity",
+              "val": "34.98"
+            },
+            {
+              "name": "Cooldown Reduction",
+              "val": "5.0"
+            }
+          ]
+        },
+        {
+          "level": "9",
+          "stats": [
+            {
+              "name": "HP",
+              "val": "5961"
+            },
+            {
+              "name": "Heal/5s",
+              "val": "59"
+            },
+            {
+              "name": "Atk",
+              "val": "204"
+            },
+            {
+              "name": "Def",
+              "val": "312"
+            },
+            {
+              "name": "Sp.Atk",
+              "val": "190"
+            },
+            {
+              "name": "Sp.Def",
+              "val": "218"
+            },
+            {
+              "name": "Atk.Spd",
+              "val": "17.75"
+            },
+            {
+              "name": "Mv.Spd",
+              "val": "4.15m/s"
+            },
+            {
+              "name": "Support Energy Rate",
+              "val": "0.0"
+            },
+            {
+              "name": "Lifesteal",
+              "val": "0.0"
+            },
+            {
+              "name": "Crit Chance",
+              "val": "0.0"
+            },
+            {
+              "name": "Crit Damage",
+              "val": "0"
+            },
+            {
+              "name": "Tenacity",
+              "val": "34.98"
+            },
+            {
+              "name": "Cooldown Reduction",
+              "val": "10.0"
+            }
+          ]
+        },
+        {
+          "level": "10",
+          "stats": [
+            {
+              "name": "HP",
+              "val": "6398"
+            },
+            {
+              "name": "Heal/5s",
+              "val": "63"
+            },
+            {
+              "name": "Atk",
+              "val": "213"
+            },
+            {
+              "name": "Def",
+              "val": "346"
+            },
+            {
+              "name": "Sp.Atk",
+              "val": "212"
+            },
+            {
+              "name": "Sp.Def",
+              "val": "242"
+            },
+            {
+              "name": "Atk.Spd",
+              "val": "18.98"
+            },
+            {
+              "name": "Mv.Spd",
+              "val": "4.15m/s"
+            },
+            {
+              "name": "Support Energy Rate",
+              "val": "0.0"
+            },
+            {
+              "name": "Lifesteal",
+              "val": "0.0"
+            },
+            {
+              "name": "Crit Chance",
+              "val": "0.0"
+            },
+            {
+              "name": "Crit Damage",
+              "val": "0"
+            },
+            {
+              "name": "Tenacity",
+              "val": "34.98"
+            },
+            {
+              "name": "Cooldown Reduction",
+              "val": "10.0"
+            }
+          ]
+        },
+        {
+          "level": "11",
+          "stats": [
+            {
+              "name": "HP",
+              "val": "6923"
+            },
+            {
+              "name": "Heal/5s",
+              "val": "68"
+            },
+            {
+              "name": "Atk",
+              "val": "224"
+            },
+            {
+              "name": "Def",
+              "val": "387"
+            },
+            {
+              "name": "Sp.Atk",
+              "val": "239"
+            },
+            {
+              "name": "Sp.Def",
+              "val": "271"
+            },
+            {
+              "name": "Atk.Spd",
+              "val": "20.46"
+            },
+            {
+              "name": "Mv.Spd",
+              "val": "4.3m/s"
+            },
+            {
+              "name": "Support Energy Rate",
+              "val": "0.0"
+            },
+            {
+              "name": "Lifesteal",
+              "val": "0.0"
+            },
+            {
+              "name": "Crit Chance",
+              "val": "0.0"
+            },
+            {
+              "name": "Crit Damage",
+              "val": "0"
+            },
+            {
+              "name": "Tenacity",
+              "val": "34.98"
+            },
+            {
+              "name": "Cooldown Reduction",
+              "val": "10.0"
+            }
+          ]
+        },
+        {
+          "level": "12",
+          "stats": [
+            {
+              "name": "HP",
+              "val": "7552"
+            },
+            {
+              "name": "Heal/5s",
+              "val": "74"
+            },
+            {
+              "name": "Atk",
+              "val": "237"
+            },
+            {
+              "name": "Def",
+              "val": "436"
+            },
+            {
+              "name": "Sp.Atk",
+              "val": "271"
+            },
+            {
+              "name": "Sp.Def",
+              "val": "305"
+            },
+            {
+              "name": "Atk.Spd",
+              "val": "22.24"
+            },
+            {
+              "name": "Mv.Spd",
+              "val": "4.3m/s"
+            },
+            {
+              "name": "Support Energy Rate",
+              "val": "0.0"
+            },
+            {
+              "name": "Lifesteal",
+              "val": "0.0"
+            },
+            {
+              "name": "Crit Chance",
+              "val": "0.0"
+            },
+            {
+              "name": "Crit Damage",
+              "val": "0"
+            },
+            {
+              "name": "Tenacity",
+              "val": "34.98"
+            },
+            {
+              "name": "Cooldown Reduction",
+              "val": "10.0"
+            }
+          ]
+        },
+        {
+          "level": "13",
+          "stats": [
+            {
+              "name": "HP",
+              "val": "8307"
+            },
+            {
+              "name": "Heal/5s",
+              "val": "82"
+            },
+            {
+              "name": "Atk",
+              "val": "252"
+            },
+            {
+              "name": "Def",
+              "val": "495"
+            },
+            {
+              "name": "Sp.Atk",
+              "val": "310"
+            },
+            {
+              "name": "Sp.Def",
+              "val": "346"
+            },
+            {
+              "name": "Atk.Spd",
+              "val": "24.37"
+            },
+            {
+              "name": "Mv.Spd",
+              "val": "4.3m/s"
+            },
+            {
+              "name": "Support Energy Rate",
+              "val": "0.0"
+            },
+            {
+              "name": "Lifesteal",
+              "val": "0.0"
+            },
+            {
+              "name": "Crit Chance",
+              "val": "0.0"
+            },
+            {
+              "name": "Crit Damage",
+              "val": "0"
+            },
+            {
+              "name": "Tenacity",
+              "val": "34.98"
+            },
+            {
+              "name": "Cooldown Reduction",
+              "val": "10.0"
+            }
+          ]
+        },
+        {
+          "level": "14",
+          "stats": [
+            {
+              "name": "HP",
+              "val": "9213"
+            },
+            {
+              "name": "Heal/5s",
+              "val": "91"
+            },
+            {
+              "name": "Atk",
+              "val": "270"
+            },
+            {
+              "name": "Def",
+              "val": "565"
+            },
+            {
+              "name": "Sp.Atk",
+              "val": "356"
+            },
+            {
+              "name": "Sp.Def",
+              "val": "395"
+            },
+            {
+              "name": "Atk.Spd",
+              "val": "26.93"
+            },
+            {
+              "name": "Mv.Spd",
+              "val": "4.3m/s"
+            },
+            {
+              "name": "Support Energy Rate",
+              "val": "0.0"
+            },
+            {
+              "name": "Lifesteal",
+              "val": "0.0"
+            },
+            {
+              "name": "Crit Chance",
+              "val": "0.0"
+            },
+            {
+              "name": "Crit Damage",
+              "val": "0"
+            },
+            {
+              "name": "Tenacity",
+              "val": "34.98"
+            },
+            {
+              "name": "Cooldown Reduction",
+              "val": "10.0"
+            }
+          ]
+        },
+        {
+          "level": "15",
+          "stats": [
+            {
+              "name": "HP",
+              "val": "10300"
+            },
+            {
+              "name": "Heal/5s",
+              "val": "102"
+            },
+            {
+              "name": "Atk",
+              "val": "292"
+            },
+            {
+              "name": "Def",
+              "val": "650"
+            },
+            {
+              "name": "Sp.Atk",
+              "val": "412"
+            },
+            {
+              "name": "Sp.Def",
+              "val": "455"
+            },
+            {
+              "name": "Atk.Spd",
+              "val": "30.0"
+            },
+            {
+              "name": "Mv.Spd",
+              "val": "4.3m/s"
+            },
+            {
+              "name": "Support Energy Rate",
+              "val": "0.0"
+            },
+            {
+              "name": "Lifesteal",
+              "val": "0.0"
+            },
+            {
+              "name": "Crit Chance",
+              "val": "0.0"
+            },
+            {
+              "name": "Crit Damage",
+              "val": "0"
+            },
+            {
+              "name": "Tenacity",
+              "val": "34.98"
+            },
+            {
+              "name": "Cooldown Reduction",
+              "val": "10.0"
+            }
+          ]
+        }
+      ]
+    },
+    "tags": [
+      {
+        "ar": "Pkm_OtherDes_FarRange",
+        "chs": "\u8FDC\u8DDD\u79BB",
+        "cht": "\u9060\u8DDD\u96E2",
+        "de": "Fernk\u00E4mpfer",
+        "en": "Ranged",
+        "es": "Largo alcance",
+        "eslt": "Pkm_OtherDes_FarRange",
+        "fr": "\u00C0 distance",
+        "hi": "\u0932\u0902\u092C\u0940 \u092A\u0939\u0941\u0901\u091A",
+        "id": "Serangan jarak jauh",
+        "it": "Lungo raggio",
+        "jp": "\u9060\u9694",
+        "kr": "\uC6D0\uAC70\uB9AC",
+        "my": "Pkm_OtherDes_FarRange",
+        "nl": "Pkm_OtherDes_FarRange",
+        "pt": "Longo alcance",
+        "ptbr": "Longo alcance",
+        "ru": "\u0414\u0430\u043B\u044C\u043D\u043E\u0431\u043E\u0439\u043D\u044B\u0439",
+        "th": "\u0E23\u0E30\u0E22\u0E30\u0E44\u0E01\u0E25",
+        "tr": "Uzun Mesafeli",
+        "vi": "Pkm_OtherDes_FarRange"
+      },
+      {
+        "ar": "Pokemon_OtherDes_Simple_001",
+        "chs": "\u5165\u95E8",
+        "cht": "\u5165\u9580",
+        "de": "Leicht",
+        "en": "Novice",
+        "es": "baja",
+        "eslt": "Pokemon_OtherDes_Simple_001",
+        "fr": "facile",
+        "hi": "\u092C\u093F\u0917\u093F\u0928\u0930",
+        "id": "Pemula",
+        "it": "facile",
+        "jp": "\u521D\u5FC3\u8005\u5411\u3051",
+        "kr": "\uCD08\uAE09\uC790\uC6A9",
+        "my": "Pokemon_OtherDes_Simple_001",
+        "nl": "Pokemon_OtherDes_Simple_001",
+        "pt": "Iniciante",
+        "ptbr": "Iniciante",
+        "ru": "\u041D\u043E\u0432\u0438\u0447\u043E\u043A",
+        "th": "\u0E21\u0E37\u0E2D\u0E2A\u0E21\u0E31\u0E04\u0E23\u0E40\u0E25\u0E48\u0E19",
+        "tr": "Tecr\u00FCbesiz",
+        "vi": "Pokemon_OtherDes_Simple_001"
+      },
+      {
+        "ar": "Common_SpAttack_5",
+        "chs": "\u7279\u653B",
+        "cht": "\u7279\u653B",
+        "de": "Sp.-Ang.",
+        "en": "Sp. Atk",
+        "es": "Ataque Especial",
+        "eslt": "Common_SpAttack_5",
+        "fr": "Attaque Sp\u00E9ciale",
+        "hi": "\u0938\u094D\u092A\u0947\u0936\u0932 \u0905\u091F\u0948\u0915",
+        "id": "Serangan Khusus",
+        "it": "Attacco Speciale",
+        "jp": "\u7279\u653B",
+        "kr": "\uD2B9\uC218\uACF5\uACA9",
+        "my": "Common_SpAttack_5",
+        "nl": "Common_SpAttack_5",
+        "pt": "Atq. Esp.",
+        "ptbr": "Atq. Esp.",
+        "ru": "\u041E\u0441\u043E\u0431. \u0430\u0442\u0430\u043A\u0430",
+        "th": "\u0E42\u0E08\u0E21\u0E15\u0E35\u0E1E\u0E34\u0E40\u0E28\u0E29",
+        "tr": "\u00D6z. Sld.",
+        "vi": "Common_SpAttack_5"
+      },
+      [
+        "Defender"
+      ]
+    ],
+    "unitId": 180007
+  },
+  "rankings": [
+    {
+      "OpenID": "14063342088432409111",
+      "RankNo": 1,
+      "RankScore": 13170,
+      "ExtraInfo": {
+        "ScoreType": 4,
+        "DetailInfo": {
+          "Pokemon": {
+            "BaseInfo": {
+              "RoleLevel": 180,
+              "Uid": "14063342088432409111",
+              "RoleName": "Continue?Nah",
+              "RoleGender": 1,
+              "HeadID": 21,
+              "CurHeadIconIDInfo": {
+                "HeadIconID": 1007000211
+              },
+              "RoleAvatarInfo": {
+                "AvatarIDList": [
+                  1004086314,
+                  1004077004,
+                  1004086305,
+                  1004003906,
+                  1004028308,
+                  1004000210,
+                  1004086309,
+                  1004000513,
+                  1004000411
+                ],
+                "RoleBaseModelID": 20191219,
+                "SkinColorID": 7
+              },
+              "PrivilePlatInfo": {},
+              "UserPlantInfo": {
+                "HeadType": 1,
+                "CurPersonStyleInfo": {
+                  "CurHeadResID": 1010200111
+                }
+              }
+            },
+            "WinRate": 97,
+            "TotalWinCnt": 12200,
+            "LastHeldItemDesignInfo": {
+              "HeldItemID": [
+                1002001040,
+                1002001006,
+                1002001029
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "OpenID": "6570327136253948443",
+      "RankNo": 2,
+      "RankScore": 9085,
+      "ExtraInfo": {
+        "ScoreType": 4,
+        "DetailInfo": {
+          "Pokemon": {
+            "BaseInfo": {
+              "RoleLevel": 157,
+              "Uid": "6570327136253948443",
+              "RoleName": "ERI",
+              "RoleGender": 2,
+              "HeadID": 21,
+              "CurHeadIconIDInfo": {
+                "HeadIconID": 1007000042
+              },
+              "RoleAvatarInfo": {
+                "AvatarIDList": [
+                  1004079214,
+                  1004000111,
+                  1004000410,
+                  1004000513,
+                  1004006106
+                ],
+                "RoleBaseModelID": 20200501,
+                "SkinColorID": 7
+              },
+              "PrivilePlatInfo": {},
+              "UserPlantInfo": {
+                "HeadType": 1,
+                "CurPersonStyleInfo": {
+                  "CurHeadResID": 1010200142
+                }
+              }
+            },
+            "WinRate": 71,
+            "TotalWinCnt": 8375,
+            "LastHeldItemDesignInfo": {
+              "HeldItemID": [
+                1002001024,
+                1002001013,
+                1002001033
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "OpenID": "169119643697354150",
+      "RankNo": 3,
+      "RankScore": 8170,
+      "ExtraInfo": {
+        "ScoreType": 4,
+        "DetailInfo": {
+          "Pokemon": {
+            "BaseInfo": {
+              "RoleLevel": 96,
+              "Uid": "169119643697354150",
+              "RoleName": "\u30E4\u30C9\u30F3(\u6606\u5E03)",
+              "RoleGender": 2,
+              "HeadID": 22,
+              "CurHeadIconIDInfo": {
+                "HeadIconID": 1007000110
+              },
+              "RoleAvatarInfo": {
+                "AvatarIDList": [
+                  1004000411,
+                  1004000410,
+                  1004002113,
+                  1004006606,
+                  1004064514
+                ],
+                "RoleBaseModelID": 20200501,
+                "SkinColorID": 8
+              },
+              "PrivilePlatInfo": {},
+              "UserPlantInfo": {
+                "HeadType": 1,
+                "CurPersonStyleInfo": {
+                  "CurHeadResID": 1010200096
+                }
+              }
+            },
+            "WinRate": 68,
+            "TotalWinCnt": 7490,
+            "LastHeldItemDesignInfo": {
+              "HeldItemID": [
+                1002001026,
+                1002001013,
+                1002001029
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "OpenID": "17622428186117830280",
+      "RankNo": 4,
+      "RankScore": 7805,
+      "ExtraInfo": {
+        "ScoreType": 4,
+        "DetailInfo": {
+          "Pokemon": {
+            "BaseInfo": {
+              "RoleLevel": 50,
+              "Uid": "17622428186117830280",
+              "RoleName": "\u0410\u0442\u0430\u043C\u0430\u0441",
+              "RoleGender": 1,
+              "HeadID": 21,
+              "CurHeadIconIDInfo": {
+                "HeadIconID": 1007000110
+              },
+              "RoleAvatarInfo": {
+                "AvatarIDList": [
+                  1004000004,
+                  1004045609,
+                  1004000613,
+                  1004045614,
+                  1004000810,
+                  1004060705,
+                  1004001106,
+                  1004000211
+                ],
+                "RoleBaseModelID": 20191219,
+                "SkinColorID": 9
+              },
+              "PrivilePlatInfo": {},
+              "UserPlantInfo": {}
+            },
+            "WinRate": 54,
+            "TotalWinCnt": 7265,
+            "LastHeldItemDesignInfo": {
+              "HeldItemID": [
+                1002001011,
+                1002001013,
+                1002001030
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "OpenID": "990379587198574994",
+      "RankNo": 5,
+      "RankScore": 7439,
+      "ExtraInfo": {
+        "ScoreType": 4,
+        "DetailInfo": {
+          "Pokemon": {
+            "BaseInfo": {
+              "RoleLevel": 87,
+              "Uid": "990379587198574994",
+              "RoleName": "\u5B9D\u5B9D\u53EF",
+              "RoleGender": 1,
+              "HeadID": 21,
+              "CurHeadIconIDInfo": {
+                "HeadIconID": 1007000006
+              },
+              "RoleAvatarInfo": {
+                "AvatarIDList": [
+                  1004082114,
+                  1004082105,
+                  1004001106,
+                  1004082107,
+                  1004000004,
+                  1004082109,
+                  1004000411,
+                  1004000510,
+                  1004000613
+                ],
+                "RoleBaseModelID": 20191219,
+                "SkinColorID": 7
+              },
+              "PrivilePlatInfo": {},
+              "UserPlantInfo": {
+                "HeadType": 1,
+                "CurPersonStyleInfo": {
+                  "CurHeadResID": 1010200096
+                }
+              }
+            },
+            "WinRate": 51,
+            "TotalWinCnt": 6929,
+            "LastHeldItemDesignInfo": {
+              "HeldItemID": [
+                1002001024,
+                1002001013,
+                1002001005
+              ]
+            }
+          }
+        }
+      }
+    }
+  ],
+  "builds": [
+    {
+      "skill1": {
+        "name": "Hydro Pump",
+        "img": "t_Skill_Squirtle_S12"
+      },
+      "skill2": {
+        "name": "Surf",
+        "img": "t_Skill_Squirtle_S21"
+      },
+      "winRate": "52.51",
+      "pickRate": "97.93",
+      "items": [
+        {
+          "img": "t_prop_EjectButton",
+          "pickRate": "74.62 %",
+          "winRate": "53.33 %"
+        },
+        {
+          "img": "t_prop_Potion",
+          "pickRate": "15.28 %",
+          "winRate": "49.65 %"
+        },
+        {
+          "img": "t_prop_XSpeed",
+          "pickRate": "8.27 %",
+          "winRate": "51.33 %"
+        }
+      ]
+    },
+    {
+      "skill1": {
+        "name": "Hydro Pump",
+        "img": "t_Skill_Squirtle_S12"
+      },
+      "skill2": {
+        "name": "Rapid Spin",
+        "img": "t_Skill_Squirtle_S22"
+      },
+      "winRate": "50.12",
+      "pickRate": "1.22",
+      "items": [
+        {
+          "img": "t_prop_EjectButton",
+          "pickRate": "81.65 %",
+          "winRate": "53.60 %"
+        },
+        {
+          "img": "t_prop_Potion",
+          "pickRate": "10.12 %",
+          "winRate": "44.19 %"
+        },
+        {
+          "img": "t_prop_XSpeed",
+          "pickRate": "6.35 %",
+          "winRate": "18.52 %"
+        }
+      ]
+    },
+    {
+      "skill1": {
+        "name": "Water Spout",
+        "img": "t_Skill_Squirtle_S11"
+      },
+      "skill2": {
+        "name": "Rapid Spin",
+        "img": "t_Skill_Squirtle_S22"
+      },
+      "winRate": "48.47",
+      "pickRate": "0.56",
+      "items": [
+        {
+          "img": "t_prop_EjectButton",
+          "pickRate": "63.27 %",
+          "winRate": "51.61 %"
+        },
+        {
+          "img": "t_prop_Potion",
+          "pickRate": "19.39 %",
+          "winRate": "39.47 %"
+        },
+        {
+          "img": "t_prop_XSpeed",
+          "pickRate": "14.80 %",
+          "winRate": "55.17 %"
+        }
+      ]
+    },
+    {
+      "skill1": {
+        "name": "Water Spout",
+        "img": "t_Skill_Squirtle_S11"
+      },
+      "skill2": {
+        "name": "Surf",
+        "img": "t_Skill_Squirtle_S21"
+      },
+      "winRate": "44.55",
+      "pickRate": "0.29",
+      "items": [
+        {
+          "img": "t_prop_Potion",
+          "pickRate": "37.62 %",
+          "winRate": "44.74 %"
+        },
+        {
+          "img": "t_prop_EjectButton",
+          "pickRate": "35.64 %",
+          "winRate": "44.44 %"
+        },
+        {
+          "img": "t_prop_XSpeed",
+          "pickRate": "19.80 %",
+          "winRate": "50.00 %"
+        }
+      ]
+    }
+  ],
+  "counters": {
+    "pokemonId": 180007,
+    "nonMirror": [
+      {
+        "pokemonId": 100471,
+        "winRate": 52,
+        "count": 7304,
+        "winCount": 3481,
+        "name": "Glaceon",
+        "img": "t_Square_Glaceon"
+      },
+      {
+        "pokemonId": 100923,
+        "winRate": 47,
+        "count": 1114,
+        "winCount": 585,
+        "name": "Pawmot",
+        "img": "t_Square_Pawmot"
+      },
+      {
+        "pokemonId": 100778,
+        "winRate": 50,
+        "count": 5278,
+        "winCount": 2655,
+        "name": "Mimikyu",
+        "img": "t_Square_Mimikyu"
+      },
+      {
+        "pokemonId": 100147,
+        "winRate": 47,
+        "count": 726,
+        "winCount": 383,
+        "name": "Dragonite",
+        "img": "t_Square_Dragonite"
+      },
+      {
+        "pokemonId": 100250,
+        "winRate": 49,
+        "count": 3705,
+        "winCount": 1907,
+        "name": "Ho-Oh",
+        "img": "t_Square_HoOh"
+      },
+      {
+        "pokemonId": 100150,
+        "winRate": 54,
+        "count": 6317,
+        "winCount": 2926,
+        "name": "Mewtwo",
+        "img": "t_Square_MewtwoX"
+      },
+      {
+        "pokemonId": 100084,
+        "winRate": 51,
+        "count": 1338,
+        "winCount": 650,
+        "name": "Dodrio",
+        "img": "t_Square_Dodrio"
+      },
+      {
+        "pokemonId": 190092,
+        "winRate": 51,
+        "count": 4021,
+        "winCount": 1964,
+        "name": "Gengar",
+        "img": "t_Square_Gengar"
+      },
+      {
+        "pokemonId": 100794,
+        "winRate": 46,
+        "count": 3146,
+        "winCount": 1696,
+        "name": "Buzzwole",
+        "img": "t_Square_Buzzwole"
+      },
+      {
+        "pokemonId": 100813,
+        "winRate": 47,
+        "count": 3965,
+        "winCount": 2086,
+        "name": "Cinderace",
+        "img": "t_Square_Cinderace"
+      },
+      {
+        "pokemonId": 100470,
+        "winRate": 48,
+        "count": 3169,
+        "winCount": 1649,
+        "name": "Leafeon",
+        "img": "t_Square_Leafeon"
+      },
+      {
+        "pokemonId": 100134,
+        "winRate": 54,
+        "count": 10080,
+        "winCount": 4672,
+        "name": "Vaporeon",
+        "img": "t_Square_Vaporeon"
+      },
+      {
+        "pokemonId": 100255,
+        "winRate": 49,
+        "count": 4003,
+        "winCount": 2043,
+        "name": "Blaziken",
+        "img": "t_Square_Blaziken"
+      },
+      {
+        "pokemonId": 100025,
+        "winRate": 46,
+        "count": 3504,
+        "winCount": 1875,
+        "name": "Pikachu",
+        "img": "t_Square_Pikachu"
+      },
+      {
+        "pokemonId": 100220,
+        "winRate": 46,
+        "count": 2811,
+        "winCount": 1520,
+        "name": "Mamoswine",
+        "img": "t_Square_Mamoswine"
+      },
+      {
+        "pokemonId": 100937,
+        "winRate": 44,
+        "count": 914,
+        "winCount": 509,
+        "name": "Ceruledge",
+        "img": "t_Square_Ceruledge"
+      },
+      {
+        "pokemonId": 100123,
+        "winRate": 49,
+        "count": 6405,
+        "winCount": 3253,
+        "name": "Scizor",
+        "img": "t_Square_Scizor"
+      },
+      {
+        "pokemonId": 190656,
+        "winRate": 48,
+        "count": 4987,
+        "winCount": 2592,
+        "name": "Greninja",
+        "img": "t_Square_Greninja"
+      },
+      {
+        "pokemonId": 190079,
+        "winRate": 47,
+        "count": 4159,
+        "winCount": 2193,
+        "name": "Slowbro",
+        "img": "t_Square_Slowbro"
+      },
+      {
+        "pokemonId": 100113,
+        "winRate": 48,
+        "count": 3449,
+        "winCount": 1788,
+        "name": "Blissey",
+        "img": "t_Square_Blissey"
+      },
+      {
+        "pokemonId": 100653,
+        "winRate": 49,
+        "count": 3127,
+        "winCount": 1595,
+        "name": "Delphox",
+        "img": "t_Square_Delphox"
+      },
+      {
+        "pokemonId": 100708,
+        "winRate": 48,
+        "count": 3247,
+        "winCount": 1704,
+        "name": "Trevenant",
+        "img": "t_Square_Trevenant"
+      },
+      {
+        "pokemonId": 100661,
+        "winRate": 49,
+        "count": 5140,
+        "winCount": 2603,
+        "name": "Talonflame",
+        "img": "t_Square_Talonflame"
+      },
+      {
+        "pokemonId": 100679,
+        "winRate": 46,
+        "count": 1204,
+        "winCount": 652,
+        "name": "Aegislash",
+        "img": "t_Square_Aegislash"
+      },
+      {
+        "pokemonId": 100724,
+        "winRate": 49,
+        "count": 7744,
+        "winCount": 3975,
+        "name": "Decidueye",
+        "img": "t_Square_Decidueye"
+      },
+      {
+        "pokemonId": 190066,
+        "winRate": 48,
+        "count": 4328,
+        "winCount": 2245,
+        "name": "Machamp",
+        "img": "t_Square_Machamp"
+      },
+      {
+        "pokemonId": 100004,
+        "winRate": 48,
+        "count": 1299,
+        "winCount": 678,
+        "name": "Charizard",
+        "img": "t_Square_Charizard"
+      },
+      {
+        "pokemonId": 100763,
+        "winRate": 48,
+        "count": 1542,
+        "winCount": 795,
+        "name": "Tsareena",
+        "img": "t_Square_Tsareena"
+      },
+      {
+        "pokemonId": 190122,
+        "winRate": 49,
+        "count": 1977,
+        "winCount": 1010,
+        "name": "Mr. Mime",
+        "img": "t_Square_MrMime"
+      },
+      {
+        "pokemonId": 109150,
+        "winRate": 51,
+        "count": 3757,
+        "winCount": 1840,
+        "name": "Mewtwo",
+        "img": "t_Square_MewtwoY"
+      },
+      {
+        "pokemonId": 106004,
+        "winRate": 48,
+        "count": 4436,
+        "winCount": 2313,
+        "name": "Mega Charizard X",
+        "img": "t_Square_CharizardX"
+      },
+      {
+        "pokemonId": 100491,
+        "winRate": 49,
+        "count": 1077,
+        "winCount": 549,
+        "name": "Darkrai",
+        "img": "t_Square_Darkrai"
+      },
+      {
+        "pokemonId": 100816,
+        "winRate": 49,
+        "count": 5116,
+        "winCount": 2623,
+        "name": "Inteleon",
+        "img": "t_Square_Inteleon"
+      },
+      {
+        "pokemonId": 100381,
+        "winRate": 47,
+        "count": 2546,
+        "winCount": 1350,
+        "name": "Latios",
+        "img": "t_Square_Latios"
+      },
+      {
+        "pokemonId": 100570,
+        "winRate": 46,
+        "count": 1880,
+        "winCount": 1021,
+        "name": "Zoroark",
+        "img": "t_Square_Zoroark"
+      },
+      {
+        "pokemonId": 100764,
+        "winRate": 46,
+        "count": 1983,
+        "winCount": 1064,
+        "name": "Comfey",
+        "img": "t_Square_Comfey"
+      },
+      {
+        "pokemonId": 100380,
+        "winRate": 52,
+        "count": 3906,
+        "winCount": 1863,
+        "name": "Latias",
+        "img": "t_Square_Latias"
+      },
+      {
+        "pokemonId": 100197,
+        "winRate": 48,
+        "count": 4678,
+        "winCount": 2423,
+        "name": "Umbreon",
+        "img": "t_Square_Umbreon"
+      },
+      {
+        "pokemonId": 109129,
+        "winRate": 53,
+        "count": 3725,
+        "winCount": 1737,
+        "name": "Mega Gyarados",
+        "img": "t_Square_MegaGyarados"
+      },
+      {
+        "pokemonId": 100026,
+        "winRate": 47,
+        "count": 2125,
+        "winCount": 1130,
+        "name": "Alolan Raichu",
+        "img": "t_Square_Raichu"
+      },
+      {
+        "pokemonId": 190280,
+        "winRate": 48,
+        "count": 3381,
+        "winCount": 1768,
+        "name": "Gardevoir",
+        "img": "t_Square_Gardevoir"
+      },
+      {
+        "pokemonId": 100781,
+        "winRate": 49,
+        "count": 2465,
+        "winCount": 1259,
+        "name": "Dhelmise",
+        "img": "t_Square_Dhelmise"
+      },
+      {
+        "pokemonId": 190807,
+        "winRate": 46,
+        "count": 2330,
+        "winCount": 1254,
+        "name": "Zeraora",
+        "img": "t_Square_Zeraora"
+      },
+      {
+        "pokemonId": 108448,
+        "winRate": 52,
+        "count": 4706,
+        "winCount": 2263,
+        "name": "Mega Lucario",
+        "img": "t_Square_MEGALucario"
+      },
+      {
+        "pokemonId": 101008,
+        "winRate": 49,
+        "count": 2307,
+        "winCount": 1174,
+        "name": "Miraidon",
+        "img": "t_Square_Miraidon"
+      },
+      {
+        "pokemonId": 100131,
+        "winRate": 48,
+        "count": 2784,
+        "winCount": 1455,
+        "name": "Lapras",
+        "img": "t_Square_Lapras"
+      },
+      {
+        "pokemonId": 100035,
+        "winRate": 48,
+        "count": 4180,
+        "winCount": 2192,
+        "name": "Clefable",
+        "img": "t_Square_Clefable"
+      },
+      {
+        "pokemonId": 100151,
+        "winRate": 48,
+        "count": 2605,
+        "winCount": 1364,
+        "name": "Mew",
+        "img": "t_Square_Mew"
+      },
+      {
+        "pokemonId": 100885,
+        "winRate": 47,
+        "count": 1137,
+        "winCount": 603,
+        "name": "Dragapult",
+        "img": "t_Square_Dragapult"
+      },
+      {
+        "pokemonId": 100245,
+        "winRate": 45,
+        "count": 7766,
+        "winCount": 4300,
+        "name": "Suicune",
+        "img": "t_Square_Suicune"
+      },
+      {
+        "pokemonId": 100001,
+        "winRate": 48,
+        "count": 2874,
+        "winCount": 1505,
+        "name": "Venusaur",
+        "img": "t_Square_Venusaur"
+      },
+      {
+        "pokemonId": 100892,
+        "winRate": 48,
+        "count": 952,
+        "winCount": 492,
+        "name": "Urshifu",
+        "img": "t_Square_Urshifu_Single"
+      },
+      {
+        "pokemonId": 100039,
+        "winRate": 51,
+        "count": 1658,
+        "winCount": 812,
+        "name": "Wigglytuff",
+        "img": "t_Square_Wigglytuff"
+      },
+      {
+        "pokemonId": 190359,
+        "winRate": 45,
+        "count": 1790,
+        "winCount": 984,
+        "name": "Absol",
+        "img": "t_Square_Absol"
+      },
+      {
+        "pokemonId": 100448,
+        "winRate": 47,
+        "count": 2145,
+        "winCount": 1133,
+        "name": "Lucario",
+        "img": "t_Square_Lucario"
+      },
+      {
+        "pokemonId": 100246,
+        "winRate": 50,
+        "count": 892,
+        "winCount": 448,
+        "name": "Tyranitar",
+        "img": "t_Square_Tyranitar"
+      },
+      {
+        "pokemonId": 100196,
+        "winRate": 48,
+        "count": 4310,
+        "winCount": 2236,
+        "name": "Espeon",
+        "img": "t_Square_Espeon"
+      },
+      {
+        "pokemonId": 100302,
+        "winRate": 44,
+        "count": 999,
+        "winCount": 558,
+        "name": "Sableye",
+        "img": "t_Square_Sableye"
+      },
+      {
+        "pokemonId": 100609,
+        "winRate": 48,
+        "count": 607,
+        "winCount": 318,
+        "name": "Chandelure",
+        "img": "t_Square_Chandelure"
+      },
+      {
+        "pokemonId": 108004,
+        "winRate": 55,
+        "count": 1246,
+        "winCount": 566,
+        "name": "Mega Charizard Y",
+        "img": "t_Square_CharizardY"
+      },
+      {
+        "pokemonId": 190037,
+        "winRate": 47,
+        "count": 2027,
+        "winCount": 1077,
+        "name": "Alolan Ninetales",
+        "img": "t_Square_Ninetales"
+      },
+      {
+        "pokemonId": 100395,
+        "winRate": 47,
+        "count": 1256,
+        "winCount": 660,
+        "name": "Empoleon",
+        "img": "t_Square_Empoleon"
+      },
+      {
+        "pokemonId": 100829,
+        "winRate": 47,
+        "count": 2775,
+        "winCount": 1466,
+        "name": "Eldegoss",
+        "img": "t_Square_Eldegoss"
+      },
+      {
+        "pokemonId": 100906,
+        "winRate": 48,
+        "count": 1238,
+        "winCount": 642,
+        "name": "Meowscarada",
+        "img": "t_Square_Meowscara"
+      },
+      {
+        "pokemonId": 100129,
+        "winRate": 52,
+        "count": 925,
+        "winCount": 444,
+        "name": "Gyarados",
+        "img": "t_Square_Gyarados"
+      },
+      {
+        "pokemonId": 100868,
+        "winRate": 50,
+        "count": 2355,
+        "winCount": 1172,
+        "name": "Alcremie",
+        "img": "t_Square_Alcremie"
+      },
+      {
+        "pokemonId": 100720,
+        "winRate": 46,
+        "count": 1474,
+        "winCount": 793,
+        "name": "Hoopa",
+        "img": "t_Square_Hoopa"
+      },
+      {
+        "pokemonId": 190143,
+        "winRate": 49,
+        "count": 4524,
+        "winCount": 2325,
+        "name": "Snorlax",
+        "img": "t_Square_Snorlax"
+      },
+      {
+        "pokemonId": 190820,
+        "winRate": 54,
+        "count": 519,
+        "winCount": 238,
+        "name": "Greedent",
+        "img": "t_Square_Greedent"
+      },
+      {
+        "pokemonId": 100957,
+        "winRate": 44,
+        "count": 445,
+        "winCount": 248,
+        "name": "Tinkaton",
+        "img": "t_Square_Tinkaton"
+      },
+      {
+        "pokemonId": 100557,
+        "winRate": 49,
+        "count": 2094,
+        "winCount": 1059,
+        "name": "Crustle",
+        "img": "t_Square_Crustle"
+      },
+      {
+        "pokemonId": 100888,
+        "winRate": 46,
+        "count": 1025,
+        "winCount": 553,
+        "name": "Zacian",
+        "img": "t_Square_Zacian"
+      },
+      {
+        "pokemonId": 100936,
+        "winRate": 50,
+        "count": 786,
+        "winCount": 395,
+        "name": "Armarouge",
+        "img": "t_Square_Armarouge"
+      },
+      {
+        "pokemonId": 100700,
+        "winRate": 48,
+        "count": 1873,
+        "winCount": 978,
+        "name": "Sylveon",
+        "img": "t_Square_Sylveon"
+      },
+      {
+        "pokemonId": 100870,
+        "winRate": 50,
+        "count": 219,
+        "winCount": 110,
+        "name": "Falinks",
+        "img": "t_Square_Falinks"
+      },
+      {
+        "pokemonId": 100884,
+        "winRate": 45,
+        "count": 279,
+        "winCount": 153,
+        "name": "Duraludon",
+        "img": "t_Square_Duraludon"
+      },
+      {
+        "pokemonId": 190845,
+        "winRate": 43,
+        "count": 398,
+        "winCount": 226,
+        "name": "Cramorant",
+        "img": "t_Square_Cramorant"
+      },
+      {
+        "pokemonId": 100183,
+        "winRate": 47,
+        "count": 1059,
+        "winCount": 559,
+        "name": "Azumarill",
+        "img": "t_Square_Azumarill"
+      },
+      {
+        "pokemonId": 100054,
+        "winRate": 48,
+        "count": 833,
+        "winCount": 435,
+        "name": "Psyduck",
+        "img": "t_Square_Psyduck"
+      },
+      {
+        "pokemonId": 100077,
+        "winRate": 46,
+        "count": 500,
+        "winCount": 268,
+        "name": "Galarian Rapidash",
+        "img": "t_Square_Rapidash"
+      },
+      {
+        "pokemonId": 100374,
+        "winRate": 45,
+        "count": 769,
+        "winCount": 420,
+        "name": "Metagross",
+        "img": "t_Square_Metagross"
+      },
+      {
+        "pokemonId": 190443,
+        "winRate": 41,
+        "count": 432,
+        "winCount": 257,
+        "name": "Garchomp",
+        "img": "t_Square_Garchomp"
+      },
+      {
+        "pokemonId": 100706,
+        "winRate": 42,
+        "count": 942,
+        "winCount": 549,
+        "name": "Goodra",
+        "img": "t_Square_Goodra"
+      }
+    ],
+    "mirror": [
+      {
+        "pokemonId": 100471,
+        "winRate": 56,
+        "count": 476,
+        "winCount": 210,
+        "name": "Glaceon",
+        "img": "t_Square_Glaceon"
+      },
+      {
+        "pokemonId": 100923,
+        "winRate": 65,
+        "count": 34,
+        "winCount": 12,
+        "name": "Pawmot",
+        "img": "t_Square_Pawmot"
+      },
+      {
+        "pokemonId": 100778,
+        "winRate": 42,
+        "count": 139,
+        "winCount": 81,
+        "name": "Mimikyu",
+        "img": "t_Square_Mimikyu"
+      },
+      {
+        "pokemonId": 100147,
+        "winRate": 48,
+        "count": 33,
+        "winCount": 17,
+        "name": "Dragonite",
+        "img": "t_Square_Dragonite"
+      },
+      {
+        "pokemonId": 100250,
+        "winRate": 42,
+        "count": 36,
+        "winCount": 21,
+        "name": "Ho-Oh",
+        "img": "t_Square_HoOh"
+      },
+      {
+        "pokemonId": 100150,
+        "winRate": 53,
+        "count": 109,
+        "winCount": 51,
+        "name": "Mewtwo",
+        "img": "t_Square_MewtwoX"
+      },
+      {
+        "pokemonId": 100084,
+        "winRate": 56,
+        "count": 34,
+        "winCount": 15,
+        "name": "Dodrio",
+        "img": "t_Square_Dodrio"
+      },
+      {
+        "pokemonId": 190092,
+        "winRate": 51,
+        "count": 156,
+        "winCount": 76,
+        "name": "Gengar",
+        "img": "t_Square_Gengar"
+      },
+      {
+        "pokemonId": 100794,
+        "winRate": 51,
+        "count": 79,
+        "winCount": 39,
+        "name": "Buzzwole",
+        "img": "t_Square_Buzzwole"
+      },
+      {
+        "pokemonId": 100813,
+        "winRate": 42,
+        "count": 166,
+        "winCount": 96,
+        "name": "Cinderace",
+        "img": "t_Square_Cinderace"
+      },
+      {
+        "pokemonId": 100470,
+        "winRate": 49,
+        "count": 86,
+        "winCount": 44,
+        "name": "Leafeon",
+        "img": "t_Square_Leafeon"
+      },
+      {
+        "pokemonId": 100134,
+        "winRate": 59,
+        "count": 155,
+        "winCount": 64,
+        "name": "Vaporeon",
+        "img": "t_Square_Vaporeon"
+      },
+      {
+        "pokemonId": 100255,
+        "winRate": 47,
+        "count": 113,
+        "winCount": 60,
+        "name": "Blaziken",
+        "img": "t_Square_Blaziken"
+      },
+      {
+        "pokemonId": 100025,
+        "winRate": 42,
+        "count": 132,
+        "winCount": 76,
+        "name": "Pikachu",
+        "img": "t_Square_Pikachu"
+      },
+      {
+        "pokemonId": 100220,
+        "winRate": 36,
+        "count": 42,
+        "winCount": 27,
+        "name": "Mamoswine",
+        "img": "t_Square_Mamoswine"
+      },
+      {
+        "pokemonId": 100937,
+        "winRate": 46,
+        "count": 39,
+        "winCount": 21,
+        "name": "Ceruledge",
+        "img": "t_Square_Ceruledge"
+      },
+      {
+        "pokemonId": 100123,
+        "winRate": 54,
+        "count": 235,
+        "winCount": 108,
+        "name": "Scizor",
+        "img": "t_Square_Scizor"
+      },
+      {
+        "pokemonId": 190656,
+        "winRate": 44,
+        "count": 230,
+        "winCount": 128,
+        "name": "Greninja",
+        "img": "t_Square_Greninja"
+      },
+      {
+        "pokemonId": 190079,
+        "winRate": 51,
+        "count": 37,
+        "winCount": 18,
+        "name": "Slowbro",
+        "img": "t_Square_Slowbro"
+      },
+      {
+        "pokemonId": 100113,
+        "winRate": 49,
+        "count": 114,
+        "winCount": 58,
+        "name": "Blissey",
+        "img": "t_Square_Blissey"
+      },
+      {
+        "pokemonId": 100653,
+        "winRate": 48,
+        "count": 71,
+        "winCount": 37,
+        "name": "Delphox",
+        "img": "t_Square_Delphox"
+      },
+      {
+        "pokemonId": 100708,
+        "winRate": 66,
+        "count": 32,
+        "winCount": 11,
+        "name": "Trevenant",
+        "img": "t_Square_Trevenant"
+      },
+      {
+        "pokemonId": 100661,
+        "winRate": 48,
+        "count": 165,
+        "winCount": 86,
+        "name": "Talonflame",
+        "img": "t_Square_Talonflame"
+      },
+      {
+        "pokemonId": 100679,
+        "winRate": 50,
+        "count": 32,
+        "winCount": 16,
+        "name": "Aegislash",
+        "img": "t_Square_Aegislash"
+      },
+      {
+        "pokemonId": 100724,
+        "winRate": 50,
+        "count": 310,
+        "winCount": 155,
+        "name": "Decidueye",
+        "img": "t_Square_Decidueye"
+      },
+      {
+        "pokemonId": 190066,
+        "winRate": 56,
+        "count": 139,
+        "winCount": 61,
+        "name": "Machamp",
+        "img": "t_Square_Machamp"
+      },
+      {
+        "pokemonId": 100004,
+        "winRate": 34,
+        "count": 35,
+        "winCount": 23,
+        "name": "Charizard",
+        "img": "t_Square_Charizard"
+      },
+      {
+        "pokemonId": 100763,
+        "winRate": 52,
+        "count": 23,
+        "winCount": 11,
+        "name": "Tsareena",
+        "img": "t_Square_Tsareena"
+      },
+      {
+        "pokemonId": 190122,
+        "winRate": 37,
+        "count": 38,
+        "winCount": 24,
+        "name": "Mr. Mime",
+        "img": "t_Square_MrMime"
+      },
+      {
+        "pokemonId": 109150,
+        "winRate": 57,
+        "count": 46,
+        "winCount": 20,
+        "name": "Mewtwo",
+        "img": "t_Square_MewtwoY"
+      },
+      {
+        "pokemonId": 106004,
+        "winRate": 49,
+        "count": 300,
+        "winCount": 153,
+        "name": "Mega Charizard X",
+        "img": "t_Square_CharizardX"
+      },
+      {
+        "pokemonId": 100491,
+        "winRate": 53,
+        "count": 30,
+        "winCount": 14,
+        "name": "Darkrai",
+        "img": "t_Square_Darkrai"
+      },
+      {
+        "pokemonId": 100816,
+        "winRate": 54,
+        "count": 179,
+        "winCount": 83,
+        "name": "Inteleon",
+        "img": "t_Square_Inteleon"
+      },
+      {
+        "pokemonId": 100381,
+        "winRate": 63,
+        "count": 40,
+        "winCount": 15,
+        "name": "Latios",
+        "img": "t_Square_Latios"
+      },
+      {
+        "pokemonId": 100570,
+        "winRate": 46,
+        "count": 84,
+        "winCount": 45,
+        "name": "Zoroark",
+        "img": "t_Square_Zoroark"
+      },
+      {
+        "pokemonId": 100764,
+        "winRate": 49,
+        "count": 59,
+        "winCount": 30,
+        "name": "Comfey",
+        "img": "t_Square_Comfey"
+      },
+      {
+        "pokemonId": 100380,
+        "winRate": 46,
+        "count": 57,
+        "winCount": 31,
+        "name": "Latias",
+        "img": "t_Square_Latias"
+      },
+      {
+        "pokemonId": 100197,
+        "winRate": 47,
+        "count": 45,
+        "winCount": 24,
+        "name": "Umbreon",
+        "img": "t_Square_Umbreon"
+      },
+      {
+        "pokemonId": 109129,
+        "winRate": 49,
+        "count": 244,
+        "winCount": 125,
+        "name": "Mega Gyarados",
+        "img": "t_Square_MegaGyarados"
+      },
+      {
+        "pokemonId": 100026,
+        "winRate": 39,
+        "count": 57,
+        "winCount": 35,
+        "name": "Alolan Raichu",
+        "img": "t_Square_Raichu"
+      },
+      {
+        "pokemonId": 190280,
+        "winRate": 51,
+        "count": 138,
+        "winCount": 67,
+        "name": "Gardevoir",
+        "img": "t_Square_Gardevoir"
+      },
+      {
+        "pokemonId": 100781,
+        "winRate": 63,
+        "count": 41,
+        "winCount": 15,
+        "name": "Dhelmise",
+        "img": "t_Square_Dhelmise"
+      },
+      {
+        "pokemonId": 190807,
+        "winRate": 49,
+        "count": 75,
+        "winCount": 38,
+        "name": "Zeraora",
+        "img": "t_Square_Zeraora"
+      },
+      {
+        "pokemonId": 108448,
+        "winRate": 58,
+        "count": 108,
+        "winCount": 45,
+        "name": "Mega Lucario",
+        "img": "t_Square_MEGALucario"
+      },
+      {
+        "pokemonId": 101008,
+        "winRate": 53,
+        "count": 40,
+        "winCount": 19,
+        "name": "Miraidon",
+        "img": "t_Square_Miraidon"
+      },
+      {
+        "pokemonId": 100131,
+        "winRate": 52,
+        "count": 46,
+        "winCount": 22,
+        "name": "Lapras",
+        "img": "t_Square_Lapras"
+      },
+      {
+        "pokemonId": 100035,
+        "winRate": 52,
+        "count": 102,
+        "winCount": 49,
+        "name": "Clefable",
+        "img": "t_Square_Clefable"
+      },
+      {
+        "pokemonId": 100151,
+        "winRate": 60,
+        "count": 65,
+        "winCount": 26,
+        "name": "Mew",
+        "img": "t_Square_Mew"
+      },
+      {
+        "pokemonId": 100885,
+        "winRate": 45,
+        "count": 38,
+        "winCount": 21,
+        "name": "Dragapult",
+        "img": "t_Square_Dragapult"
+      },
+      {
+        "pokemonId": 100245,
+        "winRate": 46,
+        "count": 241,
+        "winCount": 131,
+        "name": "Suicune",
+        "img": "t_Square_Suicune"
+      },
+      {
+        "pokemonId": 100001,
+        "winRate": 45,
+        "count": 102,
+        "winCount": 56,
+        "name": "Venusaur",
+        "img": "t_Square_Venusaur"
+      },
+      {
+        "pokemonId": 100892,
+        "winRate": 39,
+        "count": 23,
+        "winCount": 14,
+        "name": "Urshifu",
+        "img": "t_Square_Urshifu_Single"
+      },
+      {
+        "pokemonId": 100039,
+        "winRate": 42,
+        "count": 50,
+        "winCount": 29,
+        "name": "Wigglytuff",
+        "img": "t_Square_Wigglytuff"
+      },
+      {
+        "pokemonId": 190359,
+        "winRate": 48,
+        "count": 80,
+        "winCount": 42,
+        "name": "Absol",
+        "img": "t_Square_Absol"
+      },
+      {
+        "pokemonId": 100448,
+        "winRate": 44,
+        "count": 79,
+        "winCount": 44,
+        "name": "Lucario",
+        "img": "t_Square_Lucario"
+      },
+      {
+        "pokemonId": 100246,
+        "winRate": 37,
+        "count": 19,
+        "winCount": 12,
+        "name": "Tyranitar",
+        "img": "t_Square_Tyranitar"
+      },
+      {
+        "pokemonId": 100196,
+        "winRate": 49,
+        "count": 151,
+        "winCount": 77,
+        "name": "Espeon",
+        "img": "t_Square_Espeon"
+      },
+      {
+        "pokemonId": 100302,
+        "winRate": 44,
+        "count": 32,
+        "winCount": 18,
+        "name": "Sableye",
+        "img": "t_Square_Sableye"
+      },
+      {
+        "pokemonId": 100609,
+        "winRate": 53,
+        "count": 17,
+        "winCount": 8,
+        "name": "Chandelure",
+        "img": "t_Square_Chandelure"
+      },
+      {
+        "pokemonId": 108004,
+        "winRate": 62,
+        "count": 115,
+        "winCount": 44,
+        "name": "Mega Charizard Y",
+        "img": "t_Square_CharizardY"
+      },
+      {
+        "pokemonId": 190037,
+        "winRate": 42,
+        "count": 79,
+        "winCount": 46,
+        "name": "Alolan Ninetales",
+        "img": "t_Square_Ninetales"
+      },
+      {
+        "pokemonId": 100395,
+        "winRate": 43,
+        "count": 28,
+        "winCount": 16,
+        "name": "Empoleon",
+        "img": "t_Square_Empoleon"
+      },
+      {
+        "pokemonId": 100829,
+        "winRate": 58,
+        "count": 66,
+        "winCount": 28,
+        "name": "Eldegoss",
+        "img": "t_Square_Eldegoss"
+      },
+      {
+        "pokemonId": 100906,
+        "winRate": 48,
+        "count": 44,
+        "winCount": 23,
+        "name": "Meowscarada",
+        "img": "t_Square_Meowscara"
+      },
+      {
+        "pokemonId": 100129,
+        "winRate": 41,
+        "count": 22,
+        "winCount": 13,
+        "name": "Gyarados",
+        "img": "t_Square_Gyarados"
+      },
+      {
+        "pokemonId": 100868,
+        "winRate": 58,
+        "count": 31,
+        "winCount": 13,
+        "name": "Alcremie",
+        "img": "t_Square_Alcremie"
+      },
+      {
+        "pokemonId": 100720,
+        "winRate": 45,
+        "count": 44,
+        "winCount": 24,
+        "name": "Hoopa",
+        "img": "t_Square_Hoopa"
+      },
+      {
+        "pokemonId": 190143,
+        "winRate": 57,
+        "count": 42,
+        "winCount": 18,
+        "name": "Snorlax",
+        "img": "t_Square_Snorlax"
+      },
+      {
+        "pokemonId": 190820,
+        "winRate": 75,
+        "count": 8,
+        "winCount": 2,
+        "name": "Greedent",
+        "img": "t_Square_Greedent"
+      },
+      {
+        "pokemonId": 100957,
+        "winRate": 50,
+        "count": 8,
+        "winCount": 4,
+        "name": "Tinkaton",
+        "img": "t_Square_Tinkaton"
+      },
+      {
+        "pokemonId": 100557,
+        "winRate": 56,
+        "count": 9,
+        "winCount": 4,
+        "name": "Crustle",
+        "img": "t_Square_Crustle"
+      },
+      {
+        "pokemonId": 100888,
+        "winRate": 55,
+        "count": 20,
+        "winCount": 9,
+        "name": "Zacian",
+        "img": "t_Square_Zacian"
+      },
+      {
+        "pokemonId": 100936,
+        "winRate": 35,
+        "count": 23,
+        "winCount": 15,
+        "name": "Armarouge",
+        "img": "t_Square_Armarouge"
+      },
+      {
+        "pokemonId": 100700,
+        "winRate": 57,
+        "count": 69,
+        "winCount": 30,
+        "name": "Sylveon",
+        "img": "t_Square_Sylveon"
+      },
+      {
+        "pokemonId": 100870,
+        "winRate": 44,
+        "count": 9,
+        "winCount": 5,
+        "name": "Falinks",
+        "img": "t_Square_Falinks"
+      },
+      {
+        "pokemonId": 100884,
+        "winRate": 64,
+        "count": 14,
+        "winCount": 5,
+        "name": "Duraludon",
+        "img": "t_Square_Duraludon"
+      },
+      {
+        "pokemonId": 190845,
+        "winRate": 50,
+        "count": 16,
+        "winCount": 8,
+        "name": "Cramorant",
+        "img": "t_Square_Cramorant"
+      },
+      {
+        "pokemonId": 180007,
+        "winRate": 50,
+        "count": 1656,
+        "winCount": 828,
+        "name": "Blastoise",
+        "img": "t_Square_Blastoise"
+      },
+      {
+        "pokemonId": 100183,
+        "winRate": 47,
+        "count": 36,
+        "winCount": 19,
+        "name": "Azumarill",
+        "img": "t_Square_Azumarill"
+      },
+      {
+        "pokemonId": 100054,
+        "winRate": 53,
+        "count": 15,
+        "winCount": 7,
+        "name": "Psyduck",
+        "img": "t_Square_Psyduck"
+      },
+      {
+        "pokemonId": 100077,
+        "winRate": 63,
+        "count": 8,
+        "winCount": 3,
+        "name": "Galarian Rapidash",
+        "img": "t_Square_Rapidash"
+      },
+      {
+        "pokemonId": 100374,
+        "winRate": 44,
+        "count": 16,
+        "winCount": 9,
+        "name": "Metagross",
+        "img": "t_Square_Metagross"
+      },
+      {
+        "pokemonId": 190443,
+        "winRate": 50,
+        "count": 10,
+        "winCount": 5,
+        "name": "Garchomp",
+        "img": "t_Square_Garchomp"
+      },
+      {
+        "pokemonId": 100706,
+        "winRate": 43,
+        "count": 14,
+        "winCount": 8,
+        "name": "Goodra",
+        "img": "t_Square_Goodra"
+      }
+    ],
+    "name": "Blastoise",
+    "all": [
+      {
+        "pokemonId": 100471,
+        "winCount": 3691,
+        "name": "Glaceon",
+        "count": 7780,
+        "img": "t_Square_Glaceon",
+        "winRate": 53
+      },
+      {
+        "pokemonId": 100923,
+        "winCount": 597,
+        "name": "Pawmot",
+        "count": 1148,
+        "img": "t_Square_Pawmot",
+        "winRate": 48
+      },
+      {
+        "pokemonId": 100778,
+        "winCount": 2736,
+        "name": "Mimikyu",
+        "count": 5417,
+        "img": "t_Square_Mimikyu",
+        "winRate": 49
+      },
+      {
+        "pokemonId": 100147,
+        "winCount": 400,
+        "name": "Dragonite",
+        "count": 759,
+        "img": "t_Square_Dragonite",
+        "winRate": 47
+      },
+      {
+        "pokemonId": 100250,
+        "winCount": 1928,
+        "name": "Ho-Oh",
+        "count": 3741,
+        "img": "t_Square_HoOh",
+        "winRate": 48
+      },
+      {
+        "pokemonId": 100150,
+        "winCount": 2977,
+        "name": "Mewtwo",
+        "count": 6426,
+        "img": "t_Square_MewtwoX",
+        "winRate": 54
+      },
+      {
+        "pokemonId": 100084,
+        "winCount": 665,
+        "name": "Dodrio",
+        "count": 1372,
+        "img": "t_Square_Dodrio",
+        "winRate": 52
+      },
+      {
+        "pokemonId": 190092,
+        "winCount": 2040,
+        "name": "Gengar",
+        "count": 4177,
+        "img": "t_Square_Gengar",
+        "winRate": 51
+      },
+      {
+        "pokemonId": 100794,
+        "winCount": 1735,
+        "name": "Buzzwole",
+        "count": 3225,
+        "img": "t_Square_Buzzwole",
+        "winRate": 46
+      },
+      {
+        "pokemonId": 100813,
+        "winCount": 2182,
+        "name": "Cinderace",
+        "count": 4131,
+        "img": "t_Square_Cinderace",
+        "winRate": 47
+      },
+      {
+        "pokemonId": 100470,
+        "winCount": 1693,
+        "name": "Leafeon",
+        "count": 3255,
+        "img": "t_Square_Leafeon",
+        "winRate": 48
+      },
+      {
+        "pokemonId": 100134,
+        "winCount": 4736,
+        "name": "Vaporeon",
+        "count": 10235,
+        "img": "t_Square_Vaporeon",
+        "winRate": 54
+      },
+      {
+        "pokemonId": 100255,
+        "winCount": 2103,
+        "name": "Blaziken",
+        "count": 4116,
+        "img": "t_Square_Blaziken",
+        "winRate": 49
+      },
+      {
+        "pokemonId": 100025,
+        "winCount": 1951,
+        "name": "Pikachu",
+        "count": 3636,
+        "img": "t_Square_Pikachu",
+        "winRate": 46
+      },
+      {
+        "pokemonId": 100220,
+        "winCount": 1547,
+        "name": "Mamoswine",
+        "count": 2853,
+        "img": "t_Square_Mamoswine",
+        "winRate": 46
+      },
+      {
+        "pokemonId": 100937,
+        "winCount": 530,
+        "name": "Ceruledge",
+        "count": 953,
+        "img": "t_Square_Ceruledge",
+        "winRate": 44
+      },
+      {
+        "pokemonId": 100123,
+        "winCount": 3361,
+        "name": "Scizor",
+        "count": 6640,
+        "img": "t_Square_Scizor",
+        "winRate": 49
+      },
+      {
+        "pokemonId": 190656,
+        "winCount": 2720,
+        "name": "Greninja",
+        "count": 5217,
+        "img": "t_Square_Greninja",
+        "winRate": 48
+      },
+      {
+        "pokemonId": 190079,
+        "winCount": 2211,
+        "name": "Slowbro",
+        "count": 4196,
+        "img": "t_Square_Slowbro",
+        "winRate": 47
+      },
+      {
+        "pokemonId": 100113,
+        "winCount": 1846,
+        "name": "Blissey",
+        "count": 3563,
+        "img": "t_Square_Blissey",
+        "winRate": 48
+      },
+      {
+        "pokemonId": 100653,
+        "winCount": 1632,
+        "name": "Delphox",
+        "count": 3198,
+        "img": "t_Square_Delphox",
+        "winRate": 49
+      },
+      {
+        "pokemonId": 100708,
+        "winCount": 1715,
+        "name": "Trevenant",
+        "count": 3279,
+        "img": "t_Square_Trevenant",
+        "winRate": 48
+      },
+      {
+        "pokemonId": 100661,
+        "winCount": 2689,
+        "name": "Talonflame",
+        "count": 5305,
+        "img": "t_Square_Talonflame",
+        "winRate": 49
+      },
+      {
+        "pokemonId": 100679,
+        "winCount": 668,
+        "name": "Aegislash",
+        "count": 1236,
+        "img": "t_Square_Aegislash",
+        "winRate": 46
+      },
+      {
+        "pokemonId": 100724,
+        "winCount": 4130,
+        "name": "Decidueye",
+        "count": 8054,
+        "img": "t_Square_Decidueye",
+        "winRate": 49
+      },
+      {
+        "pokemonId": 190066,
+        "winCount": 2306,
+        "name": "Machamp",
+        "count": 4467,
+        "img": "t_Square_Machamp",
+        "winRate": 48
+      },
+      {
+        "pokemonId": 100004,
+        "winCount": 701,
+        "name": "Charizard",
+        "count": 1334,
+        "img": "t_Square_Charizard",
+        "winRate": 47
+      },
+      {
+        "pokemonId": 100763,
+        "winCount": 806,
+        "name": "Tsareena",
+        "count": 1565,
+        "img": "t_Square_Tsareena",
+        "winRate": 48
+      },
+      {
+        "pokemonId": 190122,
+        "winCount": 1034,
+        "name": "Mr. Mime",
+        "count": 2015,
+        "img": "t_Square_MrMime",
+        "winRate": 49
+      },
+      {
+        "pokemonId": 109150,
+        "winCount": 1860,
+        "name": "Mewtwo",
+        "count": 3803,
+        "img": "t_Square_MewtwoY",
+        "winRate": 51
+      },
+      {
+        "pokemonId": 106004,
+        "winCount": 2466,
+        "name": "Mega Charizard X",
+        "count": 4736,
+        "img": "t_Square_CharizardX",
+        "winRate": 48
+      },
+      {
+        "pokemonId": 100491,
+        "winCount": 563,
+        "name": "Darkrai",
+        "count": 1107,
+        "img": "t_Square_Darkrai",
+        "winRate": 49
+      },
+      {
+        "pokemonId": 100816,
+        "winCount": 2706,
+        "name": "Inteleon",
+        "count": 5295,
+        "img": "t_Square_Inteleon",
+        "winRate": 49
+      },
+      {
+        "pokemonId": 100381,
+        "winCount": 1365,
+        "name": "Latios",
+        "count": 2586,
+        "img": "t_Square_Latios",
+        "winRate": 47
+      },
+      {
+        "pokemonId": 100570,
+        "winCount": 1066,
+        "name": "Zoroark",
+        "count": 1964,
+        "img": "t_Square_Zoroark",
+        "winRate": 46
+      },
+      {
+        "pokemonId": 100764,
+        "winCount": 1094,
+        "name": "Comfey",
+        "count": 2042,
+        "img": "t_Square_Comfey",
+        "winRate": 46
+      },
+      {
+        "pokemonId": 100380,
+        "winCount": 1894,
+        "name": "Latias",
+        "count": 3963,
+        "img": "t_Square_Latias",
+        "winRate": 52
+      },
+      {
+        "pokemonId": 100197,
+        "winCount": 2447,
+        "name": "Umbreon",
+        "count": 4723,
+        "img": "t_Square_Umbreon",
+        "winRate": 48
+      },
+      {
+        "pokemonId": 109129,
+        "winCount": 1862,
+        "name": "Mega Gyarados",
+        "count": 3969,
+        "img": "t_Square_MegaGyarados",
+        "winRate": 53
+      },
+      {
+        "pokemonId": 100026,
+        "winCount": 1165,
+        "name": "Alolan Raichu",
+        "count": 2182,
+        "img": "t_Square_Raichu",
+        "winRate": 47
+      },
+      {
+        "pokemonId": 190280,
+        "winCount": 1835,
+        "name": "Gardevoir",
+        "count": 3519,
+        "img": "t_Square_Gardevoir",
+        "winRate": 48
+      },
+      {
+        "pokemonId": 100781,
+        "winCount": 1274,
+        "name": "Dhelmise",
+        "count": 2506,
+        "img": "t_Square_Dhelmise",
+        "winRate": 49
+      },
+      {
+        "pokemonId": 190807,
+        "winCount": 1292,
+        "name": "Zeraora",
+        "count": 2405,
+        "img": "t_Square_Zeraora",
+        "winRate": 46
+      },
+      {
+        "pokemonId": 108448,
+        "winCount": 2308,
+        "name": "Mega Lucario",
+        "count": 4814,
+        "img": "t_Square_MEGALucario",
+        "winRate": 52
+      },
+      {
+        "pokemonId": 101008,
+        "winCount": 1193,
+        "name": "Miraidon",
+        "count": 2347,
+        "img": "t_Square_Miraidon",
+        "winRate": 49
+      },
+      {
+        "pokemonId": 100131,
+        "winCount": 1477,
+        "name": "Lapras",
+        "count": 2830,
+        "img": "t_Square_Lapras",
+        "winRate": 48
+      },
+      {
+        "pokemonId": 100035,
+        "winCount": 2241,
+        "name": "Clefable",
+        "count": 4282,
+        "img": "t_Square_Clefable",
+        "winRate": 48
+      },
+      {
+        "pokemonId": 100151,
+        "winCount": 1390,
+        "name": "Mew",
+        "count": 2670,
+        "img": "t_Square_Mew",
+        "winRate": 48
+      },
+      {
+        "pokemonId": 100885,
+        "winCount": 624,
+        "name": "Dragapult",
+        "count": 1175,
+        "img": "t_Square_Dragapult",
+        "winRate": 47
+      },
+      {
+        "pokemonId": 100245,
+        "winCount": 4431,
+        "name": "Suicune",
+        "count": 8007,
+        "img": "t_Square_Suicune",
+        "winRate": 45
+      },
+      {
+        "pokemonId": 100001,
+        "winCount": 1561,
+        "name": "Venusaur",
+        "count": 2976,
+        "img": "t_Square_Venusaur",
+        "winRate": 48
+      },
+      {
+        "pokemonId": 100892,
+        "winCount": 506,
+        "name": "Urshifu",
+        "count": 975,
+        "img": "t_Square_Urshifu_Single",
+        "winRate": 48
+      },
+      {
+        "pokemonId": 100039,
+        "winCount": 841,
+        "name": "Wigglytuff",
+        "count": 1708,
+        "img": "t_Square_Wigglytuff",
+        "winRate": 51
+      },
+      {
+        "pokemonId": 190359,
+        "winCount": 1026,
+        "name": "Absol",
+        "count": 1870,
+        "img": "t_Square_Absol",
+        "winRate": 45
+      },
+      {
+        "pokemonId": 100448,
+        "winCount": 1177,
+        "name": "Lucario",
+        "count": 2224,
+        "img": "t_Square_Lucario",
+        "winRate": 47
+      },
+      {
+        "pokemonId": 100246,
+        "winCount": 460,
+        "name": "Tyranitar",
+        "count": 911,
+        "img": "t_Square_Tyranitar",
+        "winRate": 50
+      },
+      {
+        "pokemonId": 100196,
+        "winCount": 2313,
+        "name": "Espeon",
+        "count": 4461,
+        "img": "t_Square_Espeon",
+        "winRate": 48
+      },
+      {
+        "pokemonId": 100302,
+        "winCount": 576,
+        "name": "Sableye",
+        "count": 1031,
+        "img": "t_Square_Sableye",
+        "winRate": 44
+      },
+      {
+        "pokemonId": 100609,
+        "winCount": 326,
+        "name": "Chandelure",
+        "count": 624,
+        "img": "t_Square_Chandelure",
+        "winRate": 48
+      },
+      {
+        "pokemonId": 108004,
+        "winCount": 610,
+        "name": "Mega Charizard Y",
+        "count": 1361,
+        "img": "t_Square_CharizardY",
+        "winRate": 55
+      },
+      {
+        "pokemonId": 190037,
+        "winCount": 1123,
+        "name": "Alolan Ninetales",
+        "count": 2106,
+        "img": "t_Square_Ninetales",
+        "winRate": 47
+      },
+      {
+        "pokemonId": 100395,
+        "winCount": 676,
+        "name": "Empoleon",
+        "count": 1284,
+        "img": "t_Square_Empoleon",
+        "winRate": 47
+      },
+      {
+        "pokemonId": 100829,
+        "winCount": 1494,
+        "name": "Eldegoss",
+        "count": 2841,
+        "img": "t_Square_Eldegoss",
+        "winRate": 47
+      },
+      {
+        "pokemonId": 100906,
+        "winCount": 665,
+        "name": "Meowscarada",
+        "count": 1282,
+        "img": "t_Square_Meowscara",
+        "winRate": 48
+      },
+      {
+        "pokemonId": 100129,
+        "winCount": 457,
+        "name": "Gyarados",
+        "count": 947,
+        "img": "t_Square_Gyarados",
+        "winRate": 52
+      },
+      {
+        "pokemonId": 100868,
+        "winCount": 1185,
+        "name": "Alcremie",
+        "count": 2386,
+        "img": "t_Square_Alcremie",
+        "winRate": 50
+      },
+      {
+        "pokemonId": 100720,
+        "winCount": 817,
+        "name": "Hoopa",
+        "count": 1518,
+        "img": "t_Square_Hoopa",
+        "winRate": 46
+      },
+      {
+        "pokemonId": 190143,
+        "winCount": 2343,
+        "name": "Snorlax",
+        "count": 4566,
+        "img": "t_Square_Snorlax",
+        "winRate": 49
+      },
+      {
+        "pokemonId": 190820,
+        "winCount": 240,
+        "name": "Greedent",
+        "count": 527,
+        "img": "t_Square_Greedent",
+        "winRate": 54
+      },
+      {
+        "pokemonId": 100957,
+        "winCount": 252,
+        "name": "Tinkaton",
+        "count": 453,
+        "img": "t_Square_Tinkaton",
+        "winRate": 44
+      },
+      {
+        "pokemonId": 100557,
+        "winCount": 1063,
+        "name": "Crustle",
+        "count": 2103,
+        "img": "t_Square_Crustle",
+        "winRate": 49
+      },
+      {
+        "pokemonId": 100888,
+        "winCount": 562,
+        "name": "Zacian",
+        "count": 1045,
+        "img": "t_Square_Zacian",
+        "winRate": 46
+      },
+      {
+        "pokemonId": 100936,
+        "winCount": 410,
+        "name": "Armarouge",
+        "count": 809,
+        "img": "t_Square_Armarouge",
+        "winRate": 49
+      },
+      {
+        "pokemonId": 100700,
+        "winCount": 1008,
+        "name": "Sylveon",
+        "count": 1942,
+        "img": "t_Square_Sylveon",
+        "winRate": 48
+      },
+      {
+        "pokemonId": 100870,
+        "winCount": 115,
+        "name": "Falinks",
+        "count": 228,
+        "img": "t_Square_Falinks",
+        "winRate": 50
+      },
+      {
+        "pokemonId": 100884,
+        "winCount": 158,
+        "name": "Duraludon",
+        "count": 293,
+        "img": "t_Square_Duraludon",
+        "winRate": 46
+      },
+      {
+        "pokemonId": 190845,
+        "winCount": 234,
+        "name": "Cramorant",
+        "count": 414,
+        "img": "t_Square_Cramorant",
+        "winRate": 43
+      },
+      {
+        "pokemonId": 180007,
+        "winRate": 50,
+        "count": 1656,
+        "winCount": 828,
+        "name": "Blastoise",
+        "img": "t_Square_Blastoise"
+      },
+      {
+        "pokemonId": 100183,
+        "winCount": 578,
+        "name": "Azumarill",
+        "count": 1095,
+        "img": "t_Square_Azumarill",
+        "winRate": 47
+      },
+      {
+        "pokemonId": 100054,
+        "winCount": 442,
+        "name": "Psyduck",
+        "count": 848,
+        "img": "t_Square_Psyduck",
+        "winRate": 48
+      },
+      {
+        "pokemonId": 100077,
+        "winCount": 271,
+        "name": "Galarian Rapidash",
+        "count": 508,
+        "img": "t_Square_Rapidash",
+        "winRate": 47
+      },
+      {
+        "pokemonId": 100374,
+        "winCount": 429,
+        "name": "Metagross",
+        "count": 785,
+        "img": "t_Square_Metagross",
+        "winRate": 45
+      },
+      {
+        "pokemonId": 190443,
+        "winCount": 262,
+        "name": "Garchomp",
+        "count": 442,
+        "img": "t_Square_Garchomp",
+        "winRate": 41
+      },
+      {
+        "pokemonId": 100706,
+        "winCount": 557,
+        "name": "Goodra",
+        "count": 956,
+        "img": "t_Square_Goodra",
+        "winRate": 42
+      }
+    ]
+  }
+}

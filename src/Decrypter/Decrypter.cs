@@ -89,15 +89,25 @@ namespace UniteDrafter.Decrypter
             }
         }
 
-        public static string? FindPagePropsA(JsonElement data)
+        public static string? FindPagePropsE(JsonElement data)
         {
             if (data.TryGetProperty("pageProps", out var pp) &&
-                pp.TryGetProperty("a", out var aProp))
-                return aProp.GetString();
+                pp.TryGetProperty("e", out var eProp))
+                return eProp.GetString();
 
             if (data.TryGetProperty("props", out var props) &&
                 props.TryGetProperty("pageProps", out var pp2) &&
-                pp2.TryGetProperty("a", out var aProp2))
+                pp2.TryGetProperty("e", out var eProp2))
+                return eProp2.GetString();
+
+            // Backward compatibility for older fixtures that still use pageProps.a
+            if (data.TryGetProperty("pageProps", out var legacyPp) &&
+                legacyPp.TryGetProperty("a", out var aProp))
+                return aProp.GetString();
+
+            if (data.TryGetProperty("props", out var legacyProps) &&
+                legacyProps.TryGetProperty("pageProps", out var legacyPp2) &&
+                legacyPp2.TryGetProperty("a", out var aProp2))
                 return aProp2.GetString();
 
             foreach (var child in data.EnumerateObject())
@@ -113,7 +123,12 @@ namespace UniteDrafter.Decrypter
             if (node.ValueKind == JsonValueKind.Object)
             {
                 if (node.TryGetProperty("pageProps", out var pp) &&
-                    pp.TryGetProperty("a", out var aProp))
+                    pp.TryGetProperty("e", out var eProp))
+                    return eProp.GetString();
+
+                // Backward compatibility for older fixtures that still use pageProps.a
+                if (node.TryGetProperty("pageProps", out var legacyPp) &&
+                    legacyPp.TryGetProperty("a", out var aProp))
                     return aProp.GetString();
 
                 foreach (var child in node.EnumerateObject())
@@ -138,12 +153,11 @@ namespace UniteDrafter.Decrypter
         {
             string jsonText = File.ReadAllText(filePath);
             using var doc = JsonDocument.Parse(jsonText);
-            var aBlob = FindPagePropsA(doc.RootElement);
-            if (aBlob == null) throw new Exception("pageProps.a not found");
+            var blob = FindPagePropsE(doc.RootElement);
+            if (blob == null) throw new Exception("pageProps.e not found");
 
-            string decryptedJson = DecryptBlob(aBlob);
-            Console.WriteLine("Decrypted JSON preview (first 500 chars):"); 
-            Console.WriteLine(decryptedJson.Substring(0, Math.Min(500, decryptedJson.Length)));
+            Console.WriteLine("pageProps.e preview (first 500 chars):");
+            Console.WriteLine(blob.Substring(0, Math.Min(500, blob.Length)));
         }
     }
 }

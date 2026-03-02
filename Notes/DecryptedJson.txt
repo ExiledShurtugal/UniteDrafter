@@ -1,0 +1,8 @@
+{
+    ...
+    "counters": {
+        ...
+    }
+}
+
+There's the matchups winrate I need

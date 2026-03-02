@@ -10,31 +10,31 @@ namespace UniteDrafter.Tests.Decrypter;
 public class DecrypterTests
 {
     [Fact]
-    public void FindPagePropsA_ReturnsDirectPagePropsValue()
+    public void FindPagePropsE_ReturnsDirectPagePropsValue()
     {
         const string json = """
             {
               "pageProps": {
-                "a": "encrypted-value"
+                "e": "encrypted-value"
               }
             }
             """;
 
         using var doc = JsonDocument.Parse(json);
 
-        var result = DecrypterService.FindPagePropsA(doc.RootElement);
+        var result = DecrypterService.FindPagePropsE(doc.RootElement);
 
         Assert.Equal("encrypted-value", result);
     }
 
     [Fact]
-    public void FindPagePropsA_ReturnsNestedPropsPagePropsValue()
+    public void FindPagePropsE_ReturnsNestedPropsPagePropsValue()
     {
         const string json = """
             {
               "props": {
                 "pageProps": {
-                  "a": "nested-encrypted-value"
+                  "e": "nested-encrypted-value"
                 }
               }
             }
@@ -42,9 +42,27 @@ public class DecrypterTests
 
         using var doc = JsonDocument.Parse(json);
 
-        var result = DecrypterService.FindPagePropsA(doc.RootElement);
+        var result = DecrypterService.FindPagePropsE(doc.RootElement);
 
         Assert.Equal("nested-encrypted-value", result);
+    }
+
+    [Fact]
+    public void FindPagePropsE_FallsBackToLegacyAValue()
+    {
+        const string json = """
+            {
+              "pageProps": {
+                "a": "legacy-encrypted-value"
+              }
+            }
+            """;
+
+        using var doc = JsonDocument.Parse(json);
+
+        var result = DecrypterService.FindPagePropsE(doc.RootElement);
+
+        Assert.Equal("legacy-encrypted-value", result);
     }
 
     [Fact]
@@ -74,59 +92,6 @@ public class DecrypterTests
 
 
     [Fact]
-    public void DecryptBlob_FromRealFixture_ProducesParsableJson_And_WritesArtifactFile()
-    {
-        var fixturePath = ResolveFixturePath(
-            "JsonsManually/rankings.json",
-            "Notes/JsonExamples/rankings.json");
-
-        var fixtureText = File.ReadAllText(fixturePath);
-        using var encryptedDoc = JsonDocument.Parse(fixtureText);
-
-        var blob = DecrypterService.FindPagePropsA(encryptedDoc.RootElement);
-        Assert.False(string.IsNullOrWhiteSpace(blob));
-
-        var decrypted = DecrypterService.DecryptBlob(blob!);
-        using var decryptedDoc = JsonDocument.Parse(decrypted);
-
-        Assert.Equal(JsonValueKind.Object, decryptedDoc.RootElement.ValueKind);
-
-        var propertyCount = decryptedDoc.RootElement.EnumerateObject().Count();
-        Assert.True(propertyCount > 0, "Expected decrypted payload object to contain at least one property.");
-
-        var outputPath = WriteDecryptedArtifact(decryptedDoc.RootElement, "decrypted_rankings.json");
-        Assert.True(File.Exists(outputPath), $"Expected artifact file to exist: {outputPath}");
-
-        Console.WriteLine($"Decrypted artifact written to: {outputPath}");
-    }
-
-
-    [Fact]
-    public void DecryptBlob_FromPlayerFixture_ProducesParsableJson_And_WritesArtifactFile()
-    {
-        var fixturePath = ResolveFixturePath(
-            "JsonsManually/Players/DFM_Serata.json",
-            "Notes/JsonExamples/RC_Häruto.json");
-
-        var fixtureText = File.ReadAllText(fixturePath);
-        using var encryptedDoc = JsonDocument.Parse(fixtureText);
-
-        var blob = DecrypterService.FindPagePropsA(encryptedDoc.RootElement);
-        Assert.False(string.IsNullOrWhiteSpace(blob));
-
-        var decrypted = DecrypterService.DecryptBlob(blob!);
-        using var decryptedDoc = JsonDocument.Parse(decrypted);
-
-        Assert.Equal(JsonValueKind.Object, decryptedDoc.RootElement.ValueKind);
-        Assert.True(decryptedDoc.RootElement.EnumerateObject().Any(), "Expected decrypted player payload to contain data.");
-
-        var outputPath = WriteDecryptedArtifact(decryptedDoc.RootElement, "decrypted_player_DFM_Serata.json");
-        Assert.True(File.Exists(outputPath), $"Expected artifact file to exist: {outputPath}");
-
-        Console.WriteLine($"Player decrypted artifact written to: {outputPath}");
-    }
-
-    [Fact]
     public void DecryptBlob_RoundTripsKnownPlaintext()
     {
         const string plaintext = "test payload for ctr mode";
@@ -143,6 +108,46 @@ public class DecrypterTests
         var decrypted = DecrypterService.DecryptBlob(blob);
 
         Assert.Equal(plaintext, decrypted);
+    }
+
+    [Fact]
+    public void FindPagePropsE_FromBlastoiseFixture_ReturnsValue()
+    {
+        var fixturePath = ResolveFixturePath(
+            "notes/JsonExamples/best-builds-movesets-and-guide-for-blastoise.json",
+            "Notes/JsonExamples/best-builds-movesets-and-guide-for-blastoise.json");
+
+        var fixtureText = File.ReadAllText(fixturePath);
+        using var encryptedDoc = JsonDocument.Parse(fixtureText);
+
+        var blob = DecrypterService.FindPagePropsE(encryptedDoc.RootElement);
+
+        Assert.False(string.IsNullOrWhiteSpace(blob));
+    }
+
+    [Fact]
+    public void DecryptBlob_FromBlastoiseFixture_ProducesParsableJson_And_WritesArtifactFile()
+    {
+        var fixturePath = ResolveFixturePath(
+            "notes/JsonExamples/best-builds-movesets-and-guide-for-blastoise.json",
+            "Notes/JsonExamples/best-builds-movesets-and-guide-for-blastoise.json");
+
+        var fixtureText = File.ReadAllText(fixturePath);
+        using var encryptedDoc = JsonDocument.Parse(fixtureText);
+
+        var blob = DecrypterService.FindPagePropsE(encryptedDoc.RootElement);
+        Assert.False(string.IsNullOrWhiteSpace(blob));
+
+        var decrypted = DecrypterService.DecryptBlob(blob!);
+        using var decryptedDoc = JsonDocument.Parse(decrypted);
+
+        Assert.Equal(JsonValueKind.Object, decryptedDoc.RootElement.ValueKind);
+        Assert.True(decryptedDoc.RootElement.EnumerateObject().Any(), "Expected decrypted Blastoise payload to contain data.");
+
+        var outputPath = WriteDecryptedArtifact(decryptedDoc.RootElement, "decrypted_blastoise.json");
+        Assert.True(File.Exists(outputPath), $"Expected artifact file to exist: {outputPath}");
+
+        Console.WriteLine($"Blastoise decrypted artifact written to: {outputPath}");
     }
 
 
@@ -242,3 +247,4 @@ public class DecrypterTests
         }
     }
 }
+
