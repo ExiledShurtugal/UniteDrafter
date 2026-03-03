@@ -9,8 +9,3 @@ Working on a tool to statistically predict which team has advantage during a Pok
 - Data OBTAINED, extracting jsons manually from the web for now
 - Decrypting of said jsons ACHIEVED
 - Starting Database work
-
-
-# Progress velocity
-
-Project speed decreased as time is spent balancing between this project, jog searching and leetcode to practice a bit

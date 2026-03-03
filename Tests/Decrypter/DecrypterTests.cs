@@ -4,6 +4,7 @@ using System.Text;
 using System.Text.Json;
 using Xunit;
 using DecrypterService = UniteDrafter.Decrypter.Decrypter;
+using BestBuildsReaderService = UniteDrafter.Decrypter.BestBuildsReader;
 
 namespace UniteDrafter.Tests.Decrypter;
 
@@ -148,6 +149,28 @@ public class DecrypterTests
         Assert.True(File.Exists(outputPath), $"Expected artifact file to exist: {outputPath}");
 
         Console.WriteLine($"Blastoise decrypted artifact written to: {outputPath}");
+    }
+
+    [Fact]
+    public void BestBuildsReader_FromEncryptedFixture_ParsesPokemonWinRates()
+    {
+        var fixturePath = ResolveFixturePath(
+            "notes/JsonExamples/best-builds-movesets-and-guide-for-blastoise.json",
+            "Notes/JsonExamples/best-builds-movesets-and-guide-for-blastoise.json");
+
+        var data = BestBuildsReaderService.ReadPokemonWinRatesFromEncryptedPageFile(fixturePath);
+
+        Assert.Equal(180007, data.Pokemon.UniteApiId);
+        Assert.Equal(7, data.Pokemon.PokedexId);
+        Assert.Equal("Blastoise", data.Pokemon.PokemonName);
+        Assert.NotEmpty(data.Pokemon.PokemonImg);
+        Assert.True(data.CounterSections.ContainsKey("all"));
+        Assert.NotEmpty(data.CounterSections["all"]);
+
+        var topMatchup = data.CounterSections["all"][0];
+        Assert.True(topMatchup.OpponentUniteApiId > 0);
+        Assert.False(string.IsNullOrWhiteSpace(topMatchup.OpponentPokemonName));
+        Assert.True(topMatchup.WinRate > 0);
     }
 
 

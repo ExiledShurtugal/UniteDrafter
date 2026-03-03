@@ -1,0 +1,1 @@
+Decided to make a bilateral database occupying twice the minimal initial size because finding matchup winrates is read-heavy on a time constrained environment

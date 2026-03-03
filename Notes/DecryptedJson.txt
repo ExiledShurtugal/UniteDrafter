@@ -6,3 +6,5 @@
 }
 
 There's the matchups winrate I need
+
+Decided against cleaning the json because the rest of the data is not needed for MVP but can be useful for later features
