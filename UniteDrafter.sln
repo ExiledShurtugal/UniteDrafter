@@ -4,6 +4,8 @@ VisualStudioVersion = 17.5.2.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniteDrafter", "UniteDrafter.csproj", "{6CAA1F4E-684B-8A85-ED09-0F3EE7C21AC6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DecrypterTests", "tests\Decrypter\DecrypterTests.csproj", "{C64A3107-3C89-4D44-9BF9-DBDE54DF336F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -14,6 +16,10 @@ Global
 		{6CAA1F4E-684B-8A85-ED09-0F3EE7C21AC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6CAA1F4E-684B-8A85-ED09-0F3EE7C21AC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6CAA1F4E-684B-8A85-ED09-0F3EE7C21AC6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C64A3107-3C89-4D44-9BF9-DBDE54DF336F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C64A3107-3C89-4D44-9BF9-DBDE54DF336F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C64A3107-3C89-4D44-9BF9-DBDE54DF336F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C64A3107-3C89-4D44-9BF9-DBDE54DF336F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

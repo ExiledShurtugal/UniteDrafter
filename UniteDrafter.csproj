@@ -7,9 +7,10 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <!-- Prevent the app project from compiling test files under Tests/** -->
+  <!-- Prevent the app project from compiling test sources -->
   <ItemGroup>
-    <Compile Remove="Tests/**/*.cs" />
+    <Compile Remove="tests/**/*.cs" />
+    <Compile Remove="deprecated/tests/**/*.cs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.Data.Sqlite" Version="10.0.3" />

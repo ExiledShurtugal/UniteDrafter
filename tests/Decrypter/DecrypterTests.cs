@@ -115,8 +115,7 @@ public class DecrypterTests
     public void FindPagePropsE_FromBlastoiseFixture_ReturnsValue()
     {
         var fixturePath = ResolveFixturePath(
-            "notes/JsonExamples/best-builds-movesets-and-guide-for-blastoise.json",
-            "Notes/JsonExamples/best-builds-movesets-and-guide-for-blastoise.json");
+            "notes/JsonExamples/best-builds-movesets-and-guide-for-blastoise.json");
 
         var fixtureText = File.ReadAllText(fixturePath);
         using var encryptedDoc = JsonDocument.Parse(fixtureText);
@@ -130,8 +129,7 @@ public class DecrypterTests
     public void DecryptBlob_FromBlastoiseFixture_ProducesParsableJson_And_WritesArtifactFile()
     {
         var fixturePath = ResolveFixturePath(
-            "notes/JsonExamples/best-builds-movesets-and-guide-for-blastoise.json",
-            "Notes/JsonExamples/best-builds-movesets-and-guide-for-blastoise.json");
+            "notes/JsonExamples/best-builds-movesets-and-guide-for-blastoise.json");
 
         var fixtureText = File.ReadAllText(fixturePath);
         using var encryptedDoc = JsonDocument.Parse(fixtureText);
@@ -155,8 +153,7 @@ public class DecrypterTests
     public void BestBuildsReader_FromEncryptedFixture_ParsesPokemonWinRates()
     {
         var fixturePath = ResolveFixturePath(
-            "notes/JsonExamples/best-builds-movesets-and-guide-for-blastoise.json",
-            "Notes/JsonExamples/best-builds-movesets-and-guide-for-blastoise.json");
+            "notes/JsonExamples/best-builds-movesets-and-guide-for-blastoise.json");
 
         var data = BestBuildsReaderService.ReadPokemonWinRatesFromEncryptedPageFile(fixturePath);
 
@@ -222,10 +219,25 @@ public class DecrypterTests
 
     private static string ResolveOutputDirectory()
     {
-        var candidate1 = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), "Tests", "Decrypter", "TestResults"));
-        if (Directory.Exists(Path.GetDirectoryName(candidate1) ?? string.Empty))
+        var roots = new[]
         {
-            return candidate1;
+            Directory.GetCurrentDirectory(),
+            AppContext.BaseDirectory
+        };
+
+        foreach (var root in roots)
+        {
+            var dir = new DirectoryInfo(root);
+            while (dir is not null)
+            {
+                var lowerCaseCandidate = Path.Combine(dir.FullName, "tests", "Decrypter");
+                if (Directory.Exists(lowerCaseCandidate))
+                {
+                    return Path.Combine(lowerCaseCandidate, "TestResults");
+                }
+
+                dir = dir.Parent;
+            }
         }
 
         return Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "TestResults"));

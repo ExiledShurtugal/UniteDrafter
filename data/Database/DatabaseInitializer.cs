@@ -8,9 +8,7 @@ public static class DatabaseInitializer
     private const string DatabasePath = "data/Database/unitedrafter.db";
     private static readonly string[] JsonSourceDirectories =
     [
-        "data/JsonsManually/Players",
-        "data/Database/JsonsManually",
-        "notes/JsonExamples"
+        "data/Database/JsonsManually"
     ];
 
     public static void Initialize()

@@ -20,7 +20,11 @@ class Program
             using var decryptedDoc = JsonDocument.Parse(decrypted);
 
             var pretty = JsonSerializer.Serialize(decryptedDoc.RootElement, new JsonSerializerOptions { WriteIndented = true });
-            Directory.CreateDirectory(Path.GetDirectoryName(outputPath)!);
+            var outputDirectory = Path.GetDirectoryName(outputPath);
+            if (!string.IsNullOrWhiteSpace(outputDirectory))
+            {
+                Directory.CreateDirectory(outputDirectory);
+            }
             File.WriteAllText(outputPath, pretty);
             Console.WriteLine($"Wrote decrypted json to: {outputPath}");
             return;

@@ -5,6 +5,7 @@ Priorities:
 - Extract from JSONs to DB  -> DONE
 - Script DB functions
 - Build interface
+- Complex matchup logic
 
 
 Non priority:
