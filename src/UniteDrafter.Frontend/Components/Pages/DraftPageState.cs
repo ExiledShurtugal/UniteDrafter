@@ -63,6 +63,28 @@ public sealed class DraftPageState
         SearchMessage = $"{details.PokemonName} assigned to {GetTeamLabel(ActiveSlot.Team)} #{ActiveSlot.Index}.";
     }
 
+    public void ClearActiveSlot()
+    {
+        if (draftedPokemon.Remove(ActiveSlot, out var removedPokemon))
+        {
+            SearchTerm = string.Empty;
+            SearchResults = [];
+            SearchMessage = $"{removedPokemon.PokemonName} removed from {GetTeamLabel(ActiveSlot.Team)} #{ActiveSlot.Index}.";
+            return;
+        }
+
+        SearchMessage = $"{GetTeamLabel(ActiveSlot.Team)} #{ActiveSlot.Index} is already empty.";
+    }
+
+    public void ResetDraft()
+    {
+        draftedPokemon.Clear();
+        ActiveSlot = new DraftSlotRef(TeamSide.Ally, 1);
+        SearchTerm = string.Empty;
+        SearchResults = [];
+        SearchMessage = "Draft reset. Type at least 2 letters to search the database.";
+    }
+
     public bool IsActiveSlot(DraftSlotRef slot) => slot == ActiveSlot;
 
     public bool TryGetDraftedPokemon(DraftSlotRef slot, out PokemonDraftDetails? pokemon)

@@ -31,6 +31,10 @@ public partial class Home
 
     private void AssignPokemon(string pokemonName) => pageState.AssignPokemon(pokemonName);
 
+    private void ClearActiveSlot() => pageState.ClearActiveSlot();
+
+    private void ResetDraft() => pageState.ResetDraft();
+
     private bool IsActiveSlot(DraftSlotRef slot) => pageState.IsActiveSlot(slot);
 
     private string GetSlotClass(DraftSlotRef slot)
