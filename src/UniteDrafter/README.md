@@ -1,6 +1,6 @@
 # UniteDrafter CLI Commands
 
-This folder contains `Program.cs`, which supports three execution modes.
+This folder contains `Program.cs`, which supports five execution modes.
 
 ## 1) Initialize / refresh the database (default)
 Run with no args:
@@ -36,3 +36,28 @@ What it prints:
 - `pokemon.id` (Pokedex ID)
 - `counters.pokemonId` (UniteAPI ID)
 - `counters.pokemonId(raw)` directly from decrypted payload
+
+## 4) Show all matchups for one Pokemon
+
+```powershell
+dotnet run -- matchups Blastoise
+```
+
+What it does:
+- Opens `data/Database/unitedrafter.db`
+- Finds all matchup rows for the given Pokemon
+- Orders them by highest win rate first
+- Prints the full matchup list for that Pokemon
+
+If no exact matchup list is found, it also suggests close Pokemon name matches.
+
+## 5) Search Pokemon by partial name
+
+```powershell
+dotnet run -- search-pokemon blast
+```
+
+What it does:
+- Opens `data/Database/unitedrafter.db`
+- Searches Pokemon names case-insensitively
+- Returns partial matches such as `Blastoise` for `blast`

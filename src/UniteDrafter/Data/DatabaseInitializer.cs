@@ -30,7 +30,7 @@ public static class DatabaseInitializer
         EnableForeignKeys(connection);
         CreateSchema(connection);
         SeedFromJsonFiles(connection, resolvedJsonSourceDirectories);
-        PrintDatabaseSummary(connection);
+        DatabaseQueries.PrintDatabaseSummary(connection);
     }
 
     private static string ResolveDatabasePath(string? databasePath)
@@ -167,39 +167,6 @@ CREATE INDEX IF NOT EXISTS idx_matchup_opponent ON pokemon_matchup(opponent_unit
         catch
         {
             return false;
-        }
-    }
-
-    private static void PrintDatabaseSummary(SqliteConnection connection)
-    {
-        using var countCmd = connection.CreateCommand();
-        countCmd.CommandText = @"
-SELECT
-    (SELECT COUNT(*) FROM pokemon),
-    (SELECT COUNT(*) FROM pokemon_matchup);
-";
-
-        using var reader = countCmd.ExecuteReader();
-        if (reader.Read())
-        {
-            Console.WriteLine($"pokemon rows: {reader.GetInt64(0)}, pokemon_matchup rows: {reader.GetInt64(1)}");
-        }
-
-        using var sampleCmd = connection.CreateCommand();
-        sampleCmd.CommandText = @"
-SELECT p.name, o.name, m.win_rate
-FROM pokemon_matchup m
-JOIN pokemon p ON p.uniteapi_id = m.pokemon_uniteapi_id
-JOIN pokemon o ON o.uniteapi_id = m.opponent_uniteapi_id
-ORDER BY p.name, o.name
-LIMIT 5;
-";
-
-        using var sampleReader = sampleCmd.ExecuteReader();
-        while (sampleReader.Read())
-        {
-            Console.WriteLine(
-                $"sample matchup: {sampleReader.GetString(0)} vs {sampleReader.GetString(1)} -> {sampleReader.GetDouble(2)}");
         }
     }
 
