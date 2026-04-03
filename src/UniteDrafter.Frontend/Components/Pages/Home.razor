@@ -1,0 +1,92 @@
+@page "/"
+
+<PageTitle>UniteDrafter</PageTitle>
+
+<div class="draft-page">
+    <header class="draft-header">
+        <div>
+            <p class="eyebrow">MVP Draft Board</p>
+            <h1>UniteDrafter</h1>
+            <p class="subtitle">A basic single-page layout for allies, enemies, search, and matchup info.</p>
+        </div>
+    </header>
+
+    <div class="draft-board">
+        <section class="team-column ally-column">
+            <div class="column-header">
+                <h2>Your Team</h2>
+                <p>Five ally slots</p>
+            </div>
+
+            <div class="slot-list">
+                @for (var index = 1; index <= 5; index++)
+                {
+                    <button type="button" class="draft-slot">
+                        <span class="slot-number">@index</span>
+                        <span class="slot-content">
+                            <strong>Empty ally slot</strong>
+                            <span>Select a Pokemon later</span>
+                        </span>
+                    </button>
+                }
+            </div>
+        </section>
+
+        <section class="center-column">
+            <div class="panel">
+                <h2>Search</h2>
+                <input class="search-input" type="text" placeholder="Search Pokemon name" />
+            </div>
+
+            <div class="panel">
+                <h2>Pokemon Info</h2>
+                <p>No Pokemon selected yet.</p>
+
+                <div class="info-placeholder">
+                    <div class="info-box">Portrait</div>
+                    <div class="info-details">
+                        <p>Name</p>
+                        <p>Role</p>
+                        <p>Notes</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel">
+                <h2>Matchups</h2>
+
+                <div class="matchup-columns">
+                    <div class="matchup-box">
+                        <h3>Best Against</h3>
+                        <p>No data yet.</p>
+                    </div>
+
+                    <div class="matchup-box">
+                        <h3>Worst Against</h3>
+                        <p>No data yet.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="team-column enemy-column">
+            <div class="column-header">
+                <h2>Opponent Team</h2>
+                <p>Five enemy slots</p>
+            </div>
+
+            <div class="slot-list">
+                @for (var index = 1; index <= 5; index++)
+                {
+                    <button type="button" class="draft-slot opponent-slot">
+                        <span class="slot-number">@index</span>
+                        <span class="slot-content">
+                            <strong>Empty enemy slot</strong>
+                            <span>Select a Pokemon later</span>
+                        </span>
+                    </button>
+                }
+            </div>
+        </section>
+    </div>
+</div>

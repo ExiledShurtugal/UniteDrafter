@@ -3,7 +3,7 @@ Priorities:
 - Automate scraping ( cloudflare blocking, DONE MANUALLY for now )
 - Create tables from JSON components  ->  DONE
 - Extract from JSONs to DB  -> DONE
-- Script DB functions
+- Script DB functions  -> DONE
 - Build interface
 - Complex matchup logic
 
