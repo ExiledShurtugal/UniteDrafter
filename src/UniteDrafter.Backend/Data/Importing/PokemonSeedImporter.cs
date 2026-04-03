@@ -3,7 +3,15 @@ using UniteDrafter.Decrypter;
 
 namespace UniteDrafter.Data;
 
-public sealed record SeedImportSummary(int ParsedFiles, int PokemonUpserts, int MatchupUpserts);
+public sealed record SeedImportFailure(string FilePath, string Error);
+
+public sealed record SeedImportSummary(
+    int ParsedFiles,
+    int SkippedFiles,
+    int PokemonUpserts,
+    int MatchupUpserts,
+    IReadOnlyList<string> MissingDirectories,
+    IReadOnlyList<SeedImportFailure> Failures);
 
 public static class PokemonSeedImporter
 {
@@ -12,8 +20,11 @@ public static class PokemonSeedImporter
         IEnumerable<string> jsonSourceDirectories)
     {
         var parsedFiles = 0;
+        var skippedFiles = 0;
         var pokemonUpserts = 0;
         var matchupUpserts = 0;
+        var missingDirectories = new List<string>();
+        var failures = new List<SeedImportFailure>();
 
         using var transaction = connection.BeginTransaction();
 
@@ -21,18 +32,33 @@ public static class PokemonSeedImporter
         {
             if (!Directory.Exists(sourceDirectory))
             {
+                missingDirectories.Add(sourceDirectory);
                 continue;
             }
 
             foreach (var filePath in Directory.EnumerateFiles(sourceDirectory, "*.json", SearchOption.TopDirectoryOnly))
             {
-                ImportSingleFile(connection, transaction, filePath, ref parsedFiles, ref pokemonUpserts, ref matchupUpserts);
+                ImportSingleFile(
+                    connection,
+                    transaction,
+                    filePath,
+                    ref parsedFiles,
+                    ref skippedFiles,
+                    ref pokemonUpserts,
+                    ref matchupUpserts,
+                    failures);
             }
         }
 
         transaction.Commit();
 
-        return new SeedImportSummary(parsedFiles, pokemonUpserts, matchupUpserts);
+        return new SeedImportSummary(
+            parsedFiles,
+            skippedFiles,
+            pokemonUpserts,
+            matchupUpserts,
+            missingDirectories,
+            failures);
     }
 
     private static void ImportSingleFile(
@@ -40,11 +66,15 @@ public static class PokemonSeedImporter
         SqliteTransaction transaction,
         string filePath,
         ref int parsedFiles,
+        ref int skippedFiles,
         ref int pokemonUpserts,
-        ref int matchupUpserts)
+        ref int matchupUpserts,
+        List<SeedImportFailure> failures)
     {
-        if (!TryReadPokemonWinRates(filePath, out var pokemonWinRates))
+        if (!TryReadPokemonWinRates(filePath, out var pokemonWinRates, out var error))
         {
+            skippedFiles++;
+            failures.Add(new SeedImportFailure(filePath, error ?? "Unknown parse failure."));
             return;
         }
 
@@ -73,9 +103,13 @@ public static class PokemonSeedImporter
         }
     }
 
-    private static bool TryReadPokemonWinRates(string filePath, out PokemonCountersWinRates? pokemonWinRates)
+    private static bool TryReadPokemonWinRates(
+        string filePath,
+        out PokemonCountersWinRates? pokemonWinRates,
+        out string? error)
     {
         pokemonWinRates = null;
+        error = null;
 
         try
         {
@@ -87,10 +121,17 @@ public static class PokemonSeedImporter
                 ? BestBuildsReader.ReadPokemonWinRatesFromEncryptedPageFile(filePath)
                 : BestBuildsReader.ReadPokemonWinRatesFromDecryptedJsonFile(filePath);
 
-            return pokemonWinRates.Pokemon.UniteApiId > 0;
+            if (pokemonWinRates.Pokemon.UniteApiId > 0)
+            {
+                return true;
+            }
+
+            error = "Parsed file but Unite API id was missing or invalid.";
+            return false;
         }
-        catch
+        catch (Exception ex)
         {
+            error = ex.Message;
             return false;
         }
     }

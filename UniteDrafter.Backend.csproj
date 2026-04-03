@@ -11,6 +11,9 @@
   <ItemGroup>
     <Compile Remove="tests/**/*.cs" />
     <Compile Remove="deprecated/tests/**/*.cs" />
+    <Compile Remove="src/Decrypter/**/*.cs" />
+    <Compile Remove="src/UniteDrafter.Backend/Data/**/*.cs" />
+    <Compile Remove="src/UniteDrafter.Backend/Services/**/*.cs" />
     <Compile Remove="src/UniteDrafter.Frontend/**/*.cs" />
     <Compile Remove="src/UniteDrafter.Frontend/obj/**/*.cs" />
     <Compile Remove="src/UniteDrafter.Frontend/bin/**/*.cs" />
@@ -19,8 +22,7 @@
     <None Remove="src/UniteDrafter.Frontend/**" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.Data.Sqlite" Version="10.0.3" />
-    <PackageReference Include="Microsoft.Playwright" Version="1.52.0" />
+    <ProjectReference Include="src\UniteDrafter.Core\UniteDrafter.Core.csproj" />
   </ItemGroup>
 
 </Project>

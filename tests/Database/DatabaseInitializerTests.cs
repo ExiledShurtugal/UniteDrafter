@@ -98,12 +98,33 @@ SELECT
         var databasePath = _helper.CreateDatabasePath();
         var missingSeedDirectory = _helper.CreateSeedDirectory("missing-seed");
 
-        DatabaseInitializer.Initialize(databasePath, [missingSeedDirectory]);
+        var summary = DatabaseInitializer.Initialize(databasePath, [missingSeedDirectory]);
 
-        var summary = new DatabaseSummaryReader(databasePath).GetDatabaseSummary();
+        var databaseSummary = new DatabaseSummaryReader(databasePath).GetDatabaseSummary();
 
-        Assert.Equal(0L, summary.PokemonCount);
-        Assert.Equal(0L, summary.MatchupCount);
+        Assert.Equal(0L, databaseSummary.PokemonCount);
+        Assert.Equal(0L, databaseSummary.MatchupCount);
+        Assert.Equal([missingSeedDirectory], summary.MissingDirectories);
+        Assert.Empty(summary.Failures);
+    }
+
+    [Fact]
+    public void Initialize_ReportsMalformedSeedFilesWithoutImportingThem()
+    {
+        var databasePath = _helper.CreateDatabasePath();
+        var seedDirectory = _helper.CreateSeedDirectory("seed");
+        Directory.CreateDirectory(seedDirectory);
+        File.WriteAllText(Path.Combine(seedDirectory, "broken.json"), "{ this is not valid json");
+
+        var summary = DatabaseInitializer.Initialize(databasePath, [seedDirectory]);
+        var databaseSummary = new DatabaseSummaryReader(databasePath).GetDatabaseSummary();
+
+        Assert.Equal(0, summary.ParsedFiles);
+        Assert.Equal(1, summary.SkippedFiles);
+        Assert.Single(summary.Failures);
+        Assert.EndsWith("broken.json", summary.Failures[0].FilePath);
+        Assert.Equal(0L, databaseSummary.PokemonCount);
+        Assert.Equal(0L, databaseSummary.MatchupCount);
     }
 
     public void Dispose()

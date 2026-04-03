@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\UniteDrafter.Backend.csproj" />
+    <ProjectReference Include="..\UniteDrafter.Core\UniteDrafter.Core.csproj" />
   </ItemGroup>
 
 </Project>

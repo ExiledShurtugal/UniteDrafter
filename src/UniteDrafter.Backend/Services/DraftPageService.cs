@@ -4,18 +4,11 @@ namespace UniteDrafter.Services;
 
 public sealed class DraftPageService : IDraftPageService
 {
-    private readonly string databasePath;
-    private readonly IPokemonDataReader pokemonDataReader;
-    private readonly IPokemonMatchupDataReader pokemonMatchupDataReader;
+    private readonly IDraftPageDataSource dataSource;
 
-    public DraftPageService(
-        string databasePath,
-        IPokemonDataReader pokemonDataReader,
-        IPokemonMatchupDataReader pokemonMatchupDataReader)
+    public DraftPageService(IDraftPageDataSource dataSource)
     {
-        this.databasePath = Path.GetFullPath(databasePath);
-        this.pokemonDataReader = pokemonDataReader;
-        this.pokemonMatchupDataReader = pokemonMatchupDataReader;
+        this.dataSource = dataSource;
     }
 
     public PokemonSearchResponse SearchPokemon(string searchTerm, int limit = 8)
@@ -25,14 +18,15 @@ public sealed class DraftPageService : IDraftPageService
             return new PokemonSearchResponse([], null);
         }
 
-        if (!File.Exists(databasePath))
+        var availabilityError = dataSource.GetAvailabilityError();
+        if (!string.IsNullOrWhiteSpace(availabilityError))
         {
-            return new PokemonSearchResponse([], $"Database file not found at: {databasePath}");
+            return new PokemonSearchResponse([], availabilityError);
         }
 
         try
         {
-            var results = pokemonDataReader.SearchPokemon(searchTerm, limit);
+            var results = dataSource.SearchPokemon(searchTerm, limit);
             return new PokemonSearchResponse(results, null);
         }
         catch (Exception ex)
@@ -43,20 +37,26 @@ public sealed class DraftPageService : IDraftPageService
 
     public PokemonDraftDetailsResponse GetPokemonDraftDetails(string pokemonName, int matchupLimit = 5)
     {
-        if (string.IsNullOrWhiteSpace(pokemonName) || !File.Exists(databasePath))
+        if (string.IsNullOrWhiteSpace(pokemonName))
         {
-            return new PokemonDraftDetailsResponse(null, $"Database file not found at: {databasePath}");
+            return new PokemonDraftDetailsResponse(null, "Pokemon name is required.");
+        }
+
+        var availabilityError = dataSource.GetAvailabilityError();
+        if (!string.IsNullOrWhiteSpace(availabilityError))
+        {
+            return new PokemonDraftDetailsResponse(null, availabilityError);
         }
 
         try
         {
-            var profile = pokemonDataReader.GetPokemonProfile(pokemonName);
+            var profile = dataSource.GetPokemonProfile(pokemonName);
             if (profile is null)
             {
                 return new PokemonDraftDetailsResponse(null, $"Could not find Pokemon details for \"{pokemonName}\".");
             }
 
-            var matchups = pokemonMatchupDataReader.GetMatchupsForPokemon(profile.PokemonName);
+            var matchups = dataSource.GetMatchupsForPokemon(profile.PokemonName);
             var bestAgainst = matchups.Take(matchupLimit).ToArray();
             var worstAgainst = matchups.TakeLast(Math.Min(matchupLimit, matchups.Count)).Reverse().ToArray();
             var counterStatusMessage = matchups.Count == 0

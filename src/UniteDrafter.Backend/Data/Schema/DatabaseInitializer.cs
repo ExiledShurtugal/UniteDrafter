@@ -9,7 +9,7 @@ public static class DatabaseInitializer
         "data/Database/GuideSources"
     ];
 
-    public static void Initialize(
+    public static SeedImportSummary Initialize(
         string? databasePath = null,
         IEnumerable<string>? jsonSourceDirectories = null)
     {
@@ -30,9 +30,28 @@ public static class DatabaseInitializer
 
         var summary = PokemonSeedImporter.ImportFromDirectories(connection, resolvedJsonSourceDirectories);
         Console.WriteLine(
-            $"Database seed complete. Parsed files: {summary.ParsedFiles}, Pokemon upserts: {summary.PokemonUpserts}, Matchup upserts: {summary.MatchupUpserts}");
+            $"Database seed complete. Parsed files: {summary.ParsedFiles}, Skipped files: {summary.SkippedFiles}, Pokemon upserts: {summary.PokemonUpserts}, Matchup upserts: {summary.MatchupUpserts}");
+
+        if (summary.MissingDirectories.Count > 0)
+        {
+            Console.WriteLine("Missing source directories:");
+            foreach (var directory in summary.MissingDirectories)
+            {
+                Console.WriteLine($"- {directory}");
+            }
+        }
+
+        if (summary.Failures.Count > 0)
+        {
+            Console.WriteLine("Skipped source files:");
+            foreach (var failure in summary.Failures)
+            {
+                Console.WriteLine($"- {failure.FilePath}: {failure.Error}");
+            }
+        }
 
         new DatabaseSummaryReader(resolvedDatabasePath).PrintDatabaseSummary();
+        return summary;
     }
 
     private static string ResolveDatabasePath(string? databasePath)
