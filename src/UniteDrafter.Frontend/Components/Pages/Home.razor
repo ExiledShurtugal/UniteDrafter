@@ -1,4 +1,5 @@
 @page "/"
+@rendermode InteractiveServer
 
 <PageTitle>UniteDrafter</PageTitle>
 
@@ -19,13 +20,19 @@
             </div>
 
             <div class="slot-list">
-                @for (var index = 1; index <= 5; index++)
+                @for (var index = 1; index <= SlotCount; index++)
                 {
-                    <button type="button" class="draft-slot">
+                    var slot = new DraftSlotRef(TeamSide.Ally, index);
+
+                    <button
+                        type="button"
+                        class="@GetSlotClass(slot)"
+                        aria-pressed="@IsActiveSlot(slot)"
+                        @onclick="() => SelectSlot(slot)">
                         <span class="slot-number">@index</span>
                         <span class="slot-content">
                             <strong>Empty ally slot</strong>
-                            <span>Select a Pokemon later</span>
+                            <span>@GetSlotHint(slot)</span>
                         </span>
                     </button>
                 }
@@ -35,12 +42,18 @@
         <section class="center-column">
             <div class="panel">
                 <h2>Search</h2>
-                <input class="search-input" type="text" placeholder="Search Pokemon name" />
+                <p class="selection-summary">@GetSelectionSummary()</p>
+                <input
+                    class="search-input"
+                    type="text"
+                    placeholder="Search Pokemon name"
+                    aria-label="Search Pokemon name" />
+                <p class="search-hint">Search wiring comes next. For now, click a slot to choose where the next pick will go.</p>
             </div>
 
             <div class="panel">
                 <h2>Pokemon Info</h2>
-                <p>No Pokemon selected yet.</p>
+                <p>@GetInfoText()</p>
 
                 <div class="info-placeholder">
                     <div class="info-box">Portrait</div>
@@ -76,13 +89,19 @@
             </div>
 
             <div class="slot-list">
-                @for (var index = 1; index <= 5; index++)
+                @for (var index = 1; index <= SlotCount; index++)
                 {
-                    <button type="button" class="draft-slot opponent-slot">
+                    var slot = new DraftSlotRef(TeamSide.Enemy, index);
+
+                    <button
+                        type="button"
+                        class="@GetSlotClass(slot)"
+                        aria-pressed="@IsActiveSlot(slot)"
+                        @onclick="() => SelectSlot(slot)">
                         <span class="slot-number">@index</span>
                         <span class="slot-content">
                             <strong>Empty enemy slot</strong>
-                            <span>Select a Pokemon later</span>
+                            <span>@GetSlotHint(slot)</span>
                         </span>
                     </button>
                 }
@@ -90,3 +109,53 @@
         </section>
     </div>
 </div>
+
+@code {
+    private const int SlotCount = 5;
+
+    private DraftSlotRef activeSlot = new(TeamSide.Ally, 1);
+
+    private void SelectSlot(DraftSlotRef slot)
+    {
+        activeSlot = slot;
+    }
+
+    private bool IsActiveSlot(DraftSlotRef slot) => slot == activeSlot;
+
+    private string GetSlotClass(DraftSlotRef slot)
+    {
+        var classes = "draft-slot";
+
+        if (slot.Team == TeamSide.Enemy)
+        {
+            classes += " opponent-slot";
+        }
+
+        if (IsActiveSlot(slot))
+        {
+            classes += " active-slot";
+        }
+
+        return classes;
+    }
+
+    private string GetSlotHint(DraftSlotRef slot) =>
+        IsActiveSlot(slot) ? "Selected for the next pick" : "Click to target this slot";
+
+    private string GetSelectionSummary() =>
+        $"Selected slot: {GetTeamLabel(activeSlot.Team)} #{activeSlot.Index}";
+
+    private string GetInfoText() =>
+        $"No Pokemon selected yet. {GetTeamLabel(activeSlot.Team)} #{activeSlot.Index} is ready for your next pick.";
+
+    private static string GetTeamLabel(TeamSide team) =>
+        team == TeamSide.Ally ? "Your Team" : "Opponent Team";
+
+    private enum TeamSide
+    {
+        Ally,
+        Enemy
+    }
+
+    private readonly record struct DraftSlotRef(TeamSide Team, int Index);
+}

@@ -89,10 +89,35 @@
     border-radius: 0.75rem;
     background-color: #ffffff;
     text-align: left;
+    transition: border-color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease, background-color 0.18s ease;
+    cursor: pointer;
+}
+
+.draft-slot:hover {
+    border-color: #94a3b8;
+    transform: translateY(-1px);
+}
+
+.draft-slot:focus-visible {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.18);
 }
 
 .opponent-slot {
     background-color: #fbfbfc;
+}
+
+.active-slot {
+    border-color: #2563eb;
+    background-color: #eff6ff;
+    box-shadow: 0 14px 28px rgba(37, 99, 235, 0.12);
+}
+
+.active-slot.opponent-slot {
+    border-color: #dc2626;
+    background-color: #fef2f2;
+    box-shadow: 0 14px 28px rgba(220, 38, 38, 0.12);
 }
 
 .slot-number {
@@ -105,6 +130,16 @@
     background-color: #eef1f6;
     font-weight: 700;
     color: #1f2937;
+}
+
+.active-slot .slot-number {
+    background-color: #dbeafe;
+    color: #1d4ed8;
+}
+
+.active-slot.opponent-slot .slot-number {
+    background-color: #fee2e2;
+    color: #b91c1c;
 }
 
 .slot-content {
@@ -123,6 +158,17 @@
     border: 1px solid #cbd2dc;
     border-radius: 0.65rem;
     font: inherit;
+}
+
+.selection-summary {
+    margin: 0 0 0.85rem;
+    font-weight: 600;
+    color: #111827;
+}
+
+.search-hint {
+    margin-top: 0.75rem;
+    font-size: 0.95rem;
 }
 
 .info-placeholder {
