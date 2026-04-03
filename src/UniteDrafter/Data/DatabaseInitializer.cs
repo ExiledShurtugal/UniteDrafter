@@ -5,23 +5,45 @@ namespace UniteDrafter.Data;
 
 public static class DatabaseInitializer
 {
-    private const string DatabasePath = "data/Database/unitedrafter.db";
-    private static readonly string[] JsonSourceDirectories =
+    private const string DefaultDatabasePath = "data/Database/unitedrafter.db";
+    private static readonly string[] DefaultJsonSourceDirectories =
     [
         "data/Database/JsonsManually"
     ];
 
-    public static void Initialize()
+    public static void Initialize(
+        string? databasePath = null,
+        IEnumerable<string>? jsonSourceDirectories = null)
     {
-        Directory.CreateDirectory(Path.GetDirectoryName(DatabasePath)!);
+        var resolvedDatabasePath = ResolveDatabasePath(databasePath);
+        var resolvedJsonSourceDirectories = ResolveJsonSourceDirectories(jsonSourceDirectories);
 
-        using var connection = new SqliteConnection($"Data Source={DatabasePath}");
+        var databaseDirectory = Path.GetDirectoryName(resolvedDatabasePath);
+        if (!string.IsNullOrWhiteSpace(databaseDirectory))
+        {
+            Directory.CreateDirectory(databaseDirectory);
+        }
+
+        using var connection = new SqliteConnection($"Data Source={resolvedDatabasePath}");
         connection.Open();
 
         EnableForeignKeys(connection);
         CreateSchema(connection);
-        SeedFromJsonFiles(connection);
+        SeedFromJsonFiles(connection, resolvedJsonSourceDirectories);
         PrintDatabaseSummary(connection);
+    }
+
+    private static string ResolveDatabasePath(string? databasePath)
+    {
+        return string.IsNullOrWhiteSpace(databasePath) ? DefaultDatabasePath : databasePath;
+    }
+
+    private static IReadOnlyList<string> ResolveJsonSourceDirectories(IEnumerable<string>? jsonSourceDirectories)
+    {
+        return jsonSourceDirectories?
+            .Where(path => !string.IsNullOrWhiteSpace(path))
+            .ToArray()
+            ?? DefaultJsonSourceDirectories;
     }
 
     private static void EnableForeignKeys(SqliteConnection connection)
@@ -62,7 +84,7 @@ CREATE INDEX IF NOT EXISTS idx_matchup_opponent ON pokemon_matchup(opponent_unit
         cmd.ExecuteNonQuery();
     }
 
-    private static void SeedFromJsonFiles(SqliteConnection connection)
+    private static void SeedFromJsonFiles(SqliteConnection connection, IEnumerable<string> jsonSourceDirectories)
     {
         var parsedFiles = 0;
         var pokemonUpserts = 0;
@@ -70,7 +92,7 @@ CREATE INDEX IF NOT EXISTS idx_matchup_opponent ON pokemon_matchup(opponent_unit
 
         using var transaction = connection.BeginTransaction();
 
-        foreach (var sourceDirectory in JsonSourceDirectories)
+        foreach (var sourceDirectory in jsonSourceDirectories)
         {
             if (!Directory.Exists(sourceDirectory))
             {
