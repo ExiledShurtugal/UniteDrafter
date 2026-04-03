@@ -1,5 +1,7 @@
 @page "/"
 @rendermode InteractiveServer
+@using UniteDrafter.Data
+@using UniteDrafter.Services
 
 <PageTitle>UniteDrafter</PageTitle>
 
@@ -8,7 +10,7 @@
         <div>
             <p class="eyebrow">MVP Draft Board</p>
             <h1>UniteDrafter</h1>
-            <p class="subtitle">A basic single-page layout for allies, enemies, search, and matchup info.</p>
+            <p class="subtitle">Search real Pokemon from the database and assign them to ally or enemy slots.</p>
         </div>
     </header>
 
@@ -31,7 +33,7 @@
                         @onclick="() => SelectSlot(slot)">
                         <span class="slot-number">@index</span>
                         <span class="slot-content">
-                            <strong>Empty ally slot</strong>
+                            <strong>@GetSlotTitle(slot)</strong>
                             <span>@GetSlotHint(slot)</span>
                         </span>
                     </button>
@@ -46,9 +48,31 @@
                 <input
                     class="search-input"
                     type="text"
+                    value="@SearchTerm"
                     placeholder="Search Pokemon name"
-                    aria-label="Search Pokemon name" />
-                <p class="search-hint">Search wiring comes next. For now, click a slot to choose where the next pick will go.</p>
+                    aria-label="Search Pokemon name"
+                    @oninput="HandleSearchInput" />
+
+                @if (!string.IsNullOrWhiteSpace(SearchMessage))
+                {
+                    <p class="search-hint">@SearchMessage</p>
+                }
+
+                @if (SearchResults.Count > 0)
+                {
+                    <div class="search-results" role="listbox" aria-label="Pokemon search results">
+                        @foreach (var result in SearchResults)
+                        {
+                            <button
+                                type="button"
+                                class="search-result"
+                                @onclick="() => AssignPokemon(result.PokemonName)">
+                                <strong>@result.PokemonName</strong>
+                                <span>@GetSearchResultSubtitle(result)</span>
+                            </button>
+                        }
+                    </div>
+                }
             </div>
 
             <div class="panel">
@@ -56,12 +80,24 @@
                 <p>@GetInfoText()</p>
 
                 <div class="info-placeholder">
-                    <div class="info-box">Portrait</div>
-                    <div class="info-details">
-                        <p>Name</p>
-                        <p>Role</p>
-                        <p>Notes</p>
-                    </div>
+                    @if (ActivePokemon is null)
+                    {
+                        <div class="info-box">Portrait</div>
+                        <div class="info-details">
+                            <p>Name</p>
+                            <p>Role</p>
+                            <p>Notes</p>
+                        </div>
+                    }
+                    else
+                    {
+                        <img class="pokemon-portrait" src="@ActivePokemon.ImageUrl" alt="@ActivePokemon.PokemonName portrait" />
+                        <div class="info-details">
+                            <p><strong>@ActivePokemon.PokemonName</strong></p>
+                            <p>@GetPokedexText(ActivePokemon)</p>
+                            <p>@GetSlotOwnershipText()</p>
+                        </div>
+                    }
                 </div>
             </div>
 
@@ -71,12 +107,44 @@
                 <div class="matchup-columns">
                     <div class="matchup-box">
                         <h3>Best Against</h3>
-                        <p>No data yet.</p>
+
+                        @if (ActivePokemon is null || ActivePokemon.BestAgainst.Count == 0)
+                        {
+                            <p>No data yet.</p>
+                        }
+                        else
+                        {
+                            <div class="matchup-list">
+                                @foreach (var matchup in ActivePokemon.BestAgainst)
+                                {
+                                    <div class="matchup-row">
+                                        <span>@matchup.OpponentName</span>
+                                        <strong>@FormatWinRate(matchup.WinRate)</strong>
+                                    </div>
+                                }
+                            </div>
+                        }
                     </div>
 
                     <div class="matchup-box">
                         <h3>Worst Against</h3>
-                        <p>No data yet.</p>
+
+                        @if (ActivePokemon is null || ActivePokemon.WorstAgainst.Count == 0)
+                        {
+                            <p>No data yet.</p>
+                        }
+                        else
+                        {
+                            <div class="matchup-list">
+                                @foreach (var matchup in ActivePokemon.WorstAgainst)
+                                {
+                                    <div class="matchup-row">
+                                        <span>@matchup.OpponentName</span>
+                                        <strong>@FormatWinRate(matchup.WinRate)</strong>
+                                    </div>
+                                }
+                            </div>
+                        }
                     </div>
                 </div>
             </div>
@@ -100,7 +168,7 @@
                         @onclick="() => SelectSlot(slot)">
                         <span class="slot-number">@index</span>
                         <span class="slot-content">
-                            <strong>Empty enemy slot</strong>
+                            <strong>@GetSlotTitle(slot)</strong>
                             <span>@GetSlotHint(slot)</span>
                         </span>
                     </button>
@@ -109,53 +177,3 @@
         </section>
     </div>
 </div>
-
-@code {
-    private const int SlotCount = 5;
-
-    private DraftSlotRef activeSlot = new(TeamSide.Ally, 1);
-
-    private void SelectSlot(DraftSlotRef slot)
-    {
-        activeSlot = slot;
-    }
-
-    private bool IsActiveSlot(DraftSlotRef slot) => slot == activeSlot;
-
-    private string GetSlotClass(DraftSlotRef slot)
-    {
-        var classes = "draft-slot";
-
-        if (slot.Team == TeamSide.Enemy)
-        {
-            classes += " opponent-slot";
-        }
-
-        if (IsActiveSlot(slot))
-        {
-            classes += " active-slot";
-        }
-
-        return classes;
-    }
-
-    private string GetSlotHint(DraftSlotRef slot) =>
-        IsActiveSlot(slot) ? "Selected for the next pick" : "Click to target this slot";
-
-    private string GetSelectionSummary() =>
-        $"Selected slot: {GetTeamLabel(activeSlot.Team)} #{activeSlot.Index}";
-
-    private string GetInfoText() =>
-        $"No Pokemon selected yet. {GetTeamLabel(activeSlot.Team)} #{activeSlot.Index} is ready for your next pick.";
-
-    private static string GetTeamLabel(TeamSide team) =>
-        team == TeamSide.Ally ? "Your Team" : "Opponent Team";
-
-    private enum TeamSide
-    {
-        Ally,
-        Enemy
-    }
-
-    private readonly record struct DraftSlotRef(TeamSide Team, int Index);
-}

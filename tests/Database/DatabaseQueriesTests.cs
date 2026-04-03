@@ -26,10 +26,9 @@ public sealed class DatabaseQueriesTests : IDisposable
 
         DatabaseInitializer.Initialize(databasePath, [seedDirectory]);
 
-        using var connection = _helper.OpenConnection(databasePath);
-
-        var summary = DatabaseQueries.GetDatabaseSummary(connection);
-        var matchupPreview = DatabaseQueries.GetMatchupPreview(connection, limit: 10);
+        var summaryReader = new DatabaseSummaryReader(databasePath);
+        var summary = summaryReader.GetDatabaseSummary();
+        var matchupPreview = summaryReader.GetMatchupPreview(limit: 10);
 
         Assert.Equal(3L, summary.PokemonCount);
         Assert.Equal(2L, summary.MatchupCount);
@@ -63,9 +62,7 @@ public sealed class DatabaseQueriesTests : IDisposable
 
         DatabaseInitializer.Initialize(databasePath, [seedDirectory]);
 
-        using var connection = _helper.OpenConnection(databasePath);
-
-        var matchups = DatabaseQueries.GetMatchupsForPokemon(connection, "blastoise");
+        var matchups = new PokemonMatchupDataReader(databasePath).GetMatchupsForPokemon("blastoise");
 
         Assert.Equal(3, matchups.Count);
         Assert.Equal("Blastoise", matchups[0].PokemonName);
@@ -95,9 +92,7 @@ public sealed class DatabaseQueriesTests : IDisposable
 
         DatabaseInitializer.Initialize(databasePath, [seedDirectory]);
 
-        using var connection = _helper.OpenConnection(databasePath);
-
-        var matchups = DatabaseQueries.GetMatchupsForPokemon(connection, "Mew");
+        var matchups = new PokemonMatchupDataReader(databasePath).GetMatchupsForPokemon("Mew");
 
         Assert.Empty(matchups);
     }
@@ -131,9 +126,7 @@ public sealed class DatabaseQueriesTests : IDisposable
 
         DatabaseInitializer.Initialize(databasePath, [seedDirectory]);
 
-        using var connection = _helper.OpenConnection(databasePath);
-
-        var results = DatabaseQueries.SearchPokemon(connection, "blast");
+        var results = new PokemonDataReader(databasePath).SearchPokemon("blast");
 
         Assert.Equal(2, results.Count);
         Assert.Equal("Blastoise", results[0].PokemonName);
@@ -158,9 +151,7 @@ public sealed class DatabaseQueriesTests : IDisposable
 
         DatabaseInitializer.Initialize(databasePath, [seedDirectory]);
 
-        using var connection = _helper.OpenConnection(databasePath);
-
-        var results = DatabaseQueries.SearchPokemon(connection, "zzz");
+        var results = new PokemonDataReader(databasePath).SearchPokemon("zzz");
 
         Assert.Empty(results);
     }

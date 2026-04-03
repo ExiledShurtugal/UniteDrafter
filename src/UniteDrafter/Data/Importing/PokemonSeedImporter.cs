@@ -3,88 +3,13 @@ using UniteDrafter.Decrypter;
 
 namespace UniteDrafter.Data;
 
-public static class DatabaseInitializer
+public sealed record SeedImportSummary(int ParsedFiles, int PokemonUpserts, int MatchupUpserts);
+
+public static class PokemonSeedImporter
 {
-    private const string DefaultDatabasePath = "data/Database/unitedrafter.db";
-    private static readonly string[] DefaultJsonSourceDirectories =
-    [
-        "data/Database/JsonsManually"
-    ];
-
-    public static void Initialize(
-        string? databasePath = null,
-        IEnumerable<string>? jsonSourceDirectories = null)
-    {
-        var resolvedDatabasePath = ResolveDatabasePath(databasePath);
-        var resolvedJsonSourceDirectories = ResolveJsonSourceDirectories(jsonSourceDirectories);
-
-        var databaseDirectory = Path.GetDirectoryName(resolvedDatabasePath);
-        if (!string.IsNullOrWhiteSpace(databaseDirectory))
-        {
-            Directory.CreateDirectory(databaseDirectory);
-        }
-
-        using var connection = new SqliteConnection($"Data Source={resolvedDatabasePath}");
-        connection.Open();
-
-        EnableForeignKeys(connection);
-        CreateSchema(connection);
-        SeedFromJsonFiles(connection, resolvedJsonSourceDirectories);
-        DatabaseQueries.PrintDatabaseSummary(connection);
-    }
-
-    private static string ResolveDatabasePath(string? databasePath)
-    {
-        return string.IsNullOrWhiteSpace(databasePath) ? DefaultDatabasePath : databasePath;
-    }
-
-    private static IReadOnlyList<string> ResolveJsonSourceDirectories(IEnumerable<string>? jsonSourceDirectories)
-    {
-        return jsonSourceDirectories?
-            .Where(path => !string.IsNullOrWhiteSpace(path))
-            .ToArray()
-            ?? DefaultJsonSourceDirectories;
-    }
-
-    private static void EnableForeignKeys(SqliteConnection connection)
-    {
-        using var cmd = connection.CreateCommand();
-        cmd.CommandText = "PRAGMA foreign_keys = ON;";
-        cmd.ExecuteNonQuery();
-    }
-
-    private static void CreateSchema(SqliteConnection connection)
-    {
-        using var cmd = connection.CreateCommand();
-        cmd.CommandText = @"
-DROP TABLE IF EXISTS pokemon_matchup;
-DROP TABLE IF EXISTS pokemon;
-
-CREATE TABLE pokemon (
-    uniteapi_id INTEGER PRIMARY KEY,
-    pokedex_id INTEGER,
-    name TEXT NOT NULL,
-    img TEXT NOT NULL,
-    UNIQUE (pokedex_id)
-);
-
-CREATE TABLE pokemon_matchup (
-    pokemon_uniteapi_id INTEGER NOT NULL,
-    opponent_uniteapi_id INTEGER NOT NULL,
-    win_rate REAL NOT NULL,
-    PRIMARY KEY (pokemon_uniteapi_id, opponent_uniteapi_id),
-    FOREIGN KEY (pokemon_uniteapi_id) REFERENCES pokemon(uniteapi_id),
-    FOREIGN KEY (opponent_uniteapi_id) REFERENCES pokemon(uniteapi_id),
-    CHECK (win_rate >= 0 AND win_rate <= 100)
-);
-
-CREATE INDEX IF NOT EXISTS idx_pokemon_name ON pokemon(name);
-CREATE INDEX IF NOT EXISTS idx_matchup_opponent ON pokemon_matchup(opponent_uniteapi_id);
-";
-        cmd.ExecuteNonQuery();
-    }
-
-    private static void SeedFromJsonFiles(SqliteConnection connection, IEnumerable<string> jsonSourceDirectories)
+    public static SeedImportSummary ImportFromDirectories(
+        SqliteConnection connection,
+        IEnumerable<string> jsonSourceDirectories)
     {
         var parsedFiles = 0;
         var pokemonUpserts = 0;
@@ -101,17 +26,16 @@ CREATE INDEX IF NOT EXISTS idx_matchup_opponent ON pokemon_matchup(opponent_unit
 
             foreach (var filePath in Directory.EnumerateFiles(sourceDirectory, "*.json", SearchOption.TopDirectoryOnly))
             {
-                SeedSingleFile(connection, transaction, filePath, ref parsedFiles, ref pokemonUpserts, ref matchupUpserts);
+                ImportSingleFile(connection, transaction, filePath, ref parsedFiles, ref pokemonUpserts, ref matchupUpserts);
             }
         }
 
         transaction.Commit();
 
-        Console.WriteLine(
-            $"Database seed complete. Parsed files: {parsedFiles}, Pokemon upserts: {pokemonUpserts}, Matchup upserts: {matchupUpserts}");
+        return new SeedImportSummary(parsedFiles, pokemonUpserts, matchupUpserts);
     }
 
-    private static void SeedSingleFile(
+    private static void ImportSingleFile(
         SqliteConnection connection,
         SqliteTransaction transaction,
         string filePath,
@@ -123,6 +47,7 @@ CREATE INDEX IF NOT EXISTS idx_matchup_opponent ON pokemon_matchup(opponent_unit
         {
             return;
         }
+
         parsedFiles++;
 
         UpsertPokemon(
@@ -197,6 +122,7 @@ ON CONFLICT(uniteapi_id) DO UPDATE SET
         {
             cmd.Parameters.AddWithValue("$pokedexId", DBNull.Value);
         }
+
         cmd.Parameters.AddWithValue("$name", name);
         cmd.Parameters.AddWithValue("$img", img);
         cmd.ExecuteNonQuery();

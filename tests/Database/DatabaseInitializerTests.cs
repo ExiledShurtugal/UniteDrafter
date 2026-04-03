@@ -100,8 +100,7 @@ SELECT
 
         DatabaseInitializer.Initialize(databasePath, [missingSeedDirectory]);
 
-        using var connection = _helper.OpenConnection(databasePath);
-        var summary = DatabaseQueries.GetDatabaseSummary(connection);
+        var summary = new DatabaseSummaryReader(databasePath).GetDatabaseSummary();
 
         Assert.Equal(0L, summary.PokemonCount);
         Assert.Equal(0L, summary.MatchupCount);

@@ -11,6 +11,7 @@ obj/
 # Visual Studio Code
 .vscode/
 .dotnet/
+.dotnet-cli/
 
 # Logs
 *.log
