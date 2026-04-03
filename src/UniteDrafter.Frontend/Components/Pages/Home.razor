@@ -115,7 +115,7 @@
 
                         @if (ActivePokemon is null || ActivePokemon.BestAgainst.Count == 0)
                         {
-                            <p>No data yet.</p>
+                            <p>@GetMatchupEmptyText()</p>
                         }
                         else
                         {
@@ -136,7 +136,7 @@
 
                         @if (ActivePokemon is null || ActivePokemon.WorstAgainst.Count == 0)
                         {
-                            <p>No data yet.</p>
+                            <p>@GetMatchupEmptyText()</p>
                         }
                         else
                         {

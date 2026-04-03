@@ -12,6 +12,13 @@ obj/
 .vscode/
 .dotnet/
 .dotnet-cli/
+.playwright/
+data/Database/Diagnostics/
+data/Database/GuideSources/
+data/Database/JsonsManually/
+data/Database/unitedrafter.db
+temp_*.json
+temp_*.csx
 
 # Logs
 *.log

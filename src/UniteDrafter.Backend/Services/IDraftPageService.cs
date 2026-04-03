@@ -8,7 +8,8 @@ public sealed record PokemonDraftDetails(
     string PokemonName,
     string ImageUrl,
     IReadOnlyList<PokemonMatchupResult> BestAgainst,
-    IReadOnlyList<PokemonMatchupResult> WorstAgainst);
+    IReadOnlyList<PokemonMatchupResult> WorstAgainst,
+    string? CounterStatusMessage);
 
 public sealed record PokemonSearchResponse(
     IReadOnlyList<PokemonSearchResult> Results,

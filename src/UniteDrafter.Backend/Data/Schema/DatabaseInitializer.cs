@@ -6,7 +6,7 @@ public static class DatabaseInitializer
     private const string DefaultDatabasePath = "data/Database/unitedrafter.db";
     private static readonly string[] DefaultJsonSourceDirectories =
     [
-        "data/Database/JsonsManually"
+        "data/Database/GuideSources"
     ];
 
     public static void Initialize(

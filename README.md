@@ -19,7 +19,16 @@ Right now the app can:
 - show basic matchup information for the selected Pokemon
 
 Current limitation:
-- the database only contains a small manually seeded subset of Pokemon data right now, not the full roster
+- the automated source refresh currently skips a few newer Pokemon pages that do not expose counters yet
+
+Known unsupported Pokemon at the source-data level:
+- Articuno
+- Meowth
+- Moltres
+- Sirfetch'd
+- Zapdos
+
+UniteAPI currently does not have matchup/counter data for these Pokemon, so there is no source data to import into the local database yet.
 
 ## Inspiration
 
@@ -43,7 +52,9 @@ This repository currently has three main parts:
 
 Database-related files live under [`data/Database`](/c:/Users/joaoc/Desktop/Guto/UniteDrafter/data/Database), including:
 - the SQLite database file
-- the manual JSON seed inputs currently used to populate it
+- the raw guide source JSON files used to populate it
+
+The guide source files now live in [`data/Database/GuideSources`](/c:/Users/joaoc/Desktop/Guto/UniteDrafter/data/Database/GuideSources).
 
 ## Data Layer Layout
 
@@ -69,17 +80,43 @@ Run the frontend:
 dotnet run --project src/UniteDrafter.Frontend
 ```
 
-Seed or rebuild the database through the CLI app default entrypoint:
+If Windows keeps the previous frontend process alive and locks `UniteDrafter.Backend.dll`, use the helper script instead:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\run-frontend.ps1
+```
+
+## Main Workflow
+
+Refresh the downloaded guide sources and rebuild the local database in one command:
+
+```powershell
+dotnet run --project UniteDrafter.Backend.csproj -- refresh-db
+```
+
+This is the normal command to use after source data changes.
+
+If you only want to rebuild the database from files that are already on disk:
 
 ```powershell
 dotnet run --project UniteDrafter.Backend.csproj
 ```
 
-Useful CLI commands:
+Useful day-to-day commands:
 
 ```powershell
 dotnet run --project UniteDrafter.Backend.csproj -- search-pokemon blast
 dotnet run --project UniteDrafter.Backend.csproj -- matchups blastoise
+dotnet run --project UniteDrafter.Backend.csproj -- refresh-db
+```
+
+## Debugging Commands
+
+These are lower-level commands mainly useful while investigating source or parser issues:
+
+```powershell
+dotnet run --project UniteDrafter.Backend.csproj -- update-sources
+dotnet run --project UniteDrafter.Backend.csproj -- update-sources-browser
 dotnet run --project UniteDrafter.Backend.csproj -- decrypt-file <input> <output>
 dotnet run --project UniteDrafter.Backend.csproj -- decrypt-ids <input>
 ```

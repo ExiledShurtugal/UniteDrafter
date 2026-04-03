@@ -59,6 +59,9 @@ public sealed class DraftPageService : IDraftPageService
             var matchups = pokemonMatchupDataReader.GetMatchupsForPokemon(profile.PokemonName);
             var bestAgainst = matchups.Take(matchupLimit).ToArray();
             var worstAgainst = matchups.TakeLast(Math.Min(matchupLimit, matchups.Count)).Reverse().ToArray();
+            var counterStatusMessage = matchups.Count == 0
+                ? "No counters available."
+                : null;
 
             return new PokemonDraftDetailsResponse(
                 new PokemonDraftDetails(
@@ -67,7 +70,8 @@ public sealed class DraftPageService : IDraftPageService
                     profile.PokemonName,
                     profile.ImageUrl,
                     bestAgainst,
-                    worstAgainst),
+                    worstAgainst,
+                    counterStatusMessage),
                 null);
         }
         catch (Exception ex)

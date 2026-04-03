@@ -29,6 +29,24 @@ class Program
             return;
         }
 
+        if (args.Length >= 1 && string.Equals(args[0], "update-sources", StringComparison.OrdinalIgnoreCase))
+        {
+            UpdateSourcesCommand.Execute(args.Skip(1).ToArray());
+            return;
+        }
+
+        if (args.Length >= 1 && string.Equals(args[0], "update-sources-browser", StringComparison.OrdinalIgnoreCase))
+        {
+            UpdateSourcesCommand.Execute(["--browser", .. args.Skip(1)]);
+            return;
+        }
+
+        if (args.Length >= 1 && string.Equals(args[0], "refresh-db", StringComparison.OrdinalIgnoreCase))
+        {
+            RefreshDatabaseCommand.Execute(args.Skip(1).ToArray());
+            return;
+        }
+
         DatabaseInitializer.Initialize();
     }
 }

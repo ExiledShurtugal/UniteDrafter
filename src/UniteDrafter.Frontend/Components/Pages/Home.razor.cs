@@ -89,6 +89,9 @@ public partial class Home
     private string GetSlotOwnershipText() =>
         $"{GetTeamLabel(pageState.ActiveSlot.Team)} #{pageState.ActiveSlot.Index}";
 
+    private string GetMatchupEmptyText() =>
+        ActivePokemon?.CounterStatusMessage ?? "No data yet.";
+
     private static string GetPokedexText(PokemonDraftDetails pokemon) =>
         pokemon.PokedexId.HasValue ? $"Pokedex #{pokemon.PokedexId.Value}" : "No Pokedex number available";
 

@@ -5,6 +5,7 @@ using System.Text.Json;
 using Xunit;
 using DecrypterService = UniteDrafter.Decrypter.Decrypter;
 using BestBuildsReaderService = UniteDrafter.Decrypter.BestBuildsReader;
+using UniteDrafter.Data.Updating;
 
 namespace UniteDrafter.Tests.Decrypter;
 
@@ -168,6 +169,50 @@ public class DecrypterTests
         Assert.True(topMatchup.OpponentUniteApiId > 0);
         Assert.False(string.IsNullOrWhiteSpace(topMatchup.OpponentPokemonName));
         Assert.True(topMatchup.WinRate > 0);
+    }
+
+    [Fact]
+    public void TryExtractPageJson_ReturnsRawJsonWhenResponseAlreadyIsJson()
+    {
+        const string responseText = """{"pageProps":{"e":"blob"}}""";
+
+        var extracted = UniteApiSourceUpdater.TryExtractPageJson(responseText);
+
+        Assert.Equal(responseText, extracted);
+    }
+
+    [Fact]
+    public void TryExtractPageJson_ExtractsNextDataScriptFromHtml()
+    {
+        const string html = """
+            <html>
+              <body>
+                <script id="__NEXT_DATA__" type="application/json">
+                  {"pageProps":{"e":"blob"}}
+                </script>
+              </body>
+            </html>
+            """;
+
+        var extracted = UniteApiSourceUpdater.TryExtractPageJson(html);
+
+        Assert.Equal("""{"pageProps":{"e":"blob"}}""", extracted);
+    }
+
+    [Fact]
+    public void ExtractGuideUrls_ReturnsDistinctGuideLinks()
+    {
+        const string html = """
+            <a href="/pokemon/best-builds-movesets-and-guide-for-blastoise">Blastoise</a>
+            <a href="https://uniteapi.dev/pokemon/best-builds-movesets-and-guide-for-alolanraichu">Alolan Raichu</a>
+            <a href="/pokemon/best-builds-movesets-and-guide-for-blastoise">Blastoise again</a>
+            """;
+
+        var urls = UniteApiSourceUpdater.ExtractGuideUrls(html);
+
+        Assert.Equal(2, urls.Count);
+        Assert.Contains("/pokemon/best-builds-movesets-and-guide-for-blastoise", urls);
+        Assert.Contains("https://uniteapi.dev/pokemon/best-builds-movesets-and-guide-for-alolanraichu", urls);
     }
 
 
