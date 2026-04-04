@@ -1,7 +1,7 @@
 using Microsoft.Data.Sqlite;
-using UniteDrafter.Decrypter;
+using UniteDrafter.SourceUpdate.Decrypter;
 
-namespace UniteDrafter.Data;
+namespace UniteDrafter.SourceUpdate.Data;
 
 public sealed record SeedImportFailure(string FilePath, string Error);
 

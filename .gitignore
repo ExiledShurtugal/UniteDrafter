@@ -1,6 +1,7 @@
 # Build outputs
 bin/
 obj/
+src/UniteDrafter.Frontend/artifacts/
 
 # User-specific files
 *.user

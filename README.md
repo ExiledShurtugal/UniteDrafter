@@ -45,10 +45,11 @@ The longer-term goal is a local app that helps answer:
 
 ## Developer Notes
 
-This repository currently has three main parts:
-- [`src/UniteDrafter.Backend`](/c:/Users/joaoc/Desktop/Guto/UniteDrafter/src/UniteDrafter.Backend): core app logic, CLI commands, services, and data layer
+This repository currently has four main parts:
+- [`src/UniteDrafter.Backend`](/c:/Users/joaoc/Desktop/Guto/UniteDrafter/src/UniteDrafter.Backend): CLI entry point and command surface
+- [`src/UniteDrafter.Core`](/c:/Users/joaoc/Desktop/Guto/UniteDrafter/src/UniteDrafter.Core): draft-page services, shared models, and SQLite readers
 - [`src/UniteDrafter.Frontend`](/c:/Users/joaoc/Desktop/Guto/UniteDrafter/src/UniteDrafter.Frontend): Blazor frontend
-- [`src/Decrypter`](/c:/Users/joaoc/Desktop/Guto/UniteDrafter/src/Decrypter): helpers for decrypting and parsing source data
+- [`src/UniteDrafter.SourceUpdate`](/c:/Users/joaoc/Desktop/Guto/UniteDrafter/src/UniteDrafter.SourceUpdate): source refresh, decryption, schema, and import pipeline
 
 Database-related files live under [`data/Database`](/c:/Users/joaoc/Desktop/Guto/UniteDrafter/data/Database), including:
 - the SQLite database file
@@ -58,11 +59,16 @@ The guide source files now live in [`data/Database/GuideSources`](/c:/Users/joao
 
 ## Data Layer Layout
 
-Inside [`src/UniteDrafter.Backend/Data`](/c:/Users/joaoc/Desktop/Guto/UniteDrafter/src/UniteDrafter.Backend/Data):
-- `Readers/`: database readers and reader interfaces
-- `Schema/`: database creation and schema setup
-- `Importing/`: seed import logic
-- `Models/`: shared query/result models
+Inside [`src/UniteDrafter.Core`](/c:/Users/joaoc/Desktop/Guto/UniteDrafter/src/UniteDrafter.Core):
+- `Data/Readers/`: database readers and reader interfaces
+- `Data/Models/`: shared query/result models
+- `Services/`: draft page services, session state, and storage path helpers
+
+Inside [`src/UniteDrafter.SourceUpdate`](/c:/Users/joaoc/Desktop/Guto/UniteDrafter/src/UniteDrafter.SourceUpdate):
+- `Data/Schema/`: database creation and schema setup
+- `Data/Importing/`: seed import logic
+- `Data/Updating/`: source refresh, diagnostics, and payload extraction
+- `Decrypter/`: encrypted payload parsing helpers
 
 ## Current Architecture
 
@@ -80,7 +86,7 @@ Run the frontend:
 dotnet run --project src/UniteDrafter.Frontend
 ```
 
-If Windows keeps the previous frontend process alive and locks `UniteDrafter.Backend.dll`, use the helper script instead:
+If Windows keeps the previous frontend process alive, use the helper script instead:
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\scripts\run-frontend.ps1
@@ -95,8 +101,15 @@ dotnet run --project UniteDrafter.Backend.csproj -- refresh-db
 ```
 
 This is the normal command to use after source data changes.
+`refresh-db` now refreshes guide files into a staging snapshot first, then only replaces the live source directory and rebuilds SQLite if every requested page succeeds. If any guide refresh fails, the existing local sources and database are left unchanged.
 
 If you only want to rebuild the database from files that are already on disk:
+
+```powershell
+dotnet run --project UniteDrafter.Backend.csproj -- rebuild-db
+```
+
+If you just want the backend to make sure the SQLite file and schema exist without wiping imported data:
 
 ```powershell
 dotnet run --project UniteDrafter.Backend.csproj
@@ -108,7 +121,10 @@ Useful day-to-day commands:
 dotnet run --project UniteDrafter.Backend.csproj -- search-pokemon blast
 dotnet run --project UniteDrafter.Backend.csproj -- matchups blastoise
 dotnet run --project UniteDrafter.Backend.csproj -- refresh-db
+dotnet run --project UniteDrafter.Backend.csproj -- rebuild-db
 ```
+
+By default the CLI and frontend both auto-discover the nearest project storage root and resolve the database, guide sources, diagnostics, and browser profile under it. To override that root explicitly, set `UNITE_DRAFTER_STORAGE_ROOT`.
 
 ## Debugging Commands
 

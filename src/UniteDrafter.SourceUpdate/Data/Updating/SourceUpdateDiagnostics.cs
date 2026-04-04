@@ -1,19 +1,17 @@
 using System.Text;
 
-namespace UniteDrafter.Data.Updating;
+namespace UniteDrafter.SourceUpdate.Data.Updating;
 
 public static class SourceUpdateDiagnostics
 {
-    private const string FailureDiagnosticsDirectory = "data/Database/Diagnostics/SourceUpdateFailures";
-
-    public static void WriteFailureDiagnostics(string url, string pageContent)
+    public static void WriteFailureDiagnostics(string diagnosticsDirectory, string url, string pageContent)
     {
         try
         {
-            Directory.CreateDirectory(FailureDiagnosticsDirectory);
+            Directory.CreateDirectory(diagnosticsDirectory);
             var slug = Path.GetFileName(new Uri(url).AbsolutePath);
             var timestamp = DateTime.UtcNow.ToString("yyyyMMdd-HHmmss");
-            var outputPath = Path.Combine(FailureDiagnosticsDirectory, $"{timestamp}-{slug}.html");
+            var outputPath = Path.Combine(diagnosticsDirectory, $"{timestamp}-{slug}.html");
             File.WriteAllText(outputPath, pageContent);
         }
         catch
@@ -21,7 +19,10 @@ public static class SourceUpdateDiagnostics
         }
     }
 
-    internal static void WriteResponseDiagnostics(string url, IReadOnlyList<BrowserResponseCapture> responses)
+    internal static void WriteResponseDiagnostics(
+        string diagnosticsDirectory,
+        string url,
+        IReadOnlyList<BrowserResponseCapture> responses)
     {
         if (responses.Count == 0)
         {
@@ -30,10 +31,10 @@ public static class SourceUpdateDiagnostics
 
         try
         {
-            Directory.CreateDirectory(FailureDiagnosticsDirectory);
+            Directory.CreateDirectory(diagnosticsDirectory);
             var slug = Path.GetFileName(new Uri(url).AbsolutePath);
             var timestamp = DateTime.UtcNow.ToString("yyyyMMdd-HHmmss");
-            var outputPath = Path.Combine(FailureDiagnosticsDirectory, $"{timestamp}-{slug}-responses.txt");
+            var outputPath = Path.Combine(diagnosticsDirectory, $"{timestamp}-{slug}-responses.txt");
 
             using var writer = new StreamWriter(outputPath, false, Encoding.UTF8);
             foreach (var response in responses)

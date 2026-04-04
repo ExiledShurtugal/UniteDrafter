@@ -3,9 +3,9 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Text.Json;
 using Xunit;
-using DecrypterService = UniteDrafter.Decrypter.Decrypter;
-using BestBuildsReaderService = UniteDrafter.Decrypter.BestBuildsReader;
-using UniteDrafter.Data.Updating;
+using DecrypterService = UniteDrafter.SourceUpdate.Decrypter.Decrypter;
+using BestBuildsReaderService = UniteDrafter.SourceUpdate.Decrypter.BestBuildsReader;
+using UniteDrafter.SourceUpdate.Data.Updating;
 
 namespace UniteDrafter.Tests.Decrypter;
 
@@ -172,6 +172,41 @@ public class DecrypterTests
     }
 
     [Fact]
+    public void ParsePokemonWinRatesFromDecryptedPayload_ThrowsWhenCountersPokemonIdIsMissing()
+    {
+        const string json = """
+            {
+              "pokemon": {
+                "id": 7,
+                "name": {
+                  "en": "Blastoise"
+                },
+                "icons": {
+                  "square": "blastoise.png"
+                }
+              },
+              "counters": {
+                "all": [
+                  {
+                    "pokemonId": 180006,
+                    "name": "Charizard",
+                    "img": "charizard.png",
+                    "winRate": 52.5
+                  }
+                ]
+              }
+            }
+            """;
+
+        using var doc = JsonDocument.Parse(json);
+
+        var ex = Assert.Throws<InvalidOperationException>(() =>
+            BestBuildsReaderService.ParsePokemonWinRatesFromDecryptedPayload(doc.RootElement));
+
+        Assert.Contains("counters.pokemonId", ex.Message);
+    }
+
+    [Fact]
     public void TryExtractPageJson_ReturnsRawJsonWhenResponseAlreadyIsJson()
     {
         const string responseText = """{"pageProps":{"e":"blob"}}""";
@@ -211,7 +246,7 @@ public class DecrypterTests
         var urls = UniteApiSourceUpdater.ExtractGuideUrls(html);
 
         Assert.Equal(2, urls.Count);
-        Assert.Contains("/pokemon/best-builds-movesets-and-guide-for-blastoise", urls);
+        Assert.Contains("https://uniteapi.dev/pokemon/best-builds-movesets-and-guide-for-blastoise", urls);
         Assert.Contains("https://uniteapi.dev/pokemon/best-builds-movesets-and-guide-for-alolanraichu", urls);
     }
 

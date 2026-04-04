@@ -1,4 +1,4 @@
-using UniteDrafter.Data.Updating;
+using UniteDrafter.SourceUpdate.Data.Updating;
 
 namespace UniteDrafter.Commands;
 
@@ -7,7 +7,7 @@ public static class UpdateSourcesCommand
     public static void Execute(string[] args)
     {
         var options = ParseOptions(args);
-        var summary = UniteApiSourceUpdater.UpdateAsync(options).GetAwaiter().GetResult();
+        var summary = UniteApiSourceUpdater.UpdateAsync(options, new ConsoleSourceUpdateReporter()).GetAwaiter().GetResult();
 
         Console.WriteLine(
             $"Source update complete. Saved: {summary.SavedFiles}, Failed: {summary.FailedFiles}, Output: {summary.OutputDirectory}");

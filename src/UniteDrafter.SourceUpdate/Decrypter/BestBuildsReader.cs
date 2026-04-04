@@ -1,7 +1,7 @@
 using System.Globalization;
 using System.Text.Json;
 
-namespace UniteDrafter.Decrypter;
+namespace UniteDrafter.SourceUpdate.Decrypter;
 
 public sealed record PokemonInfo(
     int UniteApiId,
@@ -55,8 +55,8 @@ public static class BestBuildsReader
         var uniteApiId = ReadInt(root, "counters", "pokemonId");
         if (uniteApiId <= 0)
         {
-            // Fallback for unexpected payload variants.
-            uniteApiId = pokedexId;
+            throw new InvalidOperationException(
+                "Could not read a valid Unite API id from counters.pokemonId.");
         }
 
         var pokemon = new PokemonInfo(
@@ -110,7 +110,9 @@ public static class BestBuildsReader
     private static int ReadInt(JsonElement node, params string[] path)
     {
         var target = Navigate(node, path);
-        return target.TryGetInt32(out var value) ? value : 0;
+        return target.ValueKind == JsonValueKind.Number && target.TryGetInt32(out var value)
+            ? value
+            : 0;
     }
 
     private static string ReadString(JsonElement node, params string[] path)

@@ -8,7 +8,8 @@ For the full project overview, frontend notes, and repo structure, see the root 
 
 `Program.cs` supports these execution modes:
 - refresh source files and rebuild the database in one command
-- initialize or rebuild the local database
+- safely initialize the local database schema for normal startup
+- rebuild the local database from source files on demand
 - decrypt encrypted page JSON into readable JSON
 - inspect ID mappings from one encrypted file
 - search Pokemon names from the database
@@ -28,6 +29,12 @@ This is the primary command to use during normal development.
 If you already have fresh guide source files on disk and only want to rebuild SQLite:
 
 ```powershell
+dotnet run --project UniteDrafter.Backend.csproj -- rebuild-db
+```
+
+If you just want to ensure the SQLite file and schema exist without wiping existing imported data:
+
+```powershell
 dotnet run --project UniteDrafter.Backend.csproj
 ```
 
@@ -38,7 +45,7 @@ dotnet run --project UniteDrafter.Backend.csproj -- search-pokemon blast
 dotnet run --project UniteDrafter.Backend.csproj -- matchups Blastoise
 ```
 
-`refresh-db` uses the browser fetcher by default and continues rebuilding the database even if a few source pages are skipped, so the local SQLite file still gets updated from every successfully fetched guide.
+`refresh-db` uses the browser fetcher by default and refreshes guide files into a staging snapshot first. The live guide-source directory and SQLite database are only updated if every requested source page succeeds; otherwise the staged files are discarded and the existing local data is left unchanged.
 
 Known unsupported Pokemon at the source-data level:
 - Articuno
@@ -84,6 +91,8 @@ dotnet run --project UniteDrafter.Backend.csproj -- update-sources --cookie-file
 The cookie file should contain the raw `Cookie` header value copied from a working browser request.
 
 Browser mode stores a reusable local Edge profile by default at `.playwright/uniteapi-edge-profile`, so once you pass Cloudflare in the opened browser session, later refreshes should be smoother.
+
+The CLI resolves its database, source, diagnostics, and browser-profile paths from the shared storage root. By default it auto-discovers the nearest project root; set `UNITE_DRAFTER_STORAGE_ROOT` to override that location explicitly.
 
 ## Debugging Commands
 

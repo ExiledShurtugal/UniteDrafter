@@ -1,11 +1,13 @@
-namespace UniteDrafter.Data.Updating;
+using UniteDrafter.Storage;
+
+namespace UniteDrafter.SourceUpdate.Data.Updating;
 
 public static class SourceUpdateOptionsParser
 {
-    public static SourceUpdateOptions Parse(string[] args)
+    public static SourceUpdateOptions Parse(string[] args, string? startPath = null)
     {
-        var outputDirectory = "data/Database/GuideSources";
-        var browserProfileDirectory = ".playwright/uniteapi-edge-profile";
+        string? configuredOutputDirectory = null;
+        string? configuredBrowserProfileDirectory = null;
         string? cookieHeader = null;
         string? cookieFile = null;
         var useBrowser = false;
@@ -17,7 +19,7 @@ public static class SourceUpdateOptionsParser
             var arg = args[i];
             if (string.Equals(arg, "--output-dir", StringComparison.OrdinalIgnoreCase))
             {
-                outputDirectory = ReadValue(args, ref i, arg);
+                configuredOutputDirectory = ReadValue(args, ref i, arg);
                 continue;
             }
 
@@ -48,7 +50,7 @@ public static class SourceUpdateOptionsParser
 
             if (string.Equals(arg, "--profile-dir", StringComparison.OrdinalIgnoreCase))
             {
-                browserProfileDirectory = ReadValue(args, ref i, arg);
+                configuredBrowserProfileDirectory = ReadValue(args, ref i, arg);
                 useBrowser = true;
                 continue;
             }
@@ -66,13 +68,24 @@ public static class SourceUpdateOptionsParser
             cookieHeader = Environment.GetEnvironmentVariable("UNITE_DRAFTER_COOKIE_HEADER");
         }
 
+        var storageLayout = UniteDrafterStoragePaths.ResolveLayout(startPath ?? AppContext.BaseDirectory);
+        var outputDirectory = UniteDrafterStoragePaths.ResolvePathFromRoot(
+            storageLayout.RootPath,
+            configuredOutputDirectory,
+            UniteDrafterStoragePaths.DefaultGuideSourcesDirectory);
+        var browserProfileDirectory = UniteDrafterStoragePaths.ResolvePathFromRoot(
+            storageLayout.RootPath,
+            configuredBrowserProfileDirectory,
+            UniteDrafterStoragePaths.DefaultBrowserProfileDirectory);
+
         return new SourceUpdateOptions(
             outputDirectory,
             targets,
             cookieHeader,
             useBrowser,
             headless,
-            browserProfileDirectory);
+            browserProfileDirectory,
+            storageLayout.SourceUpdateDiagnosticsDirectory);
     }
 
     private static string ReadValue(string[] args, ref int index, string optionName)

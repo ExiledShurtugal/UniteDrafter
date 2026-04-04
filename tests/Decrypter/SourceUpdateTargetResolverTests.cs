@@ -1,4 +1,4 @@
-using UniteDrafter.Data.Updating;
+using UniteDrafter.SourceUpdate.Data.Updating;
 using Xunit;
 
 namespace UniteDrafter.Tests.Decrypter;
@@ -17,7 +17,7 @@ public sealed class SourceUpdateTargetResolverTests
         var urls = SourceUpdateTargetResolver.ExtractGuideUrls(html);
 
         Assert.Equal(2, urls.Count);
-        Assert.Equal("/pokemon/best-builds-movesets-and-guide-for-blastoise", urls[0]);
+        Assert.Equal("https://uniteapi.dev/pokemon/best-builds-movesets-and-guide-for-blastoise", urls[0]);
         Assert.Equal("https://uniteapi.dev/pokemon/best-builds-movesets-and-guide-for-charizard", urls[1]);
     }
 }

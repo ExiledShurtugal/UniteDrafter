@@ -5,28 +5,26 @@ namespace UniteDrafter.Frontend.Components.Pages;
 
 public sealed class DraftPageState
 {
-    private readonly Dictionary<DraftSlotRef, PokemonDraftDetails> draftedPokemon = [];
     private readonly IDraftPageService draftPageService;
+    private readonly DraftSession draftSession = new();
 
     public DraftPageState(IDraftPageService draftPageService)
     {
         this.draftPageService = draftPageService;
-        ActiveSlot = new DraftSlotRef(TeamSide.Ally, 1);
         SearchMessage = "Type at least 2 letters to search the database.";
         SearchResults = [];
     }
 
-    public DraftSlotRef ActiveSlot { get; private set; }
+    public DraftSlotRef ActiveSlot => draftSession.ActiveSlot;
     public string SearchTerm { get; private set; } = string.Empty;
     public string SearchMessage { get; private set; }
     public IReadOnlyList<PokemonSearchResult> SearchResults { get; private set; }
 
-    public PokemonDraftDetails? ActivePokemon =>
-        draftedPokemon.TryGetValue(ActiveSlot, out var pokemon) ? pokemon : null;
+    public PokemonDraftDetails? ActivePokemon => draftSession.ActivePokemon;
 
     public void SelectSlot(DraftSlotRef slot)
     {
-        ActiveSlot = slot;
+        draftSession.SelectSlot(slot);
 
         if (ActivePokemon is null)
         {
@@ -51,78 +49,46 @@ public sealed class DraftPageState
 
         var details = response.Details;
 
-        if (HasDuplicateOnSameTeam(details.PokemonName))
+        var operation = draftSession.AssignPokemon(details);
+        if (operation.Status == DraftSessionOperationStatus.AlreadyDrafted)
         {
-            SearchMessage = $"{details.PokemonName} is already on {GetTeamLabel(ActiveSlot.Team)}.";
+            SearchMessage = $"{details.PokemonName} is already drafted.";
             return;
         }
 
-        draftedPokemon[ActiveSlot] = details;
         SearchTerm = details.PokemonName;
         SearchResults = [];
-        SearchMessage = $"{details.PokemonName} assigned to {GetTeamLabel(ActiveSlot.Team)} #{ActiveSlot.Index}.";
+        SearchMessage = $"{details.PokemonName} assigned to {GetTeamLabel(operation.Slot.Team)} #{operation.Slot.Index}.";
     }
 
     public void ClearActiveSlot()
     {
-        if (draftedPokemon.Remove(ActiveSlot, out var removedPokemon))
+        var operation = draftSession.ClearActiveSlot();
+        if (operation.Status == DraftSessionOperationStatus.Cleared)
         {
             SearchTerm = string.Empty;
             SearchResults = [];
-            SearchMessage = $"{removedPokemon.PokemonName} removed from {GetTeamLabel(ActiveSlot.Team)} #{ActiveSlot.Index}.";
+            SearchMessage = $"{operation.PokemonName} removed from {GetTeamLabel(operation.Slot.Team)} #{operation.Slot.Index}.";
             return;
         }
 
-        SearchMessage = $"{GetTeamLabel(ActiveSlot.Team)} #{ActiveSlot.Index} is already empty.";
+        SearchMessage = $"{GetTeamLabel(operation.Slot.Team)} #{operation.Slot.Index} is already empty.";
     }
 
     public void ResetDraft()
     {
-        draftedPokemon.Clear();
-        ActiveSlot = new DraftSlotRef(TeamSide.Ally, 1);
+        draftSession.Reset();
         SearchTerm = string.Empty;
         SearchResults = [];
         SearchMessage = "Draft reset. Type at least 2 letters to search the database.";
     }
 
-    public bool IsActiveSlot(DraftSlotRef slot) => slot == ActiveSlot;
+    public bool IsActiveSlot(DraftSlotRef slot) => draftSession.IsActiveSlot(slot);
 
-    public bool TryGetDraftedPokemon(DraftSlotRef slot, out PokemonDraftDetails? pokemon)
-    {
-        if (draftedPokemon.TryGetValue(slot, out var foundPokemon))
-        {
-            pokemon = foundPokemon;
-            return true;
-        }
+    public bool TryGetDraftedPokemon(DraftSlotRef slot, out PokemonDraftDetails? pokemon) =>
+        draftSession.TryGetDraftedPokemon(slot, out pokemon);
 
-        pokemon = null;
-        return false;
-    }
-
-    public bool HasDraftedPokemon(DraftSlotRef slot) => draftedPokemon.ContainsKey(slot);
-
-    private bool HasDuplicateOnSameTeam(string pokemonName)
-    {
-        foreach (var entry in draftedPokemon)
-        {
-            if (entry.Key == ActiveSlot)
-            {
-                continue;
-            }
-
-            if (entry.Key.Team != ActiveSlot.Team)
-            {
-                continue;
-            }
-
-            if (string.Equals(entry.Value.PokemonName, pokemonName, StringComparison.OrdinalIgnoreCase))
-            {
-                return true;
-            }
-        }
-
-        return false;
-    }
+    public bool HasDraftedPokemon(DraftSlotRef slot) => draftSession.HasDraftedPokemon(slot);
 
     private void RefreshSearchResults()
     {
@@ -152,11 +118,3 @@ public sealed class DraftPageState
     private static string GetTeamLabel(TeamSide team) =>
         team == TeamSide.Ally ? "Your Team" : "Opponent Team";
 }
-
-public enum TeamSide
-{
-    Ally,
-    Enemy
-}
-
-public readonly record struct DraftSlotRef(TeamSide Team, int Index);

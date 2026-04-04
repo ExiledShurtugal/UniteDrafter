@@ -1,5 +1,5 @@
 using System.Text.Json;
-using BestBuildsDecrypter = UniteDrafter.Decrypter.Decrypter;
+using BestBuildsDecrypter = UniteDrafter.SourceUpdate.Decrypter.Decrypter;
 
 namespace UniteDrafter.Commands;
 

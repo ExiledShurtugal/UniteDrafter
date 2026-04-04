@@ -5,24 +5,17 @@
     <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
   </PropertyGroup>
 
-  <!-- Prevent the app project from compiling test sources -->
   <ItemGroup>
-    <Compile Remove="tests/**/*.cs" />
-    <Compile Remove="deprecated/tests/**/*.cs" />
-    <Compile Remove="src/Decrypter/**/*.cs" />
-    <Compile Remove="src/UniteDrafter.Backend/Data/**/*.cs" />
-    <Compile Remove="src/UniteDrafter.Backend/Services/**/*.cs" />
-    <Compile Remove="src/UniteDrafter.Frontend/**/*.cs" />
-    <Compile Remove="src/UniteDrafter.Frontend/obj/**/*.cs" />
-    <Compile Remove="src/UniteDrafter.Frontend/bin/**/*.cs" />
-    <Content Remove="src/UniteDrafter.Frontend/**" />
-    <EmbeddedResource Remove="src/UniteDrafter.Frontend/**" />
-    <None Remove="src/UniteDrafter.Frontend/**" />
+    <Compile Include="src/UniteDrafter.Backend/Program.cs" />
+    <Compile Include="src/UniteDrafter.Backend/Commands/**/*.cs" />
   </ItemGroup>
+
   <ItemGroup>
     <ProjectReference Include="src\UniteDrafter.Core\UniteDrafter.Core.csproj" />
+    <ProjectReference Include="src\UniteDrafter.SourceUpdate\UniteDrafter.SourceUpdate.csproj" />
   </ItemGroup>
 
 </Project>

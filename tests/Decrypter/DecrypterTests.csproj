@@ -22,7 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\UniteDrafter.Core\UniteDrafter.Core.csproj" />
+    <ProjectReference Include="..\..\src\UniteDrafter.SourceUpdate\UniteDrafter.SourceUpdate.csproj" />
   </ItemGroup>
 
 </Project>

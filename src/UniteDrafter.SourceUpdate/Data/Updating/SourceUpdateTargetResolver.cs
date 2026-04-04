@@ -3,7 +3,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using Microsoft.Playwright;
 
-namespace UniteDrafter.Data.Updating;
+namespace UniteDrafter.SourceUpdate.Data.Updating;
 
 public static partial class SourceUpdateTargetResolver
 {
@@ -22,6 +22,7 @@ public static partial class SourceUpdateTargetResolver
             .Matches(html)
             .Select(match => match.Groups["url"].Value)
             .Where(url => !string.IsNullOrWhiteSpace(url))
+            .Select(ToGuideUrl)
             .Distinct(StringComparer.OrdinalIgnoreCase)
             .OrderBy(url => url, StringComparer.OrdinalIgnoreCase)
             .ToArray();
@@ -99,7 +100,13 @@ public static partial class SourceUpdateTargetResolver
             return absoluteUri.ToString();
         }
 
-        var slug = target.Trim().Trim('/').ToLowerInvariant();
+        var slug = target.Trim().Trim('/');
+        if (slug.StartsWith("pokemon/", StringComparison.OrdinalIgnoreCase))
+        {
+            return UniteApiOrigin + "/" + slug.ToLowerInvariant();
+        }
+
+        slug = slug.ToLowerInvariant();
         if (slug.StartsWith("best-builds-movesets-and-guide-for-", StringComparison.OrdinalIgnoreCase))
         {
             return UniteApiOrigin + "/pokemon/" + slug;

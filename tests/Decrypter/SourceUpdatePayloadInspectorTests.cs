@@ -1,4 +1,4 @@
-using UniteDrafter.Data.Updating;
+using UniteDrafter.SourceUpdate.Data.Updating;
 using Xunit;
 
 namespace UniteDrafter.Tests.Decrypter;

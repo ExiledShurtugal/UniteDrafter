@@ -1,20 +1,19 @@
 using Microsoft.Data.Sqlite;
-namespace UniteDrafter.Data;
+using UniteDrafter.Data;
+using UniteDrafter.Storage;
 
-public static class DatabaseInitializer
+namespace UniteDrafter.SourceUpdate.Data;
+
+public static class DatabaseRebuilder
 {
-    private const string DefaultDatabasePath = "data/Database/unitedrafter.db";
-    private static readonly string[] DefaultJsonSourceDirectories =
-    [
-        "data/Database/GuideSources"
-    ];
-
-    public static SeedImportSummary Initialize(
+    public static SeedImportSummary RebuildFromSources(
         string? databasePath = null,
-        IEnumerable<string>? jsonSourceDirectories = null)
+        IEnumerable<string>? jsonSourceDirectories = null,
+        string? storageRootPath = null,
+        string? startPath = null)
     {
-        var resolvedDatabasePath = ResolveDatabasePath(databasePath);
-        var resolvedJsonSourceDirectories = ResolveJsonSourceDirectories(jsonSourceDirectories);
+        var resolvedDatabasePath = ResolveDatabasePath(startPath, storageRootPath, databasePath);
+        var resolvedJsonSourceDirectories = ResolveJsonSourceDirectories(startPath, storageRootPath, jsonSourceDirectories);
 
         var databaseDirectory = Path.GetDirectoryName(resolvedDatabasePath);
         if (!string.IsNullOrWhiteSpace(databaseDirectory))
@@ -54,16 +53,28 @@ public static class DatabaseInitializer
         return summary;
     }
 
-    private static string ResolveDatabasePath(string? databasePath)
+    private static string ResolveDatabasePath(string? startPath, string? storageRootPath, string? databasePath)
     {
-        return string.IsNullOrWhiteSpace(databasePath) ? DefaultDatabasePath : databasePath;
+        return UniteDrafterStoragePaths.ResolveStoragePath(
+            startPath ?? AppContext.BaseDirectory,
+            storageRootPath,
+            databasePath,
+            UniteDrafterStoragePaths.DefaultDatabasePath);
     }
 
-    private static IReadOnlyList<string> ResolveJsonSourceDirectories(IEnumerable<string>? jsonSourceDirectories)
+    private static IReadOnlyList<string> ResolveJsonSourceDirectories(
+        string? startPath,
+        string? storageRootPath,
+        IEnumerable<string>? jsonSourceDirectories)
     {
+        var rootPath = UniteDrafterStoragePaths.ResolveStorageRoot(
+            startPath ?? AppContext.BaseDirectory,
+            storageRootPath);
+
         return jsonSourceDirectories?
             .Where(path => !string.IsNullOrWhiteSpace(path))
+            .Select(path => UniteDrafterStoragePaths.ResolvePath(rootPath, path))
             .ToArray()
-            ?? DefaultJsonSourceDirectories;
+            ?? [UniteDrafterStoragePaths.ResolvePath(rootPath, UniteDrafterStoragePaths.DefaultGuideSourcesDirectory)];
     }
 }

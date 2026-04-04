@@ -1,8 +1,8 @@
 using System.Net;
 using System.Text.RegularExpressions;
-using DecrypterService = UniteDrafter.Decrypter.Decrypter;
+using DecrypterService = UniteDrafter.SourceUpdate.Decrypter.Decrypter;
 
-namespace UniteDrafter.Data.Updating;
+namespace UniteDrafter.SourceUpdate.Data.Updating;
 
 public static partial class SourceUpdatePayloadInspector
 {

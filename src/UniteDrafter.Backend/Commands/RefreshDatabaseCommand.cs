@@ -1,5 +1,5 @@
-using UniteDrafter.Data;
-using UniteDrafter.Data.Updating;
+using UniteDrafter.SourceUpdate.Data;
+using UniteDrafter.SourceUpdate.Data.Updating;
 
 namespace UniteDrafter.Commands;
 
@@ -13,11 +13,14 @@ public static class RefreshDatabaseCommand
 
         var options = UpdateSourcesCommand.ParseOptions(refreshArgs);
 
-        Console.WriteLine("Refreshing source files...");
-        var updateSummary = UniteApiSourceUpdater.UpdateAsync(options).GetAwaiter().GetResult();
+        Console.WriteLine("Refreshing source files into a staging snapshot...");
+        var refreshResult = DatabaseRefreshWorkflow.RefreshAndRebuildAsync(
+            options,
+            new ConsoleSourceUpdateReporter()).GetAwaiter().GetResult();
+        var updateSummary = refreshResult.UpdateSummary;
 
         Console.WriteLine(
-            $"Source update complete. Saved: {updateSummary.SavedFiles}, Failed: {updateSummary.FailedFiles}, Output: {updateSummary.OutputDirectory}");
+            $"Source update complete. Saved: {updateSummary.SavedFiles}, Failed: {updateSummary.FailedFiles}, Output: {refreshResult.SourceDirectory}");
 
         if (updateSummary.DiscoveredUrls.Count > 0)
         {
@@ -26,17 +29,19 @@ public static class RefreshDatabaseCommand
 
         if (updateSummary.Failures.Count > 0)
         {
-            Console.WriteLine();
-            Console.WriteLine("Continuing with database rebuild using the files that were fetched successfully.");
-            Console.WriteLine("Skipped sources:");
+            Console.Error.WriteLine();
+            Console.Error.WriteLine(refreshResult.ErrorMessage);
+            Console.Error.WriteLine("Skipped sources:");
             foreach (var failure in updateSummary.Failures)
             {
-                Console.WriteLine($"- {failure.Target}: {failure.Error}");
+                Console.Error.WriteLine($"- {failure.Target}: {failure.Error}");
             }
+
+            Environment.ExitCode = 1;
+            return;
         }
 
         Console.WriteLine();
-        Console.WriteLine("Rebuilding database from local source files...");
-        DatabaseInitializer.Initialize(jsonSourceDirectories: [options.OutputDirectory]);
+        Console.WriteLine("Database rebuild finished using the refreshed source snapshot.");
     }
 }

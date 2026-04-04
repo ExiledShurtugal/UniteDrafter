@@ -1,4 +1,5 @@
 using UniteDrafter.Data;
+using UniteDrafter.SourceUpdate.Data;
 using Xunit;
 
 namespace UniteDrafter.Tests.Database;
@@ -24,7 +25,7 @@ public sealed class DatabaseQueriesTests : IDisposable
                 _helper.CreateMatchup(180025, "Pikachu", "pikachu.png", 48.1)
             ]));
 
-        DatabaseInitializer.Initialize(databasePath, [seedDirectory]);
+        DatabaseRebuilder.RebuildFromSources(databasePath, [seedDirectory]);
 
         var summaryReader = new DatabaseSummaryReader(databasePath);
         var summary = summaryReader.GetDatabaseSummary();
@@ -60,7 +61,7 @@ public sealed class DatabaseQueriesTests : IDisposable
                 _helper.CreateMatchup(180094, "Gengar", "gengar.png", 60.2)
             ]));
 
-        DatabaseInitializer.Initialize(databasePath, [seedDirectory]);
+        DatabaseRebuilder.RebuildFromSources(databasePath, [seedDirectory]);
 
         var matchups = new PokemonMatchupDataReader(databasePath).GetMatchupsForPokemon("blastoise");
 
@@ -90,7 +91,7 @@ public sealed class DatabaseQueriesTests : IDisposable
                 _helper.CreateMatchup(180006, "Charizard", "charizard.png", 52.5)
             ]));
 
-        DatabaseInitializer.Initialize(databasePath, [seedDirectory]);
+        DatabaseRebuilder.RebuildFromSources(databasePath, [seedDirectory]);
 
         var matchups = new PokemonMatchupDataReader(databasePath).GetMatchupsForPokemon("Mew");
 
@@ -124,7 +125,7 @@ public sealed class DatabaseQueriesTests : IDisposable
                 _helper.CreateMatchup(180006, "Charizard", "charizard.png", 44.0)
             ]));
 
-        DatabaseInitializer.Initialize(databasePath, [seedDirectory]);
+        DatabaseRebuilder.RebuildFromSources(databasePath, [seedDirectory]);
 
         var results = new PokemonDataReader(databasePath).SearchPokemon("blast");
 
@@ -149,7 +150,7 @@ public sealed class DatabaseQueriesTests : IDisposable
                 _helper.CreateMatchup(180006, "Charizard", "charizard.png", 52.5)
             ]));
 
-        DatabaseInitializer.Initialize(databasePath, [seedDirectory]);
+        DatabaseRebuilder.RebuildFromSources(databasePath, [seedDirectory]);
 
         var results = new PokemonDataReader(databasePath).SearchPokemon("zzz");
 

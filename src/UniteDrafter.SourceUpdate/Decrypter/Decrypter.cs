@@ -2,7 +2,7 @@ using System.Text;
 using System.Text.Json;
 using System.Security.Cryptography;
 
-namespace UniteDrafter.Decrypter
+namespace UniteDrafter.SourceUpdate.Decrypter
 {
     public static class Decrypter
     {

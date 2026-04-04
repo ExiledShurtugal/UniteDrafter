@@ -1,4 +1,6 @@
 using UniteDrafter.Data;
+using UniteDrafter.SourceUpdate.Data;
+using UniteDrafter.Storage;
 using Xunit;
 
 namespace UniteDrafter.Tests.Database;
@@ -8,7 +10,7 @@ public sealed class DatabaseInitializerTests : IDisposable
     private readonly DatabaseTestHelper _helper = new();
 
     [Fact]
-    public void Initialize_CreatesSchemaAndSeedsPokemonAndMatchups()
+    public void RebuildFromSources_CreatesSchemaAndSeedsPokemonAndMatchups()
     {
         var databasePath = _helper.CreateDatabasePath();
         var seedDirectory = _helper.CreateSeedDirectory("seed");
@@ -24,7 +26,7 @@ public sealed class DatabaseInitializerTests : IDisposable
                 _helper.CreateMatchup(180025, "Pikachu", "pikachu.png", 48.1)
             ]));
 
-        DatabaseInitializer.Initialize(databasePath, [seedDirectory]);
+        DatabaseRebuilder.RebuildFromSources(databasePath, [seedDirectory]);
 
         using var connection = _helper.OpenConnection(databasePath);
         using var command = connection.CreateCommand();
@@ -45,7 +47,7 @@ SELECT
     }
 
     [Fact]
-    public void Initialize_RecreatesSchemaOnEachRun()
+    public void RebuildFromSources_RecreatesSchemaOnEachRun()
     {
         var databasePath = _helper.CreateDatabasePath();
         var firstSeedDirectory = _helper.CreateSeedDirectory("seed-first");
@@ -71,8 +73,8 @@ SELECT
                 _helper.CreateMatchup(180094, "Gengar", "gengar.png", 49.0)
             ]));
 
-        DatabaseInitializer.Initialize(databasePath, [firstSeedDirectory]);
-        DatabaseInitializer.Initialize(databasePath, [secondSeedDirectory]);
+        DatabaseRebuilder.RebuildFromSources(databasePath, [firstSeedDirectory]);
+        DatabaseRebuilder.RebuildFromSources(databasePath, [secondSeedDirectory]);
 
         using var connection = _helper.OpenConnection(databasePath);
         using var command = connection.CreateCommand();
@@ -93,12 +95,12 @@ SELECT
     }
 
     [Fact]
-    public void Initialize_IgnoresMissingSeedDirectories()
+    public void RebuildFromSources_IgnoresMissingSeedDirectories()
     {
         var databasePath = _helper.CreateDatabasePath();
         var missingSeedDirectory = _helper.CreateSeedDirectory("missing-seed");
 
-        var summary = DatabaseInitializer.Initialize(databasePath, [missingSeedDirectory]);
+        var summary = DatabaseRebuilder.RebuildFromSources(databasePath, [missingSeedDirectory]);
 
         var databaseSummary = new DatabaseSummaryReader(databasePath).GetDatabaseSummary();
 
@@ -109,14 +111,14 @@ SELECT
     }
 
     [Fact]
-    public void Initialize_ReportsMalformedSeedFilesWithoutImportingThem()
+    public void RebuildFromSources_ReportsMalformedSeedFilesWithoutImportingThem()
     {
         var databasePath = _helper.CreateDatabasePath();
         var seedDirectory = _helper.CreateSeedDirectory("seed");
         Directory.CreateDirectory(seedDirectory);
         File.WriteAllText(Path.Combine(seedDirectory, "broken.json"), "{ this is not valid json");
 
-        var summary = DatabaseInitializer.Initialize(databasePath, [seedDirectory]);
+        var summary = DatabaseRebuilder.RebuildFromSources(databasePath, [seedDirectory]);
         var databaseSummary = new DatabaseSummaryReader(databasePath).GetDatabaseSummary();
 
         Assert.Equal(0, summary.ParsedFiles);
@@ -125,6 +127,119 @@ SELECT
         Assert.EndsWith("broken.json", summary.Failures[0].FilePath);
         Assert.Equal(0L, databaseSummary.PokemonCount);
         Assert.Equal(0L, databaseSummary.MatchupCount);
+    }
+
+    [Fact]
+    public void RebuildFromSources_ReportsFailureWhenCountersPokemonIdIsMissing()
+    {
+        var databasePath = _helper.CreateDatabasePath();
+        var seedDirectory = _helper.CreateSeedDirectory("seed-invalid-id");
+
+        _helper.WriteSeedFile(seedDirectory, "blastoise.json", new
+        {
+            pokemon = new
+            {
+                id = 7,
+                name = new
+                {
+                    en = "Blastoise"
+                },
+                icons = new
+                {
+                    square = "blastoise.png"
+                }
+            },
+            counters = new
+            {
+                all = new object[]
+                {
+                    _helper.CreateMatchup(180006, "Charizard", "charizard.png", 52.5)
+                }
+            }
+        });
+
+        var summary = DatabaseRebuilder.RebuildFromSources(databasePath, [seedDirectory]);
+        var databaseSummary = new DatabaseSummaryReader(databasePath).GetDatabaseSummary();
+
+        Assert.Equal(0, summary.ParsedFiles);
+        Assert.Equal(1, summary.SkippedFiles);
+        Assert.Single(summary.Failures);
+        Assert.Contains("counters.pokemonId", summary.Failures[0].Error);
+        Assert.Equal(0L, databaseSummary.PokemonCount);
+        Assert.Equal(0L, databaseSummary.MatchupCount);
+    }
+
+    [Fact]
+    public void EnsureInitialized_CreatesEmptySchemaWithoutSeeding()
+    {
+        var databasePath = _helper.CreateDatabasePath();
+
+        var summary = DatabaseBootstrapper.EnsureInitialized(databasePath);
+        var databaseSummary = new DatabaseSummaryReader(databasePath).GetDatabaseSummary();
+
+        Assert.True(File.Exists(databasePath));
+        Assert.True(summary.CreatedDatabaseFile);
+        Assert.True(summary.CreatedSchema);
+        Assert.Equal(0L, databaseSummary.PokemonCount);
+        Assert.Equal(0L, databaseSummary.MatchupCount);
+    }
+
+    [Fact]
+    public void EnsureInitialized_DoesNotDeleteExistingData()
+    {
+        var databasePath = _helper.CreateDatabasePath();
+        var seedDirectory = _helper.CreateSeedDirectory("seed-existing");
+
+        _helper.WriteSeedFile(seedDirectory, "blastoise.json", _helper.CreatePokemonPayload(
+            uniteApiId: 180007,
+            pokedexId: 7,
+            pokemonName: "Blastoise",
+            pokemonImg: "blastoise.png",
+            matchups:
+            [
+                _helper.CreateMatchup(180006, "Charizard", "charizard.png", 52.5)
+            ]));
+
+        DatabaseRebuilder.RebuildFromSources(databasePath, [seedDirectory]);
+
+        var summary = DatabaseBootstrapper.EnsureInitialized(databasePath);
+        var databaseSummary = new DatabaseSummaryReader(databasePath).GetDatabaseSummary();
+
+        Assert.False(summary.CreatedDatabaseFile);
+        Assert.False(summary.CreatedSchema);
+        Assert.Equal(2L, databaseSummary.PokemonCount);
+        Assert.Equal(1L, databaseSummary.MatchupCount);
+    }
+
+    [Fact]
+    public void EnsureInitialized_ThrowsWhenExistingSchemaIsIncompatible()
+    {
+        var databasePath = _helper.CreateDatabasePath("invalid-schema.db");
+        Directory.CreateDirectory(Path.GetDirectoryName(databasePath)!);
+
+        using (var connection = _helper.OpenConnection(databasePath))
+        {
+            using var command = connection.CreateCommand();
+            command.CommandText = """
+CREATE TABLE pokemon (
+    uniteapi_id INTEGER PRIMARY KEY,
+    name TEXT NOT NULL
+);
+
+CREATE TABLE pokemon_matchup (
+    pokemon_uniteapi_id INTEGER NOT NULL,
+    opponent_uniteapi_id INTEGER NOT NULL,
+    PRIMARY KEY (pokemon_uniteapi_id, opponent_uniteapi_id)
+);
+""";
+            command.ExecuteNonQuery();
+        }
+
+        var ex = Assert.Throws<InvalidOperationException>(() =>
+            DatabaseBootstrapper.EnsureInitialized(databasePath));
+
+        Assert.Contains("incompatible", ex.Message, StringComparison.OrdinalIgnoreCase);
+        Assert.Contains("pokemon", ex.Message, StringComparison.OrdinalIgnoreCase);
     }
 
     public void Dispose()
