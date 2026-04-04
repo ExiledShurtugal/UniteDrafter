@@ -100,6 +100,25 @@ public sealed class DraftSession
 
     public bool HasDraftedPokemon(DraftSlotRef slot) => draftedPokemon.ContainsKey(slot);
 
+    public bool IsDrafted(int uniteApiId, string pokemonName)
+    {
+        foreach (var pokemon in draftedPokemon.Values)
+        {
+            if (pokemon.UniteApiId > 0 && uniteApiId > 0 && pokemon.UniteApiId == uniteApiId)
+            {
+                return true;
+            }
+
+            if ((pokemon.UniteApiId <= 0 || uniteApiId <= 0)
+                && string.Equals(pokemon.PokemonName, pokemonName, StringComparison.OrdinalIgnoreCase))
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     private bool HasDuplicatePick(PokemonDraftDetails details)
     {
         foreach (var entry in draftedPokemon)

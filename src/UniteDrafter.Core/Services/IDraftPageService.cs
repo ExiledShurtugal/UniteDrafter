@@ -15,12 +15,17 @@ public sealed record PokemonSearchResponse(
     IReadOnlyList<PokemonSearchResult> Results,
     string? ErrorMessage);
 
+public sealed record PokemonRosterResponse(
+    IReadOnlyList<PokemonSearchResult> Results,
+    string? ErrorMessage);
+
 public sealed record PokemonDraftDetailsResponse(
     PokemonDraftDetails? Details,
     string? ErrorMessage);
 
 public interface IDraftPageService
 {
+    PokemonRosterResponse GetAllPokemon();
     PokemonSearchResponse SearchPokemon(string searchTerm, int limit = 8);
     PokemonDraftDetailsResponse GetPokemonDraftDetails(string pokemonName, int matchupLimit = 5);
 }

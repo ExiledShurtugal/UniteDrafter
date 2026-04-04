@@ -49,9 +49,20 @@ public sealed class DraftSessionTests
         Assert.False(session.HasDraftedPokemon(new DraftSlotRef(TeamSide.Enemy, 4)));
     }
 
-    private static PokemonDraftDetails CreatePokemon(string name) =>
+    [Fact]
+    public void IsDrafted_ReturnsTrueForAssignedPokemon()
+    {
+        var session = new DraftSession();
+        session.AssignPokemon(CreatePokemon("Blastoise", uniteApiId: 180007));
+
+        var result = session.IsDrafted(180007, "Blastoise");
+
+        Assert.True(result);
+    }
+
+    private static PokemonDraftDetails CreatePokemon(string name, int uniteApiId = 1) =>
         new(
-            UniteApiId: 1,
+            UniteApiId: uniteApiId,
             PokedexId: 25,
             PokemonName: name,
             ImageUrl: $"{name.ToLowerInvariant()}.png",

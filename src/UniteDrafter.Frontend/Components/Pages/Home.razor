@@ -43,7 +43,7 @@
 
         <section class="center-column">
             <div class="panel">
-                <h2>Search</h2>
+                <h2>Available Pokemon</h2>
                 <p class="selection-summary">@GetSelectionSummary()</p>
                 <input
                     class="search-input"
@@ -63,47 +63,26 @@
                     <p class="search-hint">@SearchMessage</p>
                 }
 
-                @if (SearchResults.Count > 0)
+                @if (!string.IsNullOrWhiteSpace(AvailablePokemonMessage))
                 {
-                    <div class="search-results" role="listbox" aria-label="Pokemon search results">
-                        @foreach (var result in SearchResults)
+                    <p class="available-pokemon-summary">@AvailablePokemonMessage</p>
+                }
+
+                @if (AvailablePokemon.Count > 0)
+                {
+                    <div class="available-pokemon-list" role="list" aria-label="Available Pokemon">
+                        @foreach (var pokemon in AvailablePokemon)
                         {
                             <button
                                 type="button"
-                                class="search-result"
-                                @onclick="() => AssignPokemon(result.PokemonName)">
-                                <strong>@result.PokemonName</strong>
-                                <span>@GetSearchResultSubtitle(result)</span>
+                                class="available-pokemon-row"
+                                @onclick="() => AssignPokemon(pokemon.PokemonName)">
+                                <strong>@pokemon.PokemonName</strong>
+                                <span>@GetSearchResultSubtitle(pokemon)</span>
                             </button>
                         }
                     </div>
                 }
-            </div>
-
-            <div class="panel">
-                <h2>Pokemon Info</h2>
-                <p>@GetInfoText()</p>
-
-                <div class="info-placeholder">
-                    @if (ActivePokemon is null)
-                    {
-                        <div class="info-box">Portrait</div>
-                        <div class="info-details">
-                            <p>Name</p>
-                            <p>Role</p>
-                            <p>Notes</p>
-                        </div>
-                    }
-                    else
-                    {
-                        <img class="pokemon-portrait" src="@ActivePokemon.ImageUrl" alt="@ActivePokemon.PokemonName portrait" />
-                        <div class="info-details">
-                            <p><strong>@ActivePokemon.PokemonName</strong></p>
-                            <p>@GetPokedexText(ActivePokemon)</p>
-                            <p>@GetSlotOwnershipText()</p>
-                        </div>
-                    }
-                </div>
             </div>
 
             <div class="panel">

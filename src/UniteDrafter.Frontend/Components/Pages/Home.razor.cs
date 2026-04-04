@@ -22,7 +22,8 @@ public partial class Home
 
     private string SearchTerm => pageState.SearchTerm;
     private string SearchMessage => pageState.SearchMessage;
-    private IReadOnlyList<PokemonSearchResult> SearchResults => pageState.SearchResults;
+    private IReadOnlyList<PokemonSearchResult> AvailablePokemon => pageState.AvailablePokemon;
+    private string AvailablePokemonMessage => pageState.AvailablePokemonMessage;
 
     private void SelectSlot(DraftSlotRef slot) => pageState.SelectSlot(slot);
 
@@ -79,21 +80,8 @@ public partial class Home
         return $"Selected slot: {GetTeamLabel(pageState.ActiveSlot.Team)} #{pageState.ActiveSlot.Index} | Current pick: {selectedPokemon}";
     }
 
-    private string GetInfoText()
-    {
-        return ActivePokemon is null
-            ? $"{GetTeamLabel(pageState.ActiveSlot.Team)} #{pageState.ActiveSlot.Index} is empty. Search for a Pokemon to assign it."
-            : $"{ActivePokemon.PokemonName} is currently assigned to {GetTeamLabel(pageState.ActiveSlot.Team)} #{pageState.ActiveSlot.Index}.";
-    }
-
-    private string GetSlotOwnershipText() =>
-        $"{GetTeamLabel(pageState.ActiveSlot.Team)} #{pageState.ActiveSlot.Index}";
-
     private string GetMatchupEmptyText() =>
         ActivePokemon?.CounterStatusMessage ?? "No data yet.";
-
-    private static string GetPokedexText(PokemonDraftDetails pokemon) =>
-        pokemon.PokedexId.HasValue ? $"Pokedex #{pokemon.PokedexId.Value}" : "No Pokedex number available";
 
     private static string GetSearchResultSubtitle(PokemonSearchResult result) =>
         result.PokedexId.HasValue ? $"Pokedex #{result.PokedexId.Value}" : "Pokemon";

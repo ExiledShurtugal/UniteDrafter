@@ -1,0 +1,2 @@
+c:\Users\joaoc\Desktop\Guto\UniteDrafter\.artifacts\verify\test-obj\Debug\net10.0\EmbeddedAttribute.cs
+c:\Users\joaoc\Desktop\Guto\UniteDrafter\.artifacts\verify\test-obj\Debug\net10.0\ValidatableTypeAttribute.cs

@@ -7,35 +7,42 @@ public sealed class DraftPageState
 {
     private readonly IDraftPageService draftPageService;
     private readonly DraftSession draftSession = new();
+    private IReadOnlyList<PokemonSearchResult> allPokemon = [];
+    private bool rosterLoadFailed;
 
     public DraftPageState(IDraftPageService draftPageService)
     {
         this.draftPageService = draftPageService;
-        SearchMessage = "Type at least 2 letters to search the database.";
-        SearchResults = [];
+        SearchMessage = "Choose a Pokemon for Your Team #1, or filter the roster by name.";
+        AvailablePokemon = [];
+        AvailablePokemonMessage = "Loading available Pokemon.";
+        LoadRoster();
     }
 
     public DraftSlotRef ActiveSlot => draftSession.ActiveSlot;
     public string SearchTerm { get; private set; } = string.Empty;
     public string SearchMessage { get; private set; }
-    public IReadOnlyList<PokemonSearchResult> SearchResults { get; private set; }
+    public IReadOnlyList<PokemonSearchResult> AvailablePokemon { get; private set; }
+    public string AvailablePokemonMessage { get; private set; }
 
     public PokemonDraftDetails? ActivePokemon => draftSession.ActivePokemon;
 
     public void SelectSlot(DraftSlotRef slot)
     {
         draftSession.SelectSlot(slot);
-
-        if (ActivePokemon is null)
+        if (!rosterLoadFailed)
         {
-            SearchMessage = "Type at least 2 letters to search the database.";
+            SetSelectionMessage();
         }
     }
 
     public void UpdateSearchTerm(string value)
     {
         SearchTerm = value;
-        RefreshSearchResults();
+        if (!rosterLoadFailed)
+        {
+            RefreshAvailablePokemon();
+        }
     }
 
     public void AssignPokemon(string pokemonName)
@@ -56,9 +63,9 @@ public sealed class DraftPageState
             return;
         }
 
-        SearchTerm = details.PokemonName;
-        SearchResults = [];
+        SearchTerm = string.Empty;
         SearchMessage = $"{details.PokemonName} assigned to {GetTeamLabel(operation.Slot.Team)} #{operation.Slot.Index}.";
+        RefreshAvailablePokemon();
     }
 
     public void ClearActiveSlot()
@@ -67,8 +74,8 @@ public sealed class DraftPageState
         if (operation.Status == DraftSessionOperationStatus.Cleared)
         {
             SearchTerm = string.Empty;
-            SearchResults = [];
             SearchMessage = $"{operation.PokemonName} removed from {GetTeamLabel(operation.Slot.Team)} #{operation.Slot.Index}.";
+            RefreshAvailablePokemon();
             return;
         }
 
@@ -79,8 +86,8 @@ public sealed class DraftPageState
     {
         draftSession.Reset();
         SearchTerm = string.Empty;
-        SearchResults = [];
-        SearchMessage = "Draft reset. Type at least 2 letters to search the database.";
+        SearchMessage = "Draft reset. Choose a Pokemon for Your Team #1, or filter the roster by name.";
+        RefreshAvailablePokemon();
     }
 
     public bool IsActiveSlot(DraftSlotRef slot) => draftSession.IsActiveSlot(slot);
@@ -90,31 +97,54 @@ public sealed class DraftPageState
 
     public bool HasDraftedPokemon(DraftSlotRef slot) => draftSession.HasDraftedPokemon(slot);
 
-    private void RefreshSearchResults()
+    private void LoadRoster()
     {
-        var term = SearchTerm.Trim();
-
-        if (term.Length < 2)
-        {
-            SearchResults = [];
-            SearchMessage = "Type at least 2 letters to search the database.";
-            return;
-        }
-
-        var response = draftPageService.SearchPokemon(term);
-        SearchResults = response.Results;
+        var response = draftPageService.GetAllPokemon();
+        allPokemon = response.Results;
 
         if (!string.IsNullOrWhiteSpace(response.ErrorMessage))
         {
+            rosterLoadFailed = true;
+            AvailablePokemon = [];
+            AvailablePokemonMessage = response.ErrorMessage;
             SearchMessage = response.ErrorMessage;
             return;
         }
 
-        SearchMessage = SearchResults.Count == 0
-            ? $"No Pokemon found for \"{term}\"."
-            : $"Select a Pokemon to place into {GetTeamLabel(ActiveSlot.Team)} #{ActiveSlot.Index}.";
+        rosterLoadFailed = false;
+        RefreshAvailablePokemon();
+    }
+
+    private void RefreshAvailablePokemon()
+    {
+        var draftablePokemon = allPokemon
+            .Where(pokemon => !draftSession.IsDrafted(pokemon.UniteApiId, pokemon.PokemonName))
+            .ToArray();
+
+        var trimmedSearchTerm = SearchTerm.Trim();
+
+        AvailablePokemon = string.IsNullOrWhiteSpace(trimmedSearchTerm)
+            ? draftablePokemon
+            : draftablePokemon
+                .Where(pokemon => pokemon.PokemonName.Contains(trimmedSearchTerm, StringComparison.OrdinalIgnoreCase))
+                .ToArray();
+
+        AvailablePokemonMessage = draftablePokemon.Length == 0
+            ? "Every Pokemon in the local roster is already drafted."
+            : string.IsNullOrWhiteSpace(trimmedSearchTerm)
+                ? $"{draftablePokemon.Length} Pokemon currently available to draft."
+                : AvailablePokemon.Count == 0
+                    ? $"No available Pokemon match \"{trimmedSearchTerm}\"."
+                    : $"Showing {AvailablePokemon.Count} of {draftablePokemon.Length} available Pokemon matching \"{trimmedSearchTerm}\".";
     }
 
     private static string GetTeamLabel(TeamSide team) =>
         team == TeamSide.Ally ? "Your Team" : "Opponent Team";
+
+    private void SetSelectionMessage()
+    {
+        SearchMessage = ActivePokemon is null
+            ? $"Choose a Pokemon for {GetTeamLabel(ActiveSlot.Team)} #{ActiveSlot.Index}, or filter the roster by name."
+            : $"{ActivePokemon.PokemonName} is currently assigned to {GetTeamLabel(ActiveSlot.Team)} #{ActiveSlot.Index}.";
+    }
 }

@@ -135,6 +135,31 @@ public sealed class DatabaseQueriesTests : IDisposable
     }
 
     [Fact]
+    public void GetAllPokemon_ReturnsEntireRosterOrderedByName()
+    {
+        var databasePath = _helper.CreateDatabasePath();
+        var seedDirectory = _helper.CreateSeedDirectory("seed");
+
+        _helper.WriteSeedFile(seedDirectory, "blastoise.json", _helper.CreatePokemonPayload(
+            uniteApiId: 180007,
+            pokedexId: 7,
+            pokemonName: "Blastoise",
+            pokemonImg: "blastoise.png",
+            matchups:
+            [
+                _helper.CreateMatchup(180006, "Charizard", "charizard.png", 52.5),
+                _helper.CreateMatchup(180025, "Pikachu", "pikachu.png", 48.1)
+            ]));
+
+        DatabaseRebuilder.RebuildFromSources(databasePath, [seedDirectory]);
+
+        var results = new PokemonDataReader(databasePath).GetAllPokemon();
+
+        Assert.Equal(3, results.Count);
+        Assert.Equal(["Blastoise", "Charizard", "Pikachu"], results.Select(x => x.PokemonName).ToArray());
+    }
+
+    [Fact]
     public void SearchPokemon_ReturnsEmptyWhenNoPokemonMatch()
     {
         var databasePath = _helper.CreateDatabasePath();

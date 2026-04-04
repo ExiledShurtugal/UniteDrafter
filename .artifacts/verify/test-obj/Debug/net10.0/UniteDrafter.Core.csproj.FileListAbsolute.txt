@@ -1,0 +1,6 @@
+c:\Users\joaoc\Desktop\Guto\UniteDrafter\.artifacts\verify\test-obj\Debug\net10.0\UniteDrafter.Core.csproj.AssemblyReference.cache
+c:\Users\joaoc\Desktop\Guto\UniteDrafter\.artifacts\verify\test-obj\Debug\net10.0\UniteDrafter.Core.GeneratedMSBuildEditorConfig.editorconfig
+c:\Users\joaoc\Desktop\Guto\UniteDrafter\.artifacts\verify\test-obj\Debug\net10.0\UniteDrafter.Core.AssemblyInfoInputs.cache
+c:\Users\joaoc\Desktop\Guto\UniteDrafter\.artifacts\verify\test-obj\Debug\net10.0\UniteDrafter.Core.AssemblyInfo.cs
+c:\Users\joaoc\Desktop\Guto\UniteDrafter\.artifacts\verify\test-obj\Debug\net10.0\UniteDrafter.Core.csproj.CoreCompileInputs.cache
+c:\Users\joaoc\Desktop\Guto\UniteDrafter\.artifacts\verify\test-obj\Debug\net10.0\UniteDrafter.Core.sourcelink.json

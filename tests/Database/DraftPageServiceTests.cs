@@ -21,6 +21,24 @@ public sealed class DraftPageServiceTests
     }
 
     [Fact]
+    public void GetAllPokemon_ReturnsRoster_WhenDataSourceIsAvailable()
+    {
+        var service = new DraftPageService(new FakeDraftPageDataSource
+        {
+            AllPokemon =
+            [
+                new PokemonSearchResult(180006, 6, "Charizard"),
+                new PokemonSearchResult(180007, 7, "Blastoise")
+            ]
+        });
+
+        var response = service.GetAllPokemon();
+
+        Assert.Null(response.ErrorMessage);
+        Assert.Equal(["Charizard", "Blastoise"], response.Results.Select(x => x.PokemonName).ToArray());
+    }
+
+    [Fact]
     public void GetPokemonDraftDetails_ReturnsProfileAndSplitMatchups()
     {
         var service = new DraftPageService(new FakeDraftPageDataSource
@@ -57,11 +75,14 @@ public sealed class DraftPageServiceTests
     private sealed class FakeDraftPageDataSource : IDraftPageDataSource
     {
         public string? AvailabilityError { get; init; }
+        public IReadOnlyList<PokemonSearchResult> AllPokemon { get; init; } = [];
         public PokemonProfileResult? Profile { get; init; }
         public IReadOnlyList<PokemonMatchupResult> Matchups { get; init; } = [];
         public IReadOnlyList<PokemonSearchResult> SearchResults { get; init; } = [];
 
         public string? GetAvailabilityError() => AvailabilityError;
+
+        public IReadOnlyList<PokemonSearchResult> GetAllPokemon() => AllPokemon;
 
         public IReadOnlyList<PokemonSearchResult> SearchPokemon(string searchTerm, int limit = 8) => SearchResults;
 

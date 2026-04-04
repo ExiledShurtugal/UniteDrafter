@@ -25,6 +25,9 @@ public sealed class SqliteDraftPageDataSource : IDraftPageDataSource
             : $"Database file not found at: {databasePath}";
     }
 
+    public IReadOnlyList<PokemonSearchResult> GetAllPokemon() =>
+        pokemonDataReader.GetAllPokemon();
+
     public IReadOnlyList<PokemonSearchResult> SearchPokemon(string searchTerm, int limit = 8) =>
         pokemonDataReader.SearchPokemon(searchTerm, limit);
 

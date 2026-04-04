@@ -11,6 +11,25 @@ public sealed class DraftPageService : IDraftPageService
         this.dataSource = dataSource;
     }
 
+    public PokemonRosterResponse GetAllPokemon()
+    {
+        var availabilityError = dataSource.GetAvailabilityError();
+        if (!string.IsNullOrWhiteSpace(availabilityError))
+        {
+            return new PokemonRosterResponse([], availabilityError);
+        }
+
+        try
+        {
+            var results = dataSource.GetAllPokemon();
+            return new PokemonRosterResponse(results, null);
+        }
+        catch (Exception ex)
+        {
+            return new PokemonRosterResponse([], $"Database roster load failed: {GetExceptionMessage(ex)}");
+        }
+    }
+
     public PokemonSearchResponse SearchPokemon(string searchTerm, int limit = 8)
     {
         if (string.IsNullOrWhiteSpace(searchTerm))

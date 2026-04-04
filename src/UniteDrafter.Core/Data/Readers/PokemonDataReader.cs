@@ -12,7 +12,34 @@ public sealed class PokemonDataReader : SqliteDataReaderBase, IPokemonDataReader
     public IReadOnlyList<PokemonSearchResult> SearchPokemon(string searchTerm, int limit = 8)
     {
         using var connection = OpenConnection();
-        return ReadSearchResults(connection, searchTerm.Trim(), limit);
+        using var command = connection.CreateCommand();
+        command.CommandText = """
+SELECT uniteapi_id, pokedex_id, name
+FROM pokemon
+WHERE lower(name) LIKE '%' || lower($searchTerm) || '%'
+ORDER BY
+    CASE WHEN lower(name) = lower($searchTerm) THEN 0 ELSE 1 END,
+    CASE WHEN lower(name) LIKE lower($searchTerm) || '%' THEN 0 ELSE 1 END,
+    name ASC
+LIMIT $limit;
+""";
+        command.Parameters.AddWithValue("$searchTerm", searchTerm.Trim());
+        command.Parameters.AddWithValue("$limit", limit);
+
+        return ReadSearchResults(command);
+    }
+
+    public IReadOnlyList<PokemonSearchResult> GetAllPokemon()
+    {
+        using var connection = OpenConnection();
+        using var command = connection.CreateCommand();
+        command.CommandText = """
+SELECT uniteapi_id, pokedex_id, name
+FROM pokemon
+ORDER BY name ASC;
+""";
+
+        return ReadSearchResults(command);
     }
 
     public PokemonProfileResult? GetPokemonProfile(string pokemonName)
@@ -40,22 +67,8 @@ LIMIT 1;
             reader.GetString(3));
     }
 
-    private static IReadOnlyList<PokemonSearchResult> ReadSearchResults(SqliteConnection connection, string searchTerm, int limit)
+    private static IReadOnlyList<PokemonSearchResult> ReadSearchResults(SqliteCommand command)
     {
-        using var command = connection.CreateCommand();
-        command.CommandText = """
-SELECT uniteapi_id, pokedex_id, name
-FROM pokemon
-WHERE lower(name) LIKE '%' || lower($searchTerm) || '%'
-ORDER BY
-    CASE WHEN lower(name) = lower($searchTerm) THEN 0 ELSE 1 END,
-    CASE WHEN lower(name) LIKE lower($searchTerm) || '%' THEN 0 ELSE 1 END,
-    name ASC
-LIMIT $limit;
-""";
-        command.Parameters.AddWithValue("$searchTerm", searchTerm);
-        command.Parameters.AddWithValue("$limit", limit);
-
         using var reader = command.ExecuteReader();
         var results = new List<PokemonSearchResult>();
 
