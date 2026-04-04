@@ -44,7 +44,7 @@ public sealed class DraftPageServiceTests
         var service = new DraftPageService(new FakeDraftPageDataSource
         {
             Profile = new PokemonProfileResult(180007, 7, "Blastoise", "blastoise.png"),
-            Matchups =
+            MatchupsById =
             [
                 new PokemonMatchupResult("Blastoise", "Gengar", 60.2),
                 new PokemonMatchupResult("Blastoise", "Charizard", 52.5),
@@ -57,8 +57,31 @@ public sealed class DraftPageServiceTests
         Assert.NotNull(response.Details);
         Assert.Null(response.ErrorMessage);
         Assert.Equal("Blastoise", response.Details!.PokemonName);
+        Assert.Equal(["Gengar", "Charizard", "Pikachu"], response.Details.AllMatchups.Select(x => x.OpponentName).ToArray());
         Assert.Equal(["Gengar", "Charizard"], response.Details.BestAgainst.Select(x => x.OpponentName).ToArray());
         Assert.Equal(["Pikachu", "Charizard"], response.Details.WorstAgainst.Select(x => x.OpponentName).ToArray());
+    }
+
+    [Fact]
+    public void GetPokemonDraftDetails_UsesSelectedPokemonIdForMatchups()
+    {
+        var service = new DraftPageService(new FakeDraftPageDataSource
+        {
+            Profile = new PokemonProfileResult(150001, null, "Mewtwo", "mewtwo-x.png"),
+            Matchups =
+            [
+                new PokemonMatchupResult("Mewtwo", "Charizard", 49.0)
+            ],
+            MatchupsById =
+            [
+                new PokemonMatchupResult("Mewtwo", "Charizard", 55.0, OpponentUniteApiId: 180006)
+            ]
+        });
+
+        var response = service.GetPokemonDraftDetails("Mewtwo");
+
+        Assert.NotNull(response.Details);
+        Assert.Equal(55.0, response.Details!.AllMatchups[0].WinRate);
     }
 
     [Fact]
@@ -78,6 +101,7 @@ public sealed class DraftPageServiceTests
         public IReadOnlyList<PokemonSearchResult> AllPokemon { get; init; } = [];
         public PokemonProfileResult? Profile { get; init; }
         public IReadOnlyList<PokemonMatchupResult> Matchups { get; init; } = [];
+        public IReadOnlyList<PokemonMatchupResult> MatchupsById { get; init; } = [];
         public IReadOnlyList<PokemonSearchResult> SearchResults { get; init; } = [];
 
         public string? GetAvailabilityError() => AvailabilityError;
@@ -89,5 +113,7 @@ public sealed class DraftPageServiceTests
         public PokemonProfileResult? GetPokemonProfile(string pokemonName) => Profile;
 
         public IReadOnlyList<PokemonMatchupResult> GetMatchupsForPokemon(string pokemonName) => Matchups;
+
+        public IReadOnlyList<PokemonMatchupResult> GetMatchupsForPokemon(int uniteApiId) => MatchupsById;
     }
 }

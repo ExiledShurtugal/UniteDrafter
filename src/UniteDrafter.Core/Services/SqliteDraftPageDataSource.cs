@@ -36,4 +36,7 @@ public sealed class SqliteDraftPageDataSource : IDraftPageDataSource
 
     public IReadOnlyList<PokemonMatchupResult> GetMatchupsForPokemon(string pokemonName) =>
         pokemonMatchupDataReader.GetMatchupsForPokemon(pokemonName);
+
+    public IReadOnlyList<PokemonMatchupResult> GetMatchupsForPokemon(int uniteApiId) =>
+        pokemonMatchupDataReader.GetMatchupsForPokemon(uniteApiId);
 }

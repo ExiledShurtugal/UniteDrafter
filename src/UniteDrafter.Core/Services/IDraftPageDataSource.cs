@@ -9,4 +9,5 @@ public interface IDraftPageDataSource
     IReadOnlyList<PokemonSearchResult> SearchPokemon(string searchTerm, int limit = 8);
     PokemonProfileResult? GetPokemonProfile(string pokemonName);
     IReadOnlyList<PokemonMatchupResult> GetMatchupsForPokemon(string pokemonName);
+    IReadOnlyList<PokemonMatchupResult> GetMatchupsForPokemon(int uniteApiId);
 }

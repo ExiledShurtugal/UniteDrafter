@@ -75,7 +75,7 @@ public sealed class DraftPageService : IDraftPageService
                 return new PokemonDraftDetailsResponse(null, $"Could not find Pokemon details for \"{pokemonName}\".");
             }
 
-            var matchups = dataSource.GetMatchupsForPokemon(profile.PokemonName);
+            var matchups = dataSource.GetMatchupsForPokemon(profile.UniteApiId);
             var bestAgainst = matchups.Take(matchupLimit).ToArray();
             var worstAgainst = matchups.TakeLast(Math.Min(matchupLimit, matchups.Count)).Reverse().ToArray();
             var counterStatusMessage = matchups.Count == 0
@@ -88,6 +88,7 @@ public sealed class DraftPageService : IDraftPageService
                     profile.PokedexId,
                     profile.PokemonName,
                     profile.ImageUrl,
+                    matchups,
                     bestAgainst,
                     worstAgainst,
                     counterStatusMessage),

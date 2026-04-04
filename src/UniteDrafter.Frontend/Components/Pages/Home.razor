@@ -88,6 +88,30 @@
             <div class="panel">
                 <h2>Matchups</h2>
 
+                <div class="expected-winrate-box">
+                    <h3>Expected Win Rate</h3>
+
+                    @if (ActiveExpectedWinRate.ExpectedWinRate is null)
+                    {
+                        <p>@ActiveExpectedWinRate.StatusMessage</p>
+                    }
+                    else
+                    {
+                        <p class="expected-winrate-value">@FormatWinRate(ActiveExpectedWinRate.ExpectedWinRate.Value)</p>
+                        <p class="expected-winrate-copy">@ActiveExpectedWinRate.StatusMessage</p>
+
+                        <div class="matchup-list selected-matchup-list">
+                            @foreach (var matchup in ActiveExpectedWinRate.SelectedOpponentMatchups)
+                            {
+                                <div class="matchup-row">
+                                    <span>@matchup.OpponentName</span>
+                                    <strong>@FormatWinRate(matchup.WinRate)</strong>
+                                </div>
+                            }
+                        </div>
+                    }
+                </div>
+
                 <div class="matchup-columns">
                     <div class="matchup-box">
                         <h3>Best Against</h3>

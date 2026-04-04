@@ -7,9 +7,18 @@ public sealed record PokemonDraftDetails(
     int? PokedexId,
     string PokemonName,
     string ImageUrl,
+    IReadOnlyList<PokemonMatchupResult> AllMatchups,
     IReadOnlyList<PokemonMatchupResult> BestAgainst,
     IReadOnlyList<PokemonMatchupResult> WorstAgainst,
     string? CounterStatusMessage);
+
+public sealed record ExpectedWinRateSummary(
+    double? ExpectedWinRate,
+    int ComparedOpponentCount,
+    int TotalOpponentCount,
+    IReadOnlyList<PokemonMatchupResult> SelectedOpponentMatchups,
+    IReadOnlyList<string> MissingOpponentNames,
+    string StatusMessage);
 
 public sealed record PokemonSearchResponse(
     IReadOnlyList<PokemonSearchResult> Results,

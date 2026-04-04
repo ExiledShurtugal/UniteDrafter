@@ -7,6 +7,7 @@ public sealed class DraftPageState
 {
     private readonly IDraftPageService draftPageService;
     private readonly DraftSession draftSession = new();
+    private readonly Dictionary<int, PokemonDraftDetails> pokemonDetailsCache = [];
     private IReadOnlyList<PokemonSearchResult> allPokemon = [];
     private bool rosterLoadFailed;
 
@@ -27,12 +28,18 @@ public sealed class DraftPageState
 
     public PokemonDraftDetails? ActivePokemon => draftSession.ActivePokemon;
 
+    public ExpectedWinRateSummary ActiveExpectedWinRate =>
+        ExpectedWinRateCalculator.Calculate(
+            draftSession.ActivePokemon,
+            draftSession.GetOpposingDraftedPokemon(draftSession.ActiveSlot));
+
     public void SelectSlot(DraftSlotRef slot)
     {
         draftSession.SelectSlot(slot);
         if (!rosterLoadFailed)
         {
             SetSelectionMessage();
+            RefreshAvailablePokemon();
         }
     }
 
@@ -55,6 +62,7 @@ public sealed class DraftPageState
         }
 
         var details = response.Details;
+        pokemonDetailsCache[details.UniteApiId] = details;
 
         var operation = draftSession.AssignPokemon(details);
         if (operation.Status == DraftSessionOperationStatus.AlreadyDrafted)
@@ -122,20 +130,30 @@ public sealed class DraftPageState
             .ToArray();
 
         var trimmedSearchTerm = SearchTerm.Trim();
+        var opposingPokemon = draftSession.GetOpposingDraftedPokemon(draftSession.ActiveSlot);
 
-        AvailablePokemon = string.IsNullOrWhiteSpace(trimmedSearchTerm)
+        var filteredPokemon = string.IsNullOrWhiteSpace(trimmedSearchTerm)
             ? draftablePokemon
             : draftablePokemon
                 .Where(pokemon => pokemon.PokemonName.Contains(trimmedSearchTerm, StringComparison.OrdinalIgnoreCase))
                 .ToArray();
 
+        AvailablePokemon = AvailablePokemonSorter.SortByExpectedWinRate(
+            filteredPokemon,
+            opposingPokemon,
+            GetPokemonDraftDetailsForSorting);
+
         AvailablePokemonMessage = draftablePokemon.Length == 0
             ? "Every Pokemon in the local roster is already drafted."
             : string.IsNullOrWhiteSpace(trimmedSearchTerm)
-                ? $"{draftablePokemon.Length} Pokemon currently available to draft."
+                ? BuildAvailablePokemonSummary(
+                    $"{draftablePokemon.Length} Pokemon currently available to draft.",
+                    opposingPokemon.Count)
                 : AvailablePokemon.Count == 0
                     ? $"No available Pokemon match \"{trimmedSearchTerm}\"."
-                    : $"Showing {AvailablePokemon.Count} of {draftablePokemon.Length} available Pokemon matching \"{trimmedSearchTerm}\".";
+                    : BuildAvailablePokemonSummary(
+                        $"Showing {AvailablePokemon.Count} of {draftablePokemon.Length} available Pokemon matching \"{trimmedSearchTerm}\".",
+                        opposingPokemon.Count);
     }
 
     private static string GetTeamLabel(TeamSide team) =>
@@ -146,5 +164,29 @@ public sealed class DraftPageState
         SearchMessage = ActivePokemon is null
             ? $"Choose a Pokemon for {GetTeamLabel(ActiveSlot.Team)} #{ActiveSlot.Index}, or filter the roster by name."
             : $"{ActivePokemon.PokemonName} is currently assigned to {GetTeamLabel(ActiveSlot.Team)} #{ActiveSlot.Index}.";
+    }
+
+    private PokemonDraftDetails? GetPokemonDraftDetailsForSorting(PokemonSearchResult pokemon)
+    {
+        if (pokemonDetailsCache.TryGetValue(pokemon.UniteApiId, out var cachedDetails))
+        {
+            return cachedDetails;
+        }
+
+        var response = draftPageService.GetPokemonDraftDetails(pokemon.PokemonName);
+        if (response.Details is null)
+        {
+            return null;
+        }
+
+        pokemonDetailsCache[pokemon.UniteApiId] = response.Details;
+        return response.Details;
+    }
+
+    private static string BuildAvailablePokemonSummary(string baseMessage, int opposingPokemonCount)
+    {
+        return opposingPokemonCount == 0
+            ? baseMessage
+            : $"{baseMessage} Sorted by expected win rate against selected opponents.";
     }
 }

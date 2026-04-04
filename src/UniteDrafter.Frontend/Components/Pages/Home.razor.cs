@@ -19,6 +19,7 @@ public partial class Home
     }
 
     private PokemonDraftDetails? ActivePokemon => pageState.ActivePokemon;
+    private ExpectedWinRateSummary ActiveExpectedWinRate => pageState.ActiveExpectedWinRate;
 
     private string SearchTerm => pageState.SearchTerm;
     private string SearchMessage => pageState.SearchMessage;

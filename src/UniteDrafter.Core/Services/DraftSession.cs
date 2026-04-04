@@ -100,6 +100,24 @@ public sealed class DraftSession
 
     public bool HasDraftedPokemon(DraftSlotRef slot) => draftedPokemon.ContainsKey(slot);
 
+    public IReadOnlyList<PokemonDraftDetails> GetDraftedPokemon(TeamSide team)
+    {
+        return draftedPokemon
+            .Where(entry => entry.Key.Team == team)
+            .OrderBy(entry => entry.Key.Index)
+            .Select(entry => entry.Value)
+            .ToArray();
+    }
+
+    public IReadOnlyList<PokemonDraftDetails> GetOpposingDraftedPokemon(DraftSlotRef slot)
+    {
+        var opposingTeam = slot.Team == TeamSide.Ally
+            ? TeamSide.Enemy
+            : TeamSide.Ally;
+
+        return GetDraftedPokemon(opposingTeam);
+    }
+
     public bool IsDrafted(int uniteApiId, string pokemonName)
     {
         foreach (var pokemon in draftedPokemon.Values)

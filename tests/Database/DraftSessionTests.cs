@@ -60,12 +60,29 @@ public sealed class DraftSessionTests
         Assert.True(result);
     }
 
+    [Fact]
+    public void GetOpposingDraftedPokemon_ReturnsOppositeTeamOrderedBySlot()
+    {
+        var session = new DraftSession();
+        session.SelectSlot(new DraftSlotRef(TeamSide.Enemy, 3));
+        session.AssignPokemon(CreatePokemon("Gengar", uniteApiId: 180094));
+        session.SelectSlot(new DraftSlotRef(TeamSide.Enemy, 1));
+        session.AssignPokemon(CreatePokemon("Charizard", uniteApiId: 180006));
+        session.SelectSlot(new DraftSlotRef(TeamSide.Ally, 2));
+        session.AssignPokemon(CreatePokemon("Blastoise", uniteApiId: 180007));
+
+        var opposingPokemon = session.GetOpposingDraftedPokemon(new DraftSlotRef(TeamSide.Ally, 5));
+
+        Assert.Equal(["Charizard", "Gengar"], opposingPokemon.Select(x => x.PokemonName).ToArray());
+    }
+
     private static PokemonDraftDetails CreatePokemon(string name, int uniteApiId = 1) =>
         new(
             UniteApiId: uniteApiId,
             PokedexId: 25,
             PokemonName: name,
             ImageUrl: $"{name.ToLowerInvariant()}.png",
+            AllMatchups: Array.Empty<PokemonMatchupResult>(),
             BestAgainst: Array.Empty<PokemonMatchupResult>(),
             WorstAgainst: Array.Empty<PokemonMatchupResult>(),
             CounterStatusMessage: null);
