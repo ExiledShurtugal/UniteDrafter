@@ -1,5 +1,13 @@
 # UniteDrafter
 
+> [!WARNING]
+> **Project status: archived**
+> UniteDrafter depends on third-party matchup data for Pokemon Unite. That data is incomplete for a number of Pokemon, especially low-usage picks, and in some cases the missing matchup data does not exist upstream at all. For example, Falinks currently has only 20 recorded matchups, leaving 60 unavailable from the source itself.
+>
+> Because this missing data cannot be recovered from the available source, UniteDrafter cannot be developed into a complete or reliable draft tool in its current form. Development has been stopped, and this repository is now kept as an archive/reference project.
+
+
+
 UniteDrafter is a local Pokemon Unite draft helper.
 
 The goal is simple:
