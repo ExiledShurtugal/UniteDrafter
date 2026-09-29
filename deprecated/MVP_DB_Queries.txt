@@ -1,8 +1,0 @@
-SELECT 
-    PokemonName,
-    OpponentName,
-    CAST(Wins AS REAL) / NumberMatches AS WinRate
-FROM PokemonMatchups
-WHERE PokemonName = 'Pikachu';
-
-

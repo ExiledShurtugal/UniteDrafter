@@ -116,7 +116,7 @@ public class DecrypterTests
     public void FindPagePropsE_FromBlastoiseFixture_ReturnsValue()
     {
         var fixturePath = ResolveFixturePath(
-            "notes/JsonExamples/best-builds-movesets-and-guide-for-blastoise.json");
+            "tests/Decrypter/Fixtures/best-builds-movesets-and-guide-for-blastoise.json");
 
         var fixtureText = File.ReadAllText(fixturePath);
         using var encryptedDoc = JsonDocument.Parse(fixtureText);
@@ -130,7 +130,7 @@ public class DecrypterTests
     public void DecryptBlob_FromBlastoiseFixture_ProducesParsableJson_And_WritesArtifactFile()
     {
         var fixturePath = ResolveFixturePath(
-            "notes/JsonExamples/best-builds-movesets-and-guide-for-blastoise.json");
+            "tests/Decrypter/Fixtures/best-builds-movesets-and-guide-for-blastoise.json");
 
         var fixtureText = File.ReadAllText(fixturePath);
         using var encryptedDoc = JsonDocument.Parse(fixtureText);
@@ -154,7 +154,7 @@ public class DecrypterTests
     public void BestBuildsReader_FromEncryptedFixture_ParsesPokemonWinRates()
     {
         var fixturePath = ResolveFixturePath(
-            "notes/JsonExamples/best-builds-movesets-and-guide-for-blastoise.json");
+            "tests/Decrypter/Fixtures/best-builds-movesets-and-guide-for-blastoise.json");
 
         var data = BestBuildsReaderService.ReadPokemonWinRatesFromEncryptedPageFile(fixturePath);
 

@@ -14,6 +14,7 @@ src/UniteDrafter.Frontend/artifacts/
 .dotnet/
 .dotnet-cli/
 .playwright/
+.secrets/
 data/Database/Diagnostics/
 data/Database/GuideSources/
 data/Database/JsonsManually/
@@ -25,4 +26,6 @@ temp_*.csx
 *.log
 # Test artifacts
 tests/Decrypter/TestResults/
-deprecated/tests/
+
+# Local verification build output
+.artifacts/

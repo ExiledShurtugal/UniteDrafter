@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.2.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniteDrafter.Backend", "UniteDrafter.Backend.csproj", "{6CAA1F4E-684B-8A85-ED09-0F3EE7C21AC6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniteDrafter.Backend", "src\UniteDrafter.Backend\UniteDrafter.Backend.csproj", "{6CAA1F4E-684B-8A85-ED09-0F3EE7C21AC6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DecrypterTests", "tests\Decrypter\DecrypterTests.csproj", "{C64A3107-3C89-4D44-9BF9-DBDE54DF336F}"
 EndProject
@@ -104,6 +104,7 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{6CAA1F4E-684B-8A85-ED09-0F3EE7C21AC6} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
 		{37FDF358-8D85-4D58-91C2-8649A8D08458} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
 		{7ED8CC03-4A7C-43B4-A6F0-6A494990D2BA} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
 		{EADAE427-EF25-4375-9573-A93A80BCE0F7} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
