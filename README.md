@@ -54,36 +54,36 @@ The longer-term goal is a local app that helps answer:
 ## Developer Notes
 
 This repository currently has four main parts:
-- [`src/UniteDrafter.Backend`](/c:/Users/joaoc/Desktop/Guto/UniteDrafter/src/UniteDrafter.Backend): CLI entry point and command surface
-- [`src/UniteDrafter.Core`](/c:/Users/joaoc/Desktop/Guto/UniteDrafter/src/UniteDrafter.Core): draft-page services, shared models, and SQLite readers
-- [`src/UniteDrafter.Frontend`](/c:/Users/joaoc/Desktop/Guto/UniteDrafter/src/UniteDrafter.Frontend): Blazor frontend
-- [`src/UniteDrafter.SourceUpdate`](/c:/Users/joaoc/Desktop/Guto/UniteDrafter/src/UniteDrafter.SourceUpdate): source refresh, decryption, schema, and import pipeline
+- src/UniteDrafter.Backend: CLI entry point and command surface
+- src/UniteDrafter.Core: draft-page services, shared models, and SQLite readers
+- src/UniteDrafter.Frontend: Blazor frontend
+- src/UniteDrafter.SourceUpdate: source refresh, decryption, schema, and import pipeline
 
-Database-related files live under [`data/Database`](/c:/Users/joaoc/Desktop/Guto/UniteDrafter/data/Database), including:
+Database-related files live under data/Database, including:
 - the SQLite database file
 - the raw guide source JSON files used to populate it
 
-The guide source files now live in [`data/Database/GuideSources`](/c:/Users/joaoc/Desktop/Guto/UniteDrafter/data/Database/GuideSources).
+The guide source files now live in data/Database/GuideSources.
 
 ## Data Layer Layout
 
-Inside [`src/UniteDrafter.Core`](/c:/Users/joaoc/Desktop/Guto/UniteDrafter/src/UniteDrafter.Core):
-- `Data/Readers/`: database readers and reader interfaces
-- `Data/Models/`: shared query/result models
-- `Services/`: draft page services, session state, and storage path helpers
+Inside src/UniteDrafter.Core:
+- Data/Readers/: database readers and reader interfaces
+- Data/Models/: shared query/result models
+- Services/: draft page services, session state, and storage path helpers
 
-Inside [`src/UniteDrafter.SourceUpdate`](/c:/Users/joaoc/Desktop/Guto/UniteDrafter/src/UniteDrafter.SourceUpdate):
-- `Data/Schema/`: database creation and schema setup
-- `Data/Importing/`: seed import logic
-- `Data/Updating/`: source refresh, diagnostics, and payload extraction
-- `Decrypter/`: encrypted payload parsing helpers
+Inside src/UniteDrafter.SourceUpdate:
+- Data/Schema: database creation and schema setup
+- Data/Importing: seed import logic
+- Data/Updating: source refresh, diagnostics, and payload extraction
+- Decrypter: encrypted payload parsing helpers
 
 ## Current Architecture
 
 At a high level:
 - the Blazor page manages draft-board UI state
-- the frontend calls `IDraftPageService`
-- `DraftPageService` uses focused data readers
+- the frontend calls IDraftPageService
+- DraftPageService uses focused data readers
 - the readers query the local SQLite database
 
 ## Running The App
