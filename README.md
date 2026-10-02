@@ -55,4 +55,4 @@ dotnet run --project src/UniteDrafter.Frontend
 
 This sample holds Blastoise's matchups only. Put Blastoise in one team's slot and some opponents in the other team's slots to see its expected win rate. The CLI's other commands are listed in [src/UniteDrafter.Backend/README.md](src/UniteDrafter.Backend/README.md).
 
-This is a personal, non-commercial project. It reads publicly displayed statistics, and the repository does not redistribute the scraped dataset.
+This is a personal, non-commercial project, built for learning and as a portfolio piece. Matchup statistics come from [UniteAPI](https://uniteapi.dev). As of October 2026, UniteAPI publishes a privacy policy but no terms of service, and its robots.txt places no restrictions on crawlers. The scraper made low-volume requests, and this repository does not redistribute the scraped dataset. If UniteAPI's maintainers would rather it not be scraped, I'll take it down.
